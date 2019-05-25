@@ -9,9 +9,11 @@ timestamps {
 		
 		stage ('Checkout') {
 			// checkout scm
+			sh """ 
 			cd $PROJECT
 			git fetch --all
 			git reset --hard origin/master
+			"""
 		}
 		
 		// stage ('Replace') {
@@ -28,7 +30,7 @@ timestamps {
         // 	}
 		stage ('Build') {
 			
-		    	sh """ 
+		    sh """ 
 
 			cd $PROJECT
 			sudo virtualenv -p python3 .
