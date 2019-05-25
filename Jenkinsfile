@@ -8,21 +8,24 @@ timestamps {
 		
 		
 		stage ('Checkout') {
-			checkout scm
+			// checkout scm
+			cd $PROJECT
+			git fetch --all
+			git reset --hard origin/master
 		}
 		
-		stage ('Replace') {
+		// stage ('Replace') {
 
-			sh """ 
+		// 	sh """ 
 
-			whoami
-			echo "moving jenkins workspace $WORKSPACE to the apache project location"
-			sudo service apache2 stop
-			sudo rm -rf $PROJECT
-			sudo cp -r $WORKSPACE $PROJECT
+		// 	whoami
+		// 	echo "moving jenkins workspace $WORKSPACE to the apache project location"
+		// 	sudo service apache2 stop
+		// 	sudo rm -rf $PROJECT
+		// 	sudo cp -r $WORKSPACE $PROJECT
 
-            		""" 
-        	}
+        //     		""" 
+        // 	}
 		stage ('Build') {
 			
 		    	sh """ 
