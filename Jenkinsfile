@@ -55,7 +55,7 @@ timestamps {
 			sudo $PYTHON_P manage.py migrate                  
 			echo 'manage.py migrate done'
 
-			sudo compile_messages
+			sudo /usr/local/bin/compile_messages
 
 			sudo $PYTHON_P manage.py collectstatic --noinput  # Collect static files
 			echo 'manage.py collectstatic done'
