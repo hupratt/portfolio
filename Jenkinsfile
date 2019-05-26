@@ -55,8 +55,7 @@ timestamps {
 			sudo $PYTHON_P manage.py migrate                  
 			echo 'manage.py migrate done'
 
-			sudo django-admin manage.py compilemessages --settings=Portfolio.settings 
-			echo 'manage.py compilemessages done'
+			compile_messages
 
 			sudo $PYTHON_P manage.py collectstatic --noinput  # Collect static files
 			echo 'manage.py collectstatic done'
