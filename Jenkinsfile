@@ -67,7 +67,7 @@ timestamps {
 			sudo chown -R www-data:www-data /home/ubuntu/Dev/
 			
 			
-			tr -d '\r' < /home/ubuntu/Dev/PythonBots/Jenkinsfile > /home/ubuntu/Dev/PythonBots/Jenkinsfile.groovy
+			sudo tr -d '\r' < /home/ubuntu/Dev/PythonBots/Jenkinsfile > /home/ubuntu/Dev/PythonBots/Jenkinsfile.groovy
 			sudo mv /home/ubuntu/Dev/PythonBots/Jenkinsfile.groovy /home/ubuntu/Dev/PythonBots/Jenkinsfile
 
 			""" 
