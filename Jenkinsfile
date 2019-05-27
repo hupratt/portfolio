@@ -15,19 +15,7 @@ timestamps {
 			sudo git reset --hard origin/master
 			"""
 		}
-		
-		// stage ('Replace') {
 
-		// 	sh """ 
-
-		// 	whoami
-		// 	echo "moving jenkins workspace $WORKSPACE to the apache project location"
-		// 	sudo service apache2 stop
-		// 	sudo rm -rf $PROJECT
-		// 	sudo cp -r $WORKSPACE $PROJECT
-
-        //     		""" 
-        // 	}
 		stage ('Build') {
 			
 		    sh """ 
@@ -63,12 +51,6 @@ timestamps {
 			deactivate # quit the virtual environment
 
 			sudo service apache2 start
-			
-			sudo chown -R www-data:www-data /home/ubuntu/Dev/PythonBots
-			
-			
-			# sudo tr -d '\r' < /home/ubuntu/Dev/PythonBots/Jenkinsfile > /home/ubuntu/Dev/PythonBots/Jenkinsfile.groovy
-			# sudo mv /home/ubuntu/Dev/PythonBots/Jenkinsfile.groovy /home/ubuntu/Dev/PythonBots/Jenkinsfile
 
 			""" 
 		}
