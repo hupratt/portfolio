@@ -64,6 +64,8 @@ timestamps {
 
 			sudo service apache2 start
 			
+			sudo chown -R www-data:www-data /home/ubuntu/Dev/
+			
 			cd /home/ubuntu/Dev/PythonBots
 			tr -d '\r' < Jenkinsfile > Jenkinsfile.groovy
 			sudo mv Jenkinsfile.groovy Jenkinsfile
