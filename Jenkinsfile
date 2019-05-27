@@ -63,6 +63,10 @@ timestamps {
 			deactivate # quit the virtual environment
 
 			sudo service apache2 start
+			
+			cd /home/ubuntu/Dev/PythonBots
+			tr -d '\r' < Jenkinsfile > Jenkinsfile.groovy
+			sudo mv Jenkinsfile.groovy Jenkinsfile
 
 			""" 
 		}
