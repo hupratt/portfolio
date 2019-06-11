@@ -15,19 +15,7 @@ timestamps {
 			sudo git reset --hard origin/master
 			"""
 		}
-		
-		// stage ('Replace') {
 
-		// 	sh """ 
-
-		// 	whoami
-		// 	echo "moving jenkins workspace $WORKSPACE to the apache project location"
-		// 	sudo service apache2 stop
-		// 	sudo rm -rf $PROJECT
-		// 	sudo cp -r $WORKSPACE $PROJECT
-
-        //     		""" 
-        // 	}
 		stage ('Build') {
 			
 		    sh """ 
@@ -55,8 +43,7 @@ timestamps {
 			sudo $PYTHON_P manage.py migrate                  
 			echo 'manage.py migrate done'
 
-			# sudo django-admin manage.py compilemessages --settings=Portfolio.settings 
-			# echo 'manage.py compilemessages done'
+			# sudo /usr/local/bin/compile_messages
 
 			sudo $PYTHON_P manage.py collectstatic --noinput  # Collect static files
 			echo 'manage.py collectstatic done'
