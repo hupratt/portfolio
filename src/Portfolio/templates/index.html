@@ -5,32 +5,26 @@
 
 <main>
         <section data-anchor="Page 1">
-            <div class="text">
-                    <h1>Hugo Pratt Dos Santos</h1>
-                <h2>Turn your website into a work of art</h2>
-                <button class="btn btn-primary">Let's do it</button>
-                <div class="scroller">
-                    <small>Scroll down or swipe up.</small>
+
+            <div class="hover_bkgr_fricc">
+                <span class="helper"></span>
+                <div>
+                    <p>Add any HTML content<br />inside the popup box!</p>
                 </div>
+            </div>
+                
+            <div class="text">
+
             </div>
         </section>
         <section data-anchor="Page 2">
             <div class="text">
-                <h2>Construct</h2>
-                <pre class="language-markup"><code>&lt;div id="container"&gt;
-&lt;div data-anchor="page-1"&gt;&lt;/div&gt;
-&lt;div data-anchor="page-2"&gt;&lt;/div&gt;
-&lt;div data-anchor="page-3"&gt;&lt;/div&gt;
-&lt;div data-anchor="page-4"&gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+
             </div>
         </section>
         <section data-anchor="Page 3">
             <div class="text">
-                <h2>Initialize</h2>
-                <pre class="language-js"><code>
-new Pageable("#container");
-    </code></pre>
+
             </div>
         </section>
         <section data-anchor="Page 4">
@@ -134,4 +128,25 @@ onScroll: function() {
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+
+$(document).ready(function () {
+
+    setTimeout(() => {
+        $(".hover_bkgr_fricc").addClass("visible");
+        $(".hover_bkgr_fricc").removeClass("hidden");
+        }, 2000);
+    $('.hover_bkgr_fricc').on('mouseleave', function (e) {
+        setTimeout(() => {
+        $('.hover_bkgr_fricc').removeClass('visible').addClass('hidden');
+        }, 600);
+    });
+    $('.hover_bkgr_fricc').click(function(){
+        $('.hover_bkgr_fricc').hide();
+    });
+
+});
+
+</script>
     {% endblock %}		

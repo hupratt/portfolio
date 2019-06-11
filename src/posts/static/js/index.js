@@ -9,25 +9,17 @@ var inputs = document.querySelectorAll("input");
 var buttons = document.querySelectorAll("button");
 var selects = document.querySelectorAll("select");
 
-// var pageable = new Pageable("main", {
-// 	animation: 400,
-// 	onInit: init,
-// 	onFinish: update,
-// 	events: {
-// 		mouse: false
-// 	}
-// });
 
 const pageable = new Pageable("main", {
 	animation: 400,
 	onInit: init,
 	delay: 300,
 	onFinish: update,
-	onBeforeStart: function() {
-		this.pages.forEach((page, i) => {
-			page.classList.remove("pg-active");
-		});	
-	}	
+	// onBeforeStart: function() {
+	// 	this.pages.forEach((page, i) => {
+	// 		page.classList.remove("pg-active");
+	// 	});	
+	// }	
 });
 
 function update(data) {
@@ -86,70 +78,7 @@ function init() {
 		button.onclick = toggleMethod;
 	});
 	
-	// inputs.forEach(function (input) {
-	// 	if (input.type === "checkbox") {
-	// 		if (input.id === "freescroll") {
-	// 			input.onchange = function (e) {
-	// 				that.config.freeScroll = input.checked;
-	// 				that.events.mouse = input.checked;
-	// 				document.getElementById("mouse").checked = input.checked;
-	// 			};
-	// 		} else if (input.id === "infinite") {
-	// 			input.onchange = function (e) {
-	// 				that._toggleInfinite(!input.checked);
-	// 			};
-	// 		} else {
-	// 			input.onchange = toggleEvent;
-	// 		}
-	// 	} else {
-	// 		var output = input.previousElementSibling.lastElementChild;
-	
-	// 		var config = {
-	// 			tooltips: false,
-	// 			min: 0,
-	// 			step: 100,
-	// 			onInit: function onInit(val) {
-	// 				output.textContent = val + 'ms';
-	// 			},
-	// 			onChange: function onChange(val) {
-	// 				output.textContent = val + 'ms';
-	// 			}
-	// 		};
-	
-	// 		switch (input.id) {
-	// 			case "animation":
-	// 				config.max = 2000;
-	// 				config.value = that.config.animation;
-	// 				config.onEnd = function (val) {
-	// 					that.config.animation = parseInt(val, 10);
-	// 				};
-	// 				break;
-	// 			case "delay":
-	// 				config.max = 1000;
-	// 				config.value = that.config.delay;
-	// 				config.onEnd = function (val) {
-	// 					that.config.delay = parseInt(val, 10);
-	// 				};
-	// 				break;
-	// 			case "swipeThreshold":
-	// 				config.step = 10;
-	// 				config.max = 500;
-	// 				config.value = that.config.swipeThreshold;
-	// 				config.onEnd = function (val) {
-	// 					that.config.swipeThreshold = parseInt(val, 10);
-	// 				};
-	// 				config.onInit = function(val) {
-	// 					output.textContent = val + 'px';
-	// 				};
-	// 				config.onChange = function(val) {
-	// 					output.textContent = val + 'px';
-	// 				};				
-	// 				break;
-	// 		}
-	
-	// 		new Rangeable(input, config);
-	// 	}
-	// });
+
 	
 	selects.forEach(function (select) {
 		initSelect(select);
@@ -161,11 +90,6 @@ function init() {
 		}
 	}
 	
-	// function toggleEvent(e) {
-	// 	if ("event" in this.dataset) {
-	// 		that.events[this.dataset.event] = this.checked;
-	// 	}
-	// }
 	
 	function initSelect(select) {
 		if (select.id === "scrollToPage") {
@@ -203,3 +127,5 @@ function init() {
 		}
 	}
 }
+
+
