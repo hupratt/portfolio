@@ -54,8 +54,5 @@ timestamps {
 
 			""" 
 		}
-		stage ('Test') {
-		}
-
 	}
 }
