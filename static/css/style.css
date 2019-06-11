@@ -8,6 +8,33 @@ body {
   background-color: #2a2a2a;
 }
 
+.pg-page {
+  background-color: #2a2a2a;
+}
+
+h1 {
+  font-family: Montserrat;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-family: Inconsolata;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.text .btn{
+  margin-top: 1rem;
+}
+
+.pg-pips {
+  display: flex;
+}
 pre {
   background-color: #3a3a3a;
   padding: 20px;
@@ -31,13 +58,15 @@ section {
   position: relative;
 }
 #page-1 .text, #page-1-clone .text {
-  background-color: #3F51B5;
+  background: url("/static/img/window.jpg") 50% 0 no-repeat fixed;
+  background-size: 100% 100%;
 }
 #page-2 .text {
-  background-color: #673AB7;
+  background: url("/static/img/living-room2.jpg") 50% 0 no-repeat fixed;
+  background-size: 100% 100%;
 }
 #page-3 .text {
-  background-color: #9C27B0;
+  background-color: #E91E63;
 }
 #page-4 .text {
   background-color: #E91E63;
@@ -569,3 +598,60 @@ circle {
 }
 
 
+/* Popup box BEGIN */
+.hover_bkgr_fricc{
+  background:rgba(0,0,0,.4);
+  cursor:pointer;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  width:100%;
+  z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+  display:inline-block;
+  height:100%;
+  vertical-align:middle;
+}
+.hover_bkgr_fricc > div {
+  background-color: #fff;
+  box-shadow: 10px 10px 60px #555;
+  display: inline-block;
+  height: auto;
+  max-width: 551px;
+  min-height: 100px;
+  vertical-align: middle;
+  width: 60%;
+  position: relative;
+  border-radius: 8px;
+  padding: 15px 5%;
+}
+.popupCloseButton {
+  background-color: #fff;
+  border: 3px solid #999;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: arial;
+  font-weight: bold;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 25px;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.popupCloseButton:hover {
+  background-color: #ccc;
+}
+.trigger_popup_fricc {
+  cursor: pointer;
+  font-size: 20px;
+  margin: 20px;
+  display: inline-block;
+  font-weight: bold;
+}
+/* Popup box BEGIN */
