@@ -1,34 +1,106 @@
 <!DOCTYPE html>
-<html >
-	<head>
-		{% load static i18n %} 
-		{% get_current_language as LANGUAGE_CODE %}
-		<meta charset="UTF-8" lang="{{ LANGUAGE_CODE }}">
-		<title>Pageable</title>
-		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css">
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/minibarjs@latest/dist/minibar.min.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-	</head>
-	<body>
+<html>
+  <head>
+    {% load static i18n %} {% get_current_language as LANGUAGE_CODE %}
+    <meta charset="UTF-8" lang="{{ LANGUAGE_CODE }}" />
+    <title>Pageable</title>
 
-		<div class="anchors">
-			<ul>
-				<li><a href="#page-1" class="active">Landing Page</a></li>
-				<li><a href="#page-2">Expertise</a></li>
-				<li><a href="#page-3">Portfolio</a></li>
-				<li><a href="#page-4">Curriculum Vitae</a></li>
-			</ul>
-		</div>
-		{% block body %}
-		{% endblock %}		
-		
-		
-	</body>
-	<footer>
-		<script type="text/javascript" src="https://unpkg.com/pageable@latest/dist/pageable.min.js"></script>
-		<script type="text/javascript" src="https://unpkg.com/minibarjs@latest/dist/minibar.min.js"></script>
-		<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-	</footer>
+    <!-- <link rel="stylesheet" href="{% static 'vendor/validator/fv.css' %}" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/minibarjs@latest/dist/minibar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/material.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
+    />
+    <link
+      href="https://file.myfontastic.com/7vRKgqrN3iFEnLHuqYhYuL/icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="alert"></div>
+    <div class="anchors">
+      <ul>
+        <li><a href="#page-1" class="active">Landing Page</a></li>
+        <li><a href="#page-2">Portfolio</a></li>
+        <li><a href="#page-3">Services</a></li>
+        <li><a href="#page-4">Pricing</a></li>
+      </ul>
+    </div>
+    {% block body %} {% endblock %}
+
+    <footer>
+      <!-- External -->
+      <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        type="text/javascript"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      ></script>
+      <!-- <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"
+    ></script> -->
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"
+      ></script>
+
+      <!-- Pageable: scroll effect -->
+      <script
+        type="text/javascript"
+        src="https://unpkg.com/pageable@latest/dist/pageable.min.js"
+      ></script>
+      <!-- Settings side menu -->
+      <script
+        type="text/javascript"
+        src="https://unpkg.com/minibarjs@latest/dist/minibar.min.js"
+      ></script>
+      <!-- Vendor -->
+      <!-- <script src="{% static 'vendor/select2/select2.min.js' %}"></script> -->
+      <script src="{% static 'vendor/isotope/isotope.min.js' %}"></script>
+      <!-- <script src="{% static 'vendor/waypoints/waypoint.min.js' %}"></script> -->
+      <!-- Form Validator -->
+      <script src="{% static 'vendor/validator/multifield.js' %}"></script>
+      <script src="{% static 'vendor/validator/validator.js' %}"></script>
+      <!-- Internal -->
+      <script
+        type="text/javascript"
+        src="{% static 'js/portfolio.js' %}"
+      ></script>
+      <script
+        type="text/javascript"
+        src="{% static 'js/pageable.js' %}"
+      ></script>
+      <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
+      <script
+        type="text/javascript"
+        src="{% static 'js/validator.init.js' %}"
+      ></script>
+    </footer>
+  </body>
 </html>
