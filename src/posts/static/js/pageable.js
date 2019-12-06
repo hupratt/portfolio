@@ -17,6 +17,7 @@ $(document).ready(function() {
   var settings = document.getElementById("settings");
   var buttons = document.querySelectorAll("button");
   var selects = document.querySelectorAll("select");
+  var hamburger = document.getElementById("hamburger");
 
   const pageable = new Pageable("main", {
     animation: 400, // the duration in ms of the scroll animation
@@ -51,27 +52,27 @@ $(document).ready(function() {
   function init() {
     var that = this;
 
-    listeners.forEach(function(listener) {
-      var item = document.createElement("li");
-      item.textContent = listener;
-      list.appendChild(item);
+    // listeners.forEach(function(listener) {
+    //   var item = document.createElement("li");
+    //   item.textContent = listener;
+    //   list.appendChild(item);
 
-      that.on(listener, function(data) {
-        item.classList.add("active");
+    //   that.on(listener, function(data) {
+    //     item.classList.add("active");
 
-        setTimeout(function() {
-          item.classList.remove("active");
-        }, 200);
+    //     setTimeout(function() {
+    //       item.classList.remove("active");
+    //     }, 200);
 
-        if (listener === "scroll.end") {
-          setTimeout(function() {
-            Array.from(list.children).forEach(function(child) {
-              return child.classList.remove("active");
-            });
-          }, 400);
-        }
-      });
-    });
+    //     if (listener === "scroll.end") {
+    //       setTimeout(function() {
+    //         Array.from(list.children).forEach(function(child) {
+    //           return child.classList.remove("active");
+    //         });
+    //       }, 400);
+    //     }
+    //   });
+    // });
 
     window.bar = new MiniBar("#scroll", {
       alwaysShowBars: true
@@ -79,6 +80,7 @@ $(document).ready(function() {
 
     toggle.addEventListener("click", function(e) {
       settings.classList.toggle("active");
+      hamburger.classList.toggle("is-active");
     });
 
     buttons.forEach(function(button) {
