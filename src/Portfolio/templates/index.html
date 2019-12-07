@@ -8,6 +8,59 @@
       <li><a href="#page-2">Portfolio</a></li>
       <li><a href="#page-3">Services</a></li>
       <li><a href="#page-4">Pricing</a></li>
+
+          
+    </ul>
+  </div>
+
+<main>
+  <section data-anchor="Page 1">
+    {% include "pages/page_1.html" %}
+  </section>
+  <section id="portfolio" data-anchor="Page 2">
+    {% include "pages/page_2.html" %}
+  </section>
+  <section data-anchor="Page 3">
+    {% include "pages/page_3.html" %}
+  </section>
+  <section data-anchor="Page 4">
+    {% include "pages/page_4.html" %}
+  </section>
+
+</main>
+
+
+  <div id="settings">
+    <div class="settings-inner">
+
+      <a href="#" id="settings-open">  
+      <button class="hamburger hamburger--stand" id="hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      </a>
+      <div id="scroll">
+<!-- 
+        <h4>Events</h4>
+        <div class="setting">
+          <ul id="listeners"></ul>
+        </div> -->
+        <!-- <h4>Pages</h4>
+        <div class="anchors">
+            <ul>
+              <li><a href="#page-1" class="active">Landing Page</a></li>
+              <li><a href="#page-2">Portfolio</a></li>
+              <li><a href="#page-3">Services</a></li>
+              <li><a href="#page-4">Pricing</a></li>
+              <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode">
+                  <span class="lnr lnr-move"></span>
+              </button>
+            </ul>
+          </div> -->
+          <h4>Toggle</h4>
+          <div class="setting">
+            <button style="height:20px">
           <svg id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
             <title>Day And Night Toggle</title>
             <defs>
@@ -76,56 +129,7 @@
               </g>
              <rect class="hit" x="220" y="210" width="360" height="180" rx="90" ry="90" fill="transparent" stroke="none" stroke-width="0"/>
            
-          </svg>
-          
-    </ul>
-  </div>
-
-<main>
-  <section data-anchor="Page 1">
-    {% include "pages/page_1.html" %}
-  </section>
-  <section id="portfolio" data-anchor="Page 2">
-    {% include "pages/page_2.html" %}
-  </section>
-  <section data-anchor="Page 3">
-    {% include "pages/page_3.html" %}
-  </section>
-  <section data-anchor="Page 4">
-    {% include "pages/page_4.html" %}
-  </section>
-
-</main>
-
-
-  <div id="settings">
-    <div class="settings-inner">
-
-      <a href="#" id="settings-open">  
-      <button class="hamburger hamburger--stand" id="hamburger" type="button">
-        <span class="hamburger-box">
-          <span class="hamburger-inner"></span>
-        </span>
-      </button>
-      </a>
-      <div id="scroll">
-<!-- 
-        <h4>Events</h4>
-        <div class="setting">
-          <ul id="listeners"></ul>
-        </div> -->
-        <!-- <h4>Pages</h4>
-        <div class="anchors">
-            <ul>
-              <li><a href="#page-1" class="active">Landing Page</a></li>
-              <li><a href="#page-2">Portfolio</a></li>
-              <li><a href="#page-3">Services</a></li>
-              <li><a href="#page-4">Pricing</a></li>
-              <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode">
-                  <span class="lnr lnr-move"></span>
-              </button>
-            </ul>
-          </div> -->
+          </svg></button></div>
         <h4>Methods</h4>
         <div class="setting">
           <button type="button" data-method="prev">prev()</button>

@@ -1,6 +1,7 @@
 $(document).ready(function() {
   $("#price_range").ionRangeSlider({
     type: "double",
+    skin: "round",
     grid: true,
     min: 0,
     max: 10000,
@@ -24,6 +25,7 @@ $(document).ready(function() {
   var my_from = custom_values.indexOf("Now");
   $("#timeline").ionRangeSlider({
     grid: true,
+    skin: "round",
     from: my_from,
     values: custom_values,
     hide_min_max: true
