@@ -11,7 +11,7 @@
       <!-- Form -->
       <form id="my-form" class="text-center" action="" method="post" novalidate>
         {% csrf_token %}
-        <div id="page1" class='page-card-format'>
+        <div id="page1" class="page-card-format">
           <!-- Name -->
           <div class="my-form">
             <input type="text" class="inputText" placeholder="First Name" />
@@ -24,7 +24,7 @@
           <a id="gotoPage2" class="next-btn">Next</a>
         </div>
         <!-- E-mail -->
-        <div class="hidden" id="page2">
+        <div id="page2" class="page-card-format hidden">
           <div class="my-form field">
             <input
               name="email"
@@ -37,7 +37,7 @@
           </div>
           <a id="gotoPage3" class="next-btn">Next</a>
         </div>
-        <div class="hidden" id="page3">
+        <div class="page-card-format hidden" id="page3">
           <!-- Subject -->
           <select class="mdb-select">
             <option value="" disabled>Choose option</option>
@@ -69,7 +69,7 @@
           </div>
           <a id="gotoPage4" class="next-btn">Next</a>
         </div>
-        <div class="hidden" id="page4">
+        <div class="page-card-format hidden" id="page4">
           <!-- Slider price_range -->
           <input class="js-range-slider" id="price_range" />
           <!-- Slider price_range -->

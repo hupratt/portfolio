@@ -17,6 +17,8 @@
   --svg-shape: #9aceff;
   --svg-shape-light: #81d0d185;
   --svg-shape-lighter: #81d0d13f;
+  --shape-page1: none;
+  --shape-page1-text: black;
 }
 
 .darkmode {
@@ -24,7 +26,7 @@
   --section-background-color: rgb(85, 85, 85);
   --section-text-color: white;
   --nav-color-links: white;
-  --shape-colors: rgb(224, 224, 224);
+  --shape-colors: #9c9ca45c;
   --anchor-underline: white;
   --dot-span-color: rgba(255, 255, 255, 0.76);
   --dot-color: rgba(255, 255, 255, 0.76);
@@ -34,6 +36,8 @@
   --svg-shape: white;
   --svg-shape-light: rgba(255, 255, 255, 0.445);
   --svg-shape-lighter: rgba(255, 255, 255, 0.151);
+  --shape-page1: none;
+  --shape-page1-text: black;
 }
 
 body {
@@ -44,6 +48,9 @@ body {
   background-color: var(--background-color);
 }
 
+p {
+  color: var(--section-text-color);
+}
 h1 {
   font-family: Montserrat;
   font-size: 3rem;
@@ -53,7 +60,7 @@ h1 {
 }
 
 h2 {
-  /* font-family: Inconsolata; */
+  color: var(--section-text-color);
   font-size: 5rem;
   font-weight: 900;
   line-height: 1.2;
@@ -61,6 +68,34 @@ h2 {
   letter-spacing: -5px;
   line-height: 0.9em;
   /* min-width: 80vh; */
+}
+.section-title-center-big {
+  min-width: 80vh;
+}
+
+.section-sub-title-left {
+  color: var(--section-text-color);
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.2;
+  /* margin-top: 5rem; */
+  letter-spacing: -1px;
+  line-height: 0.9em;
+  text-align: left;
+  /* width: 60vh; */
+  left: 12vh;
+  padding-left: 0.2em;
+  /* top: -30vh; */
+}
+
+.section-title-left {
+  color: var(--section-text-color);
+  text-align: left;
+  /* position: absolute; */
+  /* width: 60vh; */
+  left: 12vh;
+  top: -30vh;
+  padding-bottom: 0.2em;
 }
 
 .text .btn {
@@ -592,6 +627,10 @@ pre[class*="language-"] {
   background-color: #fff;
 }
 
+.dark-mode-toggle {
+  height: 120px;
+  width:120px
+}
 .page-progress {
   width: 40px;
   height: 40px;
@@ -600,7 +639,7 @@ pre[class*="language-"] {
   top: 20px;
 }
 
-circle {
+circle.background-circle {
   stroke: #fff;
   fill: transparent;
   stroke-dasharray: 87.9645943005 87.9645943005;
@@ -734,22 +773,19 @@ section {
   padding-bottom: 80px;
 }
 
-.title-wrap,
 .section-title {
   text-align: center;
 }
-
-.section-title-left {
-  text-align: left;
-  position: absolute;
+.title-wrap {
+  text-align: center;
   width: 60vh;
-  left: 12vh;
-  top: -30vh;
+  background-color: var(--shape-page1);
+  padding: 20px;
+
+  border-radius: 3%;
 }
 
 .title-wrap {
-  position: absolute;
-
   left: 0;
 }
 
@@ -1148,6 +1184,12 @@ section {
   box-shadow: none;
 }
 
+.card {
+  left: 30vh;
+
+  position: absolute;
+}
+
 .page-card-format {
   padding: 20px;
   margin-top: 10px;
@@ -1316,6 +1358,17 @@ select option {
   position: absolute;
   right: -40vw;
   z-index: -1;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+}
+
+.hit {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 767px) {
