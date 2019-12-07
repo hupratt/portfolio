@@ -309,9 +309,6 @@ nav ul li:hover a span {
 #settings-open span {
   line-height: 0;
 }
-#settings-open span::before {
-  content: "\F8BA";
-}
 
 .active#settings span {
   position: absolute;
@@ -334,9 +331,7 @@ nav ul li:hover a span {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
-#settings.active #settings-open span::before {
-  content: "\F5AD";
-}
+
 #settings .settings-inner {
   border: 3px solid var(--nav-minibar);
   border-radius: 4px;
@@ -1253,6 +1248,13 @@ textarea {
   transition-property: transform;
   border-radius: 4px;
   background-color: var(--hamburger-color);
+}
+
+.hamburger.is-active .hamburger-inner {
+  top: 11px;
+}
+.hamburger .hamburger-box {
+  height: 0;
 }
 
 select option {
