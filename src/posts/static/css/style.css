@@ -1129,7 +1129,7 @@ section {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   display: block;
-  font-size: 22px;
+  font-size: 18px;
   margin: 0;
   padding: 4px 0;
   width: 100%;
@@ -1204,19 +1204,19 @@ input:focus ~ .underline {
 
 ::-webkit-input-placeholder {
   color: rgb(163, 159, 159);
-  font-size: 22px;
+  font-size: 18px;
 }
 ::-moz-placeholder {
   color: rgb(163, 159, 159);
-  font-size: 22px;
+  font-size: 18px;
 }
 :-ms-input-placeholder {
   color: rgb(163, 159, 159);
-  font-size: 22px;
+  font-size: 18px;
 }
 ::placeholder {
   color: rgb(163, 159, 159);
-  font-size: 22px;
+  font-size: 18px;
 }
 
 /* *,
@@ -1293,6 +1293,15 @@ select option {
   color: white !important;
   margin-top: 20px;
   font-size: 17px;
+}
+
+.fake-back {
+  background: gainsboro;
+  height: 100vh;
+  width: 100vh;
+  position: absolute;
+  right: -40vw;
+  z-index: -1;
 }
 
 @media (max-width: 767px) {
