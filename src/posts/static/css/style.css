@@ -1139,11 +1139,16 @@ section {
   box-shadow: none;
 }
 
+.page-card-format {
+  padding: 20px;
+  margin-top: 10px;
+}
+
 .my-form {
   position: relative;
   margin: 0;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  /* margin-bottom: 20px;
+  margin-top: 20px; */
   color: #757575;
   /* padding-top: 10px;
   padding-bottom: 10px; */

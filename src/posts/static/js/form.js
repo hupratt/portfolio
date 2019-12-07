@@ -22,6 +22,7 @@
       const message =
         '<div class="alert alert-warning"><strong>Howdy captain!</strong> The email address is invalid<button class="close" aria-label="Close" type="button" data-dismiss="alert"><span aria-hidden="true">×</span></button></div>';
       jquery("#gotoPage3").click(() => {
+        console.log("in");
         if (jquery(".alert").prop("outerHTML") == message) {
           console.log("nok");
         } else {
