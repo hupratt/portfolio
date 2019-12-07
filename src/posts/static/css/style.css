@@ -15,7 +15,8 @@
   --nav-minibar: black;
   --section-underline-text-color: none;
   --svg-shape: #9aceff;
-  --svg-shape-light: #81d0d1;
+  --svg-shape-light: #81d0d185;
+  --svg-shape-lighter: #81d0d13f;
 }
 
 .darkmode {
@@ -31,17 +32,9 @@
   --nav-minibar: white;
   --section-underline-text-color: gray;
   --svg-shape: white;
-  --svg-shape-light: white;
+  --svg-shape-light: rgba(255, 255, 255, 0.445);
+  --svg-shape-lighter: rgba(255, 255, 255, 0.151);
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: blue;
-    --section-background-color: black;
-    --section-text-color: white;
-    --nav-color-links: white;
-  }
-} */
 
 body {
   color: var(--section-text-color);
@@ -61,11 +54,13 @@ h1 {
 
 h2 {
   /* font-family: Inconsolata; */
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 900;
   line-height: 1.2;
   margin-top: 5rem;
-  min-width: 80vh;
+  letter-spacing: -5px;
+  line-height: 0.9em;
+  /* min-width: 80vh; */
 }
 
 .text .btn {
@@ -742,6 +737,20 @@ section {
 .title-wrap,
 .section-title {
   text-align: center;
+}
+
+.section-title-left {
+  text-align: left;
+  position: absolute;
+  width: 60vh;
+  left: 12vh;
+  top: -30vh;
+}
+
+.title-wrap {
+  position: absolute;
+
+  left: 0;
 }
 
 .shadow {
