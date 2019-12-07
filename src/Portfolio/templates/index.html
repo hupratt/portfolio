@@ -1,4 +1,19 @@
 {% extends "base.html" %} {% load static i18n %} {% block body %}
+
+
+<div id="alert"></div>
+<div class="anchors">
+    <ul>
+      <li><a href="#page-1" class="active">Landing Page</a></li>
+      <li><a href="#page-2">Portfolio</a></li>
+      <li><a href="#page-3">Services</a></li>
+      <li><a href="#page-4">Pricing</a></li>
+      <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode">
+          <span class="lnr lnr-move"></span>
+      </button>
+    </ul>
+  </div>
+
 <main>
   <section data-anchor="Page 1">
     {% include "pages/page_1.html" %}
@@ -12,37 +27,59 @@
   <section data-anchor="Page 4">
     {% include "pages/page_4.html" %}
   </section>
+
 </main>
 
-<div id="settings">
-  <div class="settings-inner">
-    <a href="#" id="settings-open"><span class="mdi"></span></a>
-    <div id="scroll">
-      <h4>Events</h4>
-      <div class="setting">
-        <ul id="listeners"></ul>
-      </div>
 
-      <h4>Methods</h4>
-      <div class="setting">
-        <button type="button" data-method="prev">prev()</button>
-        <button type="button" data-method="next">next()</button>
-      </div>
-      <div class="setting">
-        <label for="scrollToPage">scrollToPage()</label>
-        <select id="scrollToPage"></select>
-      </div>
+  <div id="settings">
+    <div class="settings-inner">
 
-      <div class="setting">
-        <label for="scrollToAnchor">scrollToAnchor()</label>
-        <select id="scrollToAnchor"></select>
-      </div>
-      <div class="setting">
-        <label for="orientate">orientate()</label>
-        <select id="orientate"></select>
+      <a href="#" id="settings-open">  
+      <button class="hamburger hamburger--stand" id="hamburger" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      </a>
+      <div id="scroll">
+<!-- 
+        <h4>Events</h4>
+        <div class="setting">
+          <ul id="listeners"></ul>
+        </div> -->
+        <!-- <h4>Pages</h4>
+        <div class="anchors">
+            <ul>
+              <li><a href="#page-1" class="active">Landing Page</a></li>
+              <li><a href="#page-2">Portfolio</a></li>
+              <li><a href="#page-3">Services</a></li>
+              <li><a href="#page-4">Pricing</a></li>
+              <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle dark mode">
+                  <span class="lnr lnr-move"></span>
+              </button>
+            </ul>
+          </div> -->
+        <h4>Methods</h4>
+        <div class="setting">
+          <button type="button" data-method="prev">prev()</button>
+          <button type="button" data-method="next">next()</button>
+        </div>
+        <div class="setting">
+          <label for="scrollToPage">scrollToPage()</label>
+          <select id="scrollToPage"></select>
+        </div>
+
+        <div class="setting">
+          <label for="scrollToAnchor">scrollToAnchor()</label>
+          <select id="scrollToAnchor"></select>
+        </div>
+        <div class="setting">
+          <label for="orientate">orientate()</label>
+          <select id="orientate"></select>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-{% endblock %}
+  {% endblock %}
+</svg>

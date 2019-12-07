@@ -1,7 +1,7 @@
 !((n, t, e) => {
   var o = {
     init: e => {
-      o.portfolio(), o.navbarChange(), o.showPopUp();
+      o.portfolio(), o.navbarChange(), o.showPopUp(), o.toggle_darkmode();
     },
 
     portfolio: () => {
@@ -41,6 +41,31 @@
       });
       n("#book").click(() => {
         n(".hover_bkgr_fricc").show();
+      });
+    },
+    toggle_darkmode: () => {
+      let darkMode = localStorage.getItem("darkMode");
+
+      const enableDarkMode = () => {
+        document.body.classList.add("darkmode");
+        localStorage.setItem("darkMode", "enabled");
+      };
+      const disableDarkMode = () => {
+        document.body.classList.remove("darkmode");
+        localStorage.setItem("darkMode", null);
+      };
+      if (darkMode === "enabled") {
+        enableDarkMode();
+      }
+      const toggle = document.querySelector("#dark-mode-toggle");
+
+      toggle.addEventListener("click", _ => {
+        darkMode = localStorage.getItem("darkMode");
+        if (darkMode !== "enabled") {
+          enableDarkMode();
+        } else {
+          disableDarkMode();
+        }
       });
     }
   };
