@@ -13,6 +13,9 @@
   --dot-color: rgba(25, 25, 25, 0.15);
   --hamburger-color: black;
   --nav-minibar: black;
+  --section-underline-text-color: none;
+  --svg-shape: #9aceff;
+  --svg-shape-light: #81d0d1;
 }
 
 .darkmode {
@@ -26,6 +29,9 @@
   --dot-color: rgba(255, 255, 255, 0.76);
   --hamburger-color: white;
   --nav-minibar: white;
+  --section-underline-text-color: gray;
+  --svg-shape: white;
+  --svg-shape-light: white;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -55,10 +61,11 @@ h1 {
 
 h2 {
   /* font-family: Inconsolata; */
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 3rem;
+  font-weight: 900;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
+  margin-top: 5rem;
+  min-width: 80vh;
 }
 
 .text .btn {
@@ -917,6 +924,19 @@ section {
     floating ease-in-out 4s infinite;
 }
 
+.circle-4 {
+  top: 10%;
+  left: 15%;
+  width: 40px;
+  height: 40px;
+  border: 2px solid;
+  border-color: var(--shape-colors);
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  animation: fadeInFromTop 0.5s linear forwards,
+    floating ease-in-out 4s infinite;
+}
 @keyframes floating {
   0% {
     transform: translate(0%, 0%) rotate(25deg);
@@ -976,7 +996,7 @@ section {
 }
 
 .triangle-1 {
-  top: 10%;
+  top: -40%;
   left: 5%;
   animation: fadeInFromTop 0.5s linear forwards,
     floating ease-in-out 6s infinite;
