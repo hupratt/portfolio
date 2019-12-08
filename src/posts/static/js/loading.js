@@ -146,12 +146,12 @@ window.addEventListener("load", () => {
         duration: _duration,
         begin: function(anim) {
           document.getElementById("twelve").setAttribute("stroke", "black");
+        },
+        complete: anim => {
+          sleep(1000).then(() => {
+            $(".loading").remove();
+          });
         }
-
-        // complete: anim => {
-        //   sleep(1000).then(() => {
-        //     $(".loading").remove();
-        //   });
       });
   });
 });
