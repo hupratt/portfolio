@@ -40,6 +40,34 @@
   --shape-page1-text: black;
 }
 
+.squiggle {
+  stroke-dasharray: 450;
+  stroke-dashoffset: 450;
+  animation: draw 2s linear infinite alternate;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.cassie-logo {
+  width: 70vw;
+  visibility: inherit;
+  transform: translateY(-20%);
+}
+
+.loading {
+  overflow: hidden;
+  height: 100vh;
+  /* width:1px; */
+  background-color: #ffffff;
+  background-size: 30vh;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 body {
   color: var(--section-text-color);
   margin: 0;

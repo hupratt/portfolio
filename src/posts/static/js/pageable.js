@@ -52,28 +52,6 @@ $(document).ready(function() {
   function init() {
     var that = this;
 
-    // listeners.forEach(function(listener) {
-    //   var item = document.createElement("li");
-    //   item.textContent = listener;
-    //   list.appendChild(item);
-
-    //   that.on(listener, function(data) {
-    //     item.classList.add("active");
-
-    //     setTimeout(function() {
-    //       item.classList.remove("active");
-    //     }, 200);
-
-    //     if (listener === "scroll.end") {
-    //       setTimeout(function() {
-    //         Array.from(list.children).forEach(function(child) {
-    //           return child.classList.remove("active");
-    //         });
-    //       }, 400);
-    //     }
-    //   });
-    // });
-
     window.bar = new MiniBar("#scroll", {
       alwaysShowBars: true
     });
