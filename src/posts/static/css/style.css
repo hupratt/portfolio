@@ -363,7 +363,7 @@ nav ul li:hover a span {
   color: var(--nav-minibar);
   font-size: 35px;
   position: absolute;
-  right: -105px;
+  right: -80px;
   top: 10px;
   width: 35px;
   height: 35px;
@@ -377,7 +377,7 @@ nav ul li:hover a span {
 
 .active#settings span {
   position: absolute;
-  left: -25px;
+  /* left: -25px; */
   z-index: 1;
 }
 
