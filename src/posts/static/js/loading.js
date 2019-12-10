@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-  const _duration = 100;
+  const _duration = 200;
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
@@ -10,141 +10,161 @@ window.addEventListener("load", () => {
         easing: "easeInOutCubic"
       })
       .add({
-        targets: "#1",
-        // strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("1").setAttribute("stroke", "black");
-        }
-      })
-      .add({
-        targets: "#2",
-        // strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("2").setAttribute("stroke", "black");
-        }
-      })
-      .add({
-        targets: "#3",
+        targets: "#Letter_1",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("3").setAttribute("stroke", "black");
-          document.getElementById("1").setAttribute("fill", "black");
-          document.getElementById("1").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_1").setAttribute("stroke", "black");
         }
       })
       .add({
-        targets: "#4",
+        targets: "#Letter_2",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("4").setAttribute("stroke", "black");
-          document.getElementById("2").setAttribute("fill", "black");
-          document.getElementById("2").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_2").setAttribute("stroke", "black");
         }
       })
       .add({
-        targets: "#5",
+        targets: "#Letter_3",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("5").setAttribute("stroke", "black");
-          document.getElementById("3").setAttribute("fill", "black");
-          document.getElementById("3").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_3").setAttribute("stroke", "black");
+          document.getElementById("Letter_1").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_1")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#6",
+        targets: "#Letter_4",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("6").setAttribute("stroke", "black");
-          document.getElementById("4").setAttribute("fill", "black");
-          document.getElementById("4").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_4").setAttribute("stroke", "black");
+          document.getElementById("Letter_2").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_2")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#7",
+        targets: "#Letter_5",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("7").setAttribute("stroke", "black");
-          document.getElementById("5").setAttribute("fill", "black");
-          document.getElementById("5").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_5").setAttribute("stroke", "black");
+          document.getElementById("Letter_3").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_3")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#8",
+        targets: "#Letter_6",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("8").setAttribute("stroke", "black");
-          document.getElementById("6").setAttribute("fill", "black");
-          document.getElementById("6").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_6").setAttribute("stroke", "black");
+          document.getElementById("Letter_4").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_4")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#9",
+        targets: "#Letter_7",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("9").setAttribute("stroke", "black");
-          document.getElementById("7").setAttribute("fill", "black");
-          document.getElementById("7").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_7").setAttribute("stroke", "black");
+          document.getElementById("Letter_5").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_5")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#10",
+        targets: "#Letter_8",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("10").setAttribute("stroke", "black");
-          document.getElementById("8").setAttribute("fill", "black");
-          document.getElementById("8").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_8").setAttribute("stroke", "black");
+          document.getElementById("Letter_6").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_6")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#11",
+        targets: "#Letter_9",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("11").setAttribute("stroke", "black");
-          document.getElementById("9").setAttribute("fill", "black");
-          document.getElementById("9").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_9").setAttribute("stroke", "black");
+          document.getElementById("Letter_7").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_7")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#12",
+        targets: "#Letter_10",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("12").setAttribute("stroke", "black");
-          document.getElementById("10").setAttribute("fill", "black");
-          document.getElementById("10").setAttribute("stroke", "transparent");
-          document.getElementById("11").setAttribute("fill", "black");
-          document.getElementById("11").setAttribute("stroke", "transparent");
+          document.getElementById("Letter_10").setAttribute("stroke", "black");
+          document.getElementById("Letter_8").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_8")
+            .setAttribute("stroke", "transparent");
         }
       })
       .add({
-        targets: "#13",
+        targets: "#Letter_11",
         strokeDashoffset: [anime.setDashoffset, 0],
         duration: _duration,
         begin: function(anim) {
-          document.getElementById("12").setAttribute("fill", "black");
-          document.getElementById("12").setAttribute("stroke", "transparent");
-          // document.getElementById("13").setAttribute("stroke-width", "10px");
-          // document.getElementById("13").setAttribute("stroke", "black");
-          document.getElementById("13").setAttribute("stroke", "black");
+          document.getElementById("Letter_11").setAttribute("stroke", "black");
+          document.getElementById("Letter_9").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_9")
+            .setAttribute("stroke", "transparent");
+        }
+      })
+      .add({
+        targets: "#Letter_12",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        duration: _duration,
+        begin: function(anim) {
+          document.getElementById("Letter_12").setAttribute("stroke", "black");
+          document.getElementById("Letter_10").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_10")
+            .setAttribute("stroke", "transparent");
+          document.getElementById("Letter_11").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_11")
+            .setAttribute("stroke", "transparent");
+        }
+      })
+      .add({
+        targets: "#Line",
+        strokeDashoffset: [anime.setDashoffset, 0],
+        duration: _duration,
+        begin: function(anim) {
+          document.getElementById("Letter_12").setAttribute("fill", "black");
+          document
+            .getElementById("Letter_12")
+            .setAttribute("stroke", "transparent");
+          document.getElementById("Line").setAttribute("stroke", "black");
+        },
+        complete: anim => {
+          sleep(1000).then(() => {
+            $(".loading").remove();
+          });
         }
       });
-
-    // complete: anim => {
-    //   sleep(1000).then(() => {
-    //     $(".loading").remove();
-    //   });
-    // }
-    // });
   });
 });
