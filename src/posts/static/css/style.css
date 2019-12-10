@@ -110,7 +110,7 @@ h2 {
   letter-spacing: -1px;
   line-height: 0.9em;
   text-align: left;
-  /* width: 60vh; */
+  width: 30vw;
   left: 12vh;
   padding-left: 0.2em;
   /* top: -30vh; */
@@ -781,6 +781,8 @@ a:link {
   outline: none;
   color: var(--nav-color-links);
   text-decoration: line-through;
+  box-shadow: none;
+  border-color: transparent;
 }
 
 .btn:hover,
@@ -1392,11 +1394,11 @@ select option {
 }
 
 .fake-back {
-  background: gainsboro;
+  background: var(--svg-shape);
   height: 100vh;
   width: 100vh;
   position: absolute;
-  right: -40vw;
+  left: -20vw;
   z-index: -1;
 }
 
