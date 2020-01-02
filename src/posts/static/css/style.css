@@ -712,6 +712,19 @@ circle.background-circle {
   border-radius: 8px;
   padding: 15px 5%;
 }
+.allProjects {
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+  position: fixed;
+  left: 0;
+}
+
 .popupCloseButton {
   background-color: #fff;
   border: 3px solid #999;

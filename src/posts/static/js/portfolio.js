@@ -1,7 +1,7 @@
 !((n, t, e) => {
   var o = {
     init: e => {
-      o.portfolio(), o.navbarChange(), o.showPopUp(), o.toggle_darkmode();
+      o.portfolio(), o.navbarChange(), o.showPopUp(), o.showAll(), o.toggle_darkmode();
     },
 
     portfolio: () => {
@@ -41,6 +41,12 @@
       });
       n("#book").click(() => {
         n(".hover_bkgr_fricc").show();
+      });
+    },
+    showAll: () => {
+
+      n("#allProjects").click(() => {
+        n(".allProjects").show();
       });
     },
     toggle_darkmode: () => {
