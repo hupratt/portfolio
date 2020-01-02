@@ -1,3 +1,5 @@
+window.addEventListener("load", () => {
+
 class Slider {
     constructor() {
       this.bindAll()
@@ -82,20 +84,6 @@ class Slider {
         TweenMax.set(slide, { autoAlpha: 0 })
       })
       
-      this.bullets.forEach((bullet, index) => {
-        if (index === 0) return
-        
-        const txt = bullet.querySelector('.js-slider-bullet__text')
-        const line = bullet.querySelector('.js-slider-bullet__line')
-        
-        TweenMax.set(txt, {
-          alpha: 0.25
-        })
-        TweenMax.set(line, {
-          scaleX: 0,
-          transformOrigin: 'left'
-        })
-      })
     }
     
     cameraSetup() {
@@ -316,8 +304,10 @@ class Slider {
       this.loadTextures()
       this.createMesh()
       this.setStyles()
+      
       this.render()
       this.listeners()
+
     }
   }
   
@@ -333,4 +323,6 @@ class Slider {
   })
   
   // Init classes
-  const slider = new Slider()
+  new Slider()
+ 
+});

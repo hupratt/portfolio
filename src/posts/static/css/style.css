@@ -1569,6 +1569,7 @@ ul, li {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   z-index: 10;
+  height:0px
 }
 .slider-bullet {
   display: flex;
@@ -1585,6 +1586,11 @@ ul, li {
   height: 1px;
   width: 1rem;
 }
+figure img {
+  padding:20px
+}
+
+
 .slider canvas {
   position: absolute;
   left: 0;

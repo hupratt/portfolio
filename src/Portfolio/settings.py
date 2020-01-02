@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'posts',
 ]
 
@@ -50,8 +51,21 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
+CORS_ORIGIN_WHITELIST = [
+
+    "http://localhost:8080",
+    "http://localhost:8000",
+    "http://localhost:3000",
+    "http://127.0.0.1:9000"
+]
+
+CORS_ORIGIN_REGEX_WHITELIST = [
+    r"^https://\rural\.pythonbots\.site$",
+]
 
 ROOT_URLCONF = 'Portfolio.urls'
 
