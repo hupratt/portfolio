@@ -1,7 +1,5 @@
 # Portfolio web application
 
-status: actively maintained
-
 https://portfolio.pythonbots.site/
 
 ## Architecture
