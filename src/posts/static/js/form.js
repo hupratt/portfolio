@@ -8,6 +8,7 @@
       jquery("#gotoPage2").click(() => {
         jquery("#page1").hide();
         jquery("#page2").show();
+        jquery("#page2").removeClass('hidden');
       });
       jquery("#my-form").on("keyup keypress", e => {
         var keyCode = e.keyCode || e.which;
@@ -27,6 +28,7 @@
         } else {
           jquery("#page2").hide();
           jquery("#page3").show();
+          jquery("#page3").removeClass('hidden');
         }
       });
       jquery("#my-form").on("keyup keypress", e => {
@@ -44,6 +46,7 @@
       jquery("#gotoPage4").click(() => {
         jquery("#page3").hide();
         jquery("#page4").show();
+        jquery("#page4").removeClass('hidden');
       });
       jquery("#my-form").on("keyup keypress", e => {
         var keyCode = e.keyCode || e.which;
