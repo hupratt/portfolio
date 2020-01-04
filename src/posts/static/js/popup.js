@@ -8,6 +8,7 @@ $(document).ready(function() {
 			$('a').unbind("click.myDisable");
 			$('a').css('pointer-events','');
 			$('a').show();
+			$('#dark-mode-toggle').show();
 
 		} else {
 			$('body').addClass('menu-show');
@@ -18,12 +19,33 @@ $(document).ready(function() {
 			$('a').bind("click.myDisable", function() { return false; });
 			$('a').css('pointer-events','none');
 			$('a').hide();
+			$('#dark-mode-toggle').hide();
 			$('#closeme').css('pointer-events','');
 			$('#closeme').show();
 			
 		}
 	});
-
+	// [].forEach.call(document.getElementById("showNightToggle"),function(el){
+	// 	el.addEventListener("click",function(e){
+	// 		if( $('#dark-mode-toggle').hasClass('hidden') ) {
+	// 			$('#dark-mode-toggle').show();
+	// 			$('#dark-mode-toggle').removeClass('hidden');
+	// 		} else {
+	// 			$('#dark-mode-toggle').hide();
+	// 			$('#dark-mode-toggle').addClass('hidden');	
+	// 		}		});
+	//   });
+	$('#showNightToggle').bind('click', function() {
+		if( $('#dark-mode-toggle').hasClass('hidden') ) {
+		$('#dark-mode-toggle').show();
+		$('#dark-mode-toggle').removeClass('hidden');
+		$('#showNightToggle').text("Hide Theme")
+	} else {
+		$('#dark-mode-toggle').hide();
+		$('#dark-mode-toggle').addClass('hidden');	
+		$('#showNightToggle').text("Show Theme")
+	}
+	});
 });
 
 	    

@@ -35,6 +35,7 @@
         );
       });
     },
+    
     showPopUp: () => {
       n(".hover_bkgr_fricc").on("mouseleave", e => {
         n(".hover_bkgr_fricc").hide(600);

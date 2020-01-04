@@ -281,7 +281,7 @@ nav li:nth-child(4) a::before {
   position: absolute;
   color: var(--section-text-color);
 }
-nav span::after {
+.pg-pips span::after {
   background: var(--dot-span-color); /*shadow for the nav dot span */
   position: absolute;
   content: "";
@@ -295,24 +295,24 @@ nav span::after {
 }
 
 /* dot navigation span */
-nav li .active span {
+.pg-pips li .active span {
   background: var(--dot-color);
   position: absolute;
 }
 
-nav li .active span:after {
+.pg-pips li .active span:after {
   top: -6px;
   left: -6px;
   bottom: -6px;
   right: -6px;
 }
 
-nav ul {
+.pg-pips ul {
   margin: 0;
   padding: 0;
 }
 
-nav ul li {
+.pg-pips ul li {
   display: block;
   width: 14px;
   height: 13px;
@@ -320,7 +320,7 @@ nav ul li {
   position: relative;
 }
 
-nav ul li a {
+.pg-pips ul li a {
   display: block;
   position: relative;
   z-index: 1;
@@ -330,16 +330,16 @@ nav ul li a {
   text-decoration: none;
 }
 
-nav ul li a.active span,
-nav ul li:hover a.active span {
+.pg-pips ul li a.active span,
+.pg-pips ul li:hover a.active span {
   height: 12px;
   width: 12px;
   margin: -6px 0 0 -6px;
   border-radius: 100%;
 }
 
-/* inactive navigation dots */
-nav ul li a span {
+/* inactive .pg-pipsigation dots */
+.pg-pips ul li a span {
   border-radius: 50%;
   position: absolute;
   z-index: 1;
@@ -353,7 +353,7 @@ nav ul li a span {
   transition: all 0.1s ease-in-out;
 }
 
-nav ul li:hover a span {
+.pg-pips ul li:hover a span {
   width: 10px;
   height: 10px;
   margin: -5px 0px 0px -5px;
@@ -402,6 +402,13 @@ nav ul li:hover a span {
   border-radius: 4px;
   padding: 15px;
 }
+
+@media (min-width: 767px) {
+  .settings-inner{
+    display: none;
+  }
+}
+
 #settings h4 {
   margin: 10px 0 5px 0;
   padding: 6px 15px;
@@ -658,11 +665,9 @@ pre[class*="language-"] {
 .dark-mode-toggle {
   height: 140px;
   width: 120px;
-  /* top: -7vh; */
   position: absolute;
-  /* right: 113vh; */
-  top: -0.1vh;
-  left: -0.5vh;
+  top: -3.2vh;
+  left: 10vh;
 }
 .page-progress {
   width: 40px;
@@ -1945,11 +1950,14 @@ figure img {
 
 
 .phone {
-  height: 1400px;
-  width:800px;
-  background: #221c37;
-  top: 20px;
+  height: 90vh;
+  width:75vw;
+  background: rgba(177, 172, 172, 0.301);
+  top: 10vh;
+  bottom: 10vh;
   position: relative;
+  overflow: hidden;
+  margin-left: 20vw;
 }
 .phone .header {
   width: 100%;
@@ -2051,8 +2059,8 @@ figure img {
 }
 .cards-wrapper li {
   background: white;
-  width: 300px;
-  height: 330px;
+  width: 50vw;
+  height: 40vh;
   position: absolute;
   left: 0;
   right: 0;
@@ -2148,4 +2156,8 @@ figure img {
 }
 .cards-wrapper .pink .card-header {
   background: #ef03fc;
+}
+
+.hidden{
+  visibility: hidden;
 }
