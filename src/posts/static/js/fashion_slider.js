@@ -49,9 +49,10 @@ class Slider {
       this.camera = null
       
       this.images = [
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/bg1.jpg',
-        'https://s3-us-west-2.amazonaws.com/s.cdpn.io/58281/bg2.jpg',
-        '/static/img/projects/paper.jpg'
+        '/static/img/bg1.jpg',
+        '/static/img/bg2.jpg',
+        '/static/img/projects/paper_black_white.jpg',
+        '/static/img/projects/paper_black_white.jpg'
       ]
       
       this.data = {

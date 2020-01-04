@@ -2205,6 +2205,10 @@ filter: grayscale(100%);
   visibility: hidden;
 }
 
+canvas {
+  height:100vh !important;
+}
+
 
 
 @media (max-width: 560px){
