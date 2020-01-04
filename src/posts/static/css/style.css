@@ -1700,9 +1700,81 @@ figure img {
   min-width: 12.5rem;
   -webkit-transform-origin: top;
           transform-origin: top;
--webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  -webkit-animation: color_change_out 1s forwards;
+  animation: color_change_out 1s forwards;
+
 }
+
+.slide__img:hover {
+  -webkit-animation: color_change_in 1s forwards;
+	animation: color_change_in 1s forwards;
+
+}
+
+@-webkit-keyframes color_change_in {
+  from { -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+	to {   -webkit-filter: grayscale(0);
+    filter: none; }
+}
+@-moz-keyframes color_change_in {
+  from { -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+	to {   -webkit-filter: grayscale(0);
+    filter: none; }
+}
+@-ms-keyframes color_change_in {
+  from { -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+	to {   -webkit-filter: grayscale(0);
+    filter: none; }
+}
+@-o-keyframes color_change_in {
+  from { -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+	to {   -webkit-filter: grayscale(0);
+    filter: none; }
+}
+@keyframes color_change_in {
+  from { -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+	to {   -webkit-filter: grayscale(0);
+    filter: none; }
+}
+@-webkit-keyframes color_change_out {
+  from { -webkit-filter: grayscale(0);
+    filter: none; }
+	to {   -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+}
+@-moz-keyframes color_change_out {
+  from { -webkit-filter: grayscale(0);
+    filter: none; }
+	to {   -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+}
+@-ms-keyframes color_change_out {
+  from { -webkit-filter: grayscale(0);
+    filter: none; }
+	to {   -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+}
+@-o-keyframes color_change_out {
+  from { -webkit-filter: grayscale(0);
+    filter: none; }
+	to {   -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+}
+@keyframes color_change_out {
+  from { -webkit-filter: grayscale(0);
+    filter: none; }
+	to {   -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+}
+
+
 .slide__img:first-child {
   top: -1.5rem;
 }

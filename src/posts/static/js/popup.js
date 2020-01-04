@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	
 	$('.js-fh5co-nav-toggle').on('click', function(event) {
 		event.preventDefault();
 		if( $('body').hasClass('menu-show') ) {
