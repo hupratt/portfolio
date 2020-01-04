@@ -102,6 +102,9 @@ a{
   font-size: 1.5rem;
 }
 
+.grid-title h4{
+  color: white;
+}
 .pg-pips a{
   font-size: 1rem;
 }
@@ -1187,7 +1190,8 @@ section {
 .grid-link a {
   margin: 5px;
   font-size: 20px;
-  color: #000;
+  color: white;
+  text-decoration:none;
 }
 
 .grid-portfolio {
@@ -1213,10 +1217,12 @@ section {
   opacity: 1;
 }
 
+
+
 .grid-item-wrapper:before {
   content: "";
   display: block;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   position: absolute;
   top: 0;
   right: 0;
