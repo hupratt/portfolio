@@ -76,9 +76,7 @@ body {
   background-color: var(--background-color);
 }
 
-p {
-  color: var(--section-text-color);
-}
+
 h1 {
   font-family: Montserrat;
   font-size: 3rem;
@@ -133,11 +131,12 @@ line-height: 1.2;
 letter-spacing: -1px;
 line-height: 0.9em;
 padding:1.5rem;
+text-align: center;
 }
 
 
 .section-sub-title-left {
-  color: black;
+  color: var(--section-text-color);
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 1.2;
