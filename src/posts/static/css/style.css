@@ -112,8 +112,32 @@ a{
   min-width: 80vh;
 }
 
+
+.section-sub-title {
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  line-height: 0.9em;
+  padding:1.5rem;
+}
+
+.section-head-title{
+color:white;
+font-size: 2rem;
+line-height: 1.2;
+letter-spacing: -1px;
+line-height: 0.9em;
+padding:1.5rem;
+}
+
+
 .section-sub-title-left {
-  color: var(--section-text-color);
+  color: black;
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 1.2;
@@ -1282,6 +1306,7 @@ section {
   left: 40vh;
   position: absolute;
   width:40vw;
+  overflow: hidden;
 }
 
 .page-card-format {
@@ -2145,9 +2170,9 @@ filter: grayscale(100%);
   display: table-cell;
   vertical-align: middle;
   color: white;
-  opacity: 0;
-  visibility: hidden;
+  opacity: 1;
 }
+
 .cards-wrapper .card-header .close {
   display: table-cell;
   color: white;
