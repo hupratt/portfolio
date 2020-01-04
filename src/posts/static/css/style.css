@@ -97,6 +97,14 @@ h2 {
   line-height: 0.9em;
   /* min-width: 80vh; */
 }
+
+a{
+  font-size: 1.5rem;
+}
+
+.pg-pips a{
+  font-size: 1rem;
+}
 .section-title-center-big {
   min-width: 80vh;
 }
@@ -1304,7 +1312,6 @@ section {
   color: var(--nav-color-links);
   text-decoration: none;
   position: relative;
-  font-size: 20px;
 }
 
 .anchors ul li a.active::after {
@@ -1738,7 +1745,7 @@ figure img {
   content: "\66";
 }
 
-@media (max-width: 767px) {
+@media (max-width: 815px) {
   .jumbotron {
     min-height: 500px;
   }
@@ -2256,6 +2263,10 @@ line-height: 1em;
   width: 60vw;
 }
 
+.card{
+  width: 60vw;
+}
+
 }
 @media (max-width: 1200px){
 
@@ -2265,7 +2276,7 @@ line-height: 1em;
 }
 .card {
   left: 30vh;
-  width:60vw;
+  width: 70vw;
 }
 
 }
@@ -2296,6 +2307,8 @@ line-height: 1em;
     margin-right: auto;
     left: 10%;
     right: 10%;  
+    width: 75vw;
+
   
   }
 }
@@ -2306,6 +2319,30 @@ line-height: 1em;
   margin-left: auto;
   margin-right: auto;
 }
-
-
+a::before{
+  content:" ";
+  display:none;
 }
+.filter-button-group {
+  display: flex;
+  flex-flow: column wrap;
+}
+.filter-button-group a{
+  text-align: center;
+}
+
+a{
+  font-size: 1rem;
+}
+
+.section-content{
+  padding-top: 0px;
+  padding-bottom: 0px;}
+
+  h2{
+    margin-top: 0rem;
+    font-size: 3rem;
+  }
+}
+
+
