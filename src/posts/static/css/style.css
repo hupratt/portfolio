@@ -285,7 +285,7 @@ nav li:nth-child(3) a::before {
   color: var(--section-text-color);
 }
 nav li:nth-child(4) a::before {
-  content: "P";
+  content: "C";
   background: transparent;
   margin-left: -20px;
   font-size: 0.8em;
@@ -678,11 +678,11 @@ pre[class*="language-"] {
 }
 
 .dark-mode-toggle {
-  height: 80vh;
-  width: 80vw;
+  height: 140px;
+  width: 120px;
   position: absolute;
-  top: -10vh;
-  left: 5vh;
+  top: -3.2vh;
+  left: 10vh;
 }
 .page-progress {
   width: 40px;
@@ -1593,13 +1593,14 @@ ul, li {
   bottom: calc(2rem + 3vw);
   left: calc(2rem + 3vw);
   z-index: 10;
-  font-size: calc(1rem + 4vw);
+  font-size: 3rem;
   text-transform: uppercase;
   -webkit-transform-origin: top;
           transform-origin: top;
   line-height: 1.075;
   color: #fff;
   font-weight: 500;
+  text-align: left;
 }
 .slider__text-line {
   overflow: hidden;
@@ -1675,6 +1676,8 @@ figure img {
   min-width: 12.5rem;
   -webkit-transform-origin: top;
           transform-origin: top;
+-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+filter: grayscale(100%);
 }
 .slide__img:first-child {
   top: -1.5rem;
