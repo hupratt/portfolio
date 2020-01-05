@@ -1,95 +1,95 @@
 
 <!-- Material form contact -->
-  <div class="card">
-    <!-- <h5 class="card-header info-color white-text text-center py-4">
-      <strong>Contact us</strong>
-    </h5> -->
+<div class="card">
+  <!-- <h5 class="card-header info-color white-text text-center py-4">
+    <strong>Contact us</strong>
+  </h5> -->
 
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
-      <!-- Form -->
-      <form id="my-form" class="text-center" action="" method="post" novalidate>
-        {% csrf_token %}
-        <div id="page1" class="page-card-format">
-          <!-- Name -->
-          <div class="my-form">
-            <input type="text" class="inputText" placeholder="First Name" />
-            <div class="underline"></div>
-          </div>
-          <div class="my-form">
-            <input type="text" class="inputText" placeholder="Last Name" />
-            <div class="underline"></div>
-          </div>
-          <a id="gotoPage2" class="next-btn">Next</a>
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+    <!-- Form -->
+    <form id="my-form" class="text-center" action="" method="post" novalidate>
+      {% csrf_token %}
+      <div id="page1" class="page-card-format">
+        <!-- Name -->
+        <div class="my-form">
+          <input type="text" class="inputText" placeholder="First Name" />
+          <div class="underline"></div>
         </div>
-        <!-- E-mail -->
-        <div id="page2" class="page-card-format hidden">
-          <div class="my-form field">
-            <input
-              name="email"
-              class="email"
-              required="required"
-              type="email"
-              placeholder="Email address"
-            />
-            <div class="underline"></div>
-          </div>
-          <a id="gotoPage3" class="next-btn">Next</a>
+        <div class="my-form">
+          <input type="text" class="inputText" placeholder="Last Name" />
+          <div class="underline"></div>
         </div>
-        <div class="page-card-format hidden" id="page3">
-          <!-- Subject -->
-          <select class="mdb-select">
-            <option value="" disabled>Choose option</option>
-            <option value="1" selected>Let's have a chat !</option>
-            <option value="2">Report a bug on this website</option>
-            <option value="3">I'd like to add a feature to my website</option>
-            <option value="4">Fix my website</option>
-          </select>
-
-          <!--Message-->
-          <div class="my-form">
-            <textarea
-              id="materialContactFormMessage"
-              class="my-form md-textarea"
-              rows="3"
-            ></textarea>
-          </div>
-
-          <!-- Copy -->
-          <div class="form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="materialContactFormCopy"
-            />
-            <label class="form-check-label" for="materialContactFormCopy"
-              >Send me a copy of this message</label
-            >
-          </div>
-          <a id="gotoPage4" class="next-btn">Next</a>
+        <a id="gotoPage2" class="next-btn">Next</a>
+      </div>
+      <!-- E-mail -->
+      <div id="page2" class="page-card-format hidden">
+        <div class="my-form field">
+          <input
+            name="email"
+            class="email"
+            required="required"
+            type="email"
+            placeholder="Email address"
+          />
+          <div class="underline"></div>
         </div>
-        <div class="page-card-format hidden" id="page4">
-          <!-- Slider price_range -->
+        <a id="gotoPage3" class="next-btn">Next</a>
+      </div>
+      <div class="page-card-format hidden" id="page3">
+        <!-- Subject -->
+        <select class="mdb-select">
+          <option value="" disabled>Choose option</option>
+          <option value="1" selected>Let's have a chat !</option>
+          <option value="2">Report a bug on this website</option>
+          <option value="3">I'd like to add a feature to my website</option>
+          <option value="4">Fix my website</option>
+        </select>
 
-          <input class="js-range-slider" id="price_range" />
-          <label>What is your price range?</label>
-          <!-- Slider price_range -->
+        <!--Message-->
+        <div class="my-form">
+          <textarea
+            id="materialContactFormMessage"
+            class="my-form md-textarea"
+            rows="3"
+          ></textarea>
+        </div>
 
-          <input class="js-range-slider" id="timeline" />
-          <label>How urgent is it?</label>
-          <!-- Send button -->
-          <button
-            class="formbtn btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
-            type="submit"
+        <!-- Copy -->
+        <div class="form-check">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="materialContactFormCopy"
+          />
+          <label class="form-check-label" for="materialContactFormCopy"
+            >Send me a copy of this message</label
           >
-            Send
-          </button>
         </div>
-      </form>
-      <!-- Form -->
-    </div>
-  </div>
+        <a id="gotoPage4" class="next-btn">Next</a>
+      </div>
+      <div class="page-card-format hidden" id="page4">
+        <!-- Slider price_range -->
 
-  <!-- Material form contact -->
+        <input class="js-range-slider" id="price_range" />
+        <label>What is your price range?</label>
+        <!-- Slider price_range -->
+
+        <input class="js-range-slider" id="timeline" />
+        <label>How urgent is it?</label>
+        <!-- Send button -->
+        <button
+          class="formbtn btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
+          type="submit"
+        >
+          Send
+        </button>
+      </div>
+    </form>
+    <!-- Form -->
+  </div>
+</div>
+
+<!-- Material form contact -->
 
 
