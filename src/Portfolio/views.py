@@ -26,9 +26,9 @@ from django.views.generic import ListView, RedirectView
 from .forms import EmailPostForm
 
 from emails.models import Email
-
-
+from .templates.email.confirmation import template
 # Create your views here.
+
 
 def index(request):
     """
@@ -51,20 +51,19 @@ def index(request):
         if result['success']:
             cd = form.cleaned_data
             from sendgrid import SendGridAPIClient
-            from sendgrid.helpers.mail import Mail
+            from sendgrid.helpers.mail import Mail, HtmlContent
             message = Mail(
                 from_email=cd['email'],
                 to_emails=settings.EMAIL_HOST_RECIPIENT,
                 subject=cd['subject'],
-                html_content='Name {} \nSubject  {} \nMessage  {} \nEmail {} \n \nUrgency {} \n \nPrice range {} \n \nSend cc {} \n'.format(
-                    cd['firstname']+" "+cd['lastname'], cd['subject'], cd['message'], cd['email'], cd['urgency'], cd['pricerange'], cd['sendcc'])
-            )
+                html_content=HtmlContent(template.format(
+                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), str(cd['subject']), str(cd['urgency']), str(cd['pricerange']))))
             try:
                 sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                 response = sg.send(message)
                 if cd['sendcc'] is True:
                     from sendgrid import SendGridAPIClient
-                    from sendgrid.helpers.mail import Mail
+                    from sendgrid.helpers.mail import Mail, HtmlContent
                     sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                     message2 = Mail(
                         from_email='noreply@craft.studios',
