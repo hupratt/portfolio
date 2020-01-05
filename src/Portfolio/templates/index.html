@@ -16,9 +16,9 @@
 </div>
 
 <main style="    width: 100vw !important; display: block !important;">
-  <!-- <section class="loading">
+  <section class="loading">
     {% include "pages/loading.html" %}
-  </section> -->
+  </section>
   <section data-anchor="Page 1">
     {% include "pages/page_1.html" %}
     {% include "components/page_1_background.html" %}
@@ -41,11 +41,11 @@
             <p>Add any HTML content<br />inside the popup box!</p>
           </div>
         </div> -->
-
-    {% include "components/projectpopup.html" %}
-    {% include "pages/page_2.html" %}
-    {% include "components/page_2_background.html" %}
-    {% include "components/chat.html" %} 
+        {% include "pages/page_2.html" %}
+        {% include "components/chat.html" %} 
+        {% include "components/projectpopup.html" %}
+      </div>
+      {% include "components/page_2_background.html" %}
   </div>
 
   </div>
