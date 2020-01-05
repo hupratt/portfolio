@@ -22,15 +22,32 @@
   <section data-anchor="Page 1">
     {% include "pages/page_1.html" %}
     {% include "components/page_1_background.html" %}
-    {% include "pages/chat.html" %} 
+    {% include "components/chat.html" %} 
 
   </section>
   <section id="portfolio" data-anchor="Page 2">
     <div class="zoom-zoom" style="overflow:hidden">
+      <div class="section-content section-title-center-big">
 
+        <!-- <div class="hover_bkgr_fricc hidden">
+          <span class="helper"></span>
+          <div>
+            <p>Add any HTML content<br />inside the popup box!</p>
+          </div>
+        </div>
+        <div class="allProjects hidden">
+          <span class="helper"></span>
+          <div>
+            <p>Add any HTML content<br />inside the popup box!</p>
+          </div>
+        </div> -->
+
+    {% include "components/projectpopup.html" %}
     {% include "pages/page_2.html" %}
     {% include "components/page_2_background.html" %}
-    {% include "pages/chat.html" %} 
+    {% include "components/chat.html" %} 
+  </div>
+
   </div>
 
   </section>

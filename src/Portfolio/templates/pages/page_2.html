@@ -1,354 +1,226 @@
 {% load static i18n %}
 
 
-  <div class="section-content section-title-center-big">
-
-    <div class="hover_bkgr_fricc hidden">
-      <span class="helper"></span>
-      <div>
-        <p>Add any HTML content<br />inside the popup box!</p>
-      </div>
+<div class="row">
+  <!-- Portfolio Holder -->
+  <div class="col-md-12 portfolio-holder mt-3">
+    <!-- Btn Filter -->
+    <div
+      class="filter-button-group btn-filter d-flex justify-content-center"
+    >
+      <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">Show All</a>
+      <a tabindex="0" class="is-checked" data-filter="*">Clear Filters</a>
+      <a tabindex="0" data-filter=".desktop">Desktop app</a>
+      <a tabindex="0" data-filter=".web">Web app</a>
     </div>
-    <div class="allProjects hidden">
-      <span class="helper"></span>
-      <div>
-        <p>Add any HTML content<br />inside the popup box!</p>
+    <!-- End of Btn Filter -->
+    <!-- Portfolio Content -->
+    <div class="grid-portfolio">
+      <div class="grid-sizer"></div>
+      <div class="gutter-sizer"></div>
+      <!-- Portfolio Item -->
+      <div class="grid-item desktop" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+            src="{% static 'img/projects/jira desktop app main.jpg' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://github.com/hupratt/jira-utilities/tree/master/"
+                title="Aris desktop app"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://github.com/hupratt/jira-utilities/tree/master/"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Python desktop app</h4>
+            </div>
+          </div>
+        </div>
       </div>
+      <!-- End of Portfolio Item -->
+      <!-- Portfolio Item -->
+      <div class="grid-item web" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+          src="{% static 'img/projects/craft studios.jpg' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://portfolio.pythonbots.site"
+                title="Ship"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://portfolio.pythonbots.site"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Craft Studio's website</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Portfolio Item -->
+      <!-- Portfolio Item -->
+      <div class="grid-item web grid-item-height" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+          src="{% static 'img/projects/lpp.jpg' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://www.lapetiteportugaise.eu"
+                title="Tracy Portrait"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://www.lapetiteportugaise.eu"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Bookstore & Event venue</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Portfolio Item -->
+      <!-- Portfolio Item -->
+      <div class="grid-item web" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+            src="{% static 'img/projects/pbots.jpg' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://www.pythonbots.site/"
+                title="Guitar"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://www.pythonbots.site/"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Blog</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Portfolio Item -->
+      <!-- Portfolio Item -->
+      <div class="grid-item web" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+          src="{% static 'img/projects/saleor.png' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                id="book"
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://shop.lapetiteportugaise.eu"
+                title="Bookself"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://shop.lapetiteportugaise.eu"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Online book store</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Portfolio Item -->
+      <!-- Portfolio Item -->
+      <div class="grid-item web" data-aos="fade-up">
+        <div class="grid-item-wrapper">
+          <img
+            src="{% static 'img/projects/rural portugal.jpg' %}"
+            alt="portfolio-img"
+            class="portfolio-item"
+          />
+          <div class="grid-info">
+            <div class="grid-link d-flex justify-content-center">
+              <a
+                class="img-pop js-fh5co-nav-toggle"
+                data-rel="lightcase"
+                href="https://rural.pythonbots.site/"
+                title="Guitar"
+              >
+                <span class="lnr lnr-move"></span>
+              </a>
+              <a
+                class="ext-link"
+                href="https://rural.pythonbots.site/"
+                target="_blank"
+              >
+                <span class="lnr lnr-link"></span>
+              </a>
+            </div>
+            <div class="grid-title">
+              <h4>Hotel booking website</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Portfolio Item -->
     </div>
-    <!-- Start of Page 5  -->
-    <nav id="fh5co-main-nav" role="navigation">
-      
-      <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle active" id="closeme"><i></i></a>
-
-      <div class="slider js-slider">
-        <div class="slider__inner js-slider__inner"></div>
-        
-
-
-        
-        <div class="slide js-slide">
-          <div class="slide__content">
-            <figure class="slide__img js-slide__img"> 
-              <img src="{% static 'img/projects/lpp logo.jpg' %}" onclick="location.href='https://www.lapetiteportugaise.eu/';" >
-
-            </figure>
-             <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/lpp main.jpg' %}" onclick="location.href='https://www.lapetiteportugaise.eu/';" >
-            </figure>
-          </div>
-          <div class="slider__text js-slider__text">
-            <div class="slider__text-line js-slider__text-line"><div>Book store</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>landing page</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>and events page</div></div>
-          </div>
-        </div>
-
-        <div class="slide js-slide">
-          <div class="slide__content">
-            <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/aris logo.jpg' %}" onclick="location.href='https://github.com/hupratt/jira-utilities/tree/master/';" >
-            </figure>
-             <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/jira desktop app main.jpg' %}" onclick="location.href='https://github.com/hupratt/jira-utilities/tree/master/';" >
-            </figure>
-          </div>
-          <div class="slider__text js-slider__text">
-            <div class="slider__text-line js-slider__text-line"><div>Desktop app</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>for scraping</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>and ticket management</div></div>
-          </div>
-        </div>
-
-        <div class="slide js-slide">
-          <div class="slide__content">
-            <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/linkedin-big.jpg' %}" onclick="location.href='https://www.pythonbots.site/';" >
-            </figure>
-             <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/pbots.jpg' %}" onclick="location.href='https://www.pythonbots.site/';">
-              
-            </figure>
-          </div>
-          
-          <div class="slider__text js-slider__text">
-            <div class="slider__text-line js-slider__text-line"><div>Blog and </div></div>
-            <div class="slider__text-line js-slider__text-line"><div>CMS website</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>about datascience</div></div>
-          </div>
-          
-        </div>
-        
-        <div class="slide js-slide">
-          <div class="slide__content">
-            <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/craft bigger.jpg' %}" onclick="location.href='https://portfolio.pythonbots.site/';" >
-            </figure>
-            <figure class="slide__img js-slide__img">
-              <img src="{% static 'img/projects/craft studios main.jpg' %}" onclick="location.href='https://portfolio.pythonbots.site/';" >
-            </figure>
-
-          </div>
-          <div class="slider__text js-slider__text">
-            <div class="slider__text-line js-slider__text-line"><div>Agency</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>advertising</div></div>
-            <div class="slider__text-line js-slider__text-line"><div>web development services</div></div>
-          </div>
-          
-        </div>
-        <nav class="slider__nav js-slider__nav">
-          <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">01</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-          </div>
-           <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">02</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-          </div>
-           <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">03</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-          </div>
-          <div class="slider-bullet js-slider-bullet">
-            <span class="slider-bullet__text js-slider-bullet__text">04</span>
-            <span class="slider-bullet__line js-slider-bullet__line"></span>
-          </div>
-        </nav>
-        
-        <div class="scroll js-scroll"></div>
-        
-        
-      </div>
-      
-      <div class="vert-text">
-        <span>
-          Brought to you<br>
-          by Craft studios
-        </span>
-      </div>
-      <!-- End of Page 5  -->
-    </nav>
-    <!-- End of Section Title -->
-    <div class="row">
-      <!-- Portfolio Holder -->
-      <div class="col-md-12 portfolio-holder mt-3">
-        <!-- Btn Filter -->
-        <div
-          class="filter-button-group btn-filter d-flex justify-content-center"
-        >
-          <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle">Show All</a>
-          <a tabindex="0" class="is-checked" data-filter="*">Clear Filters</a>
-          <a tabindex="0" data-filter=".desktop">Desktop app</a>
-          <a tabindex="0" data-filter=".web">Web app</a>
-        </div>
-        <!-- End of Btn Filter -->
-        <!-- Portfolio Content -->
-        <div class="grid-portfolio">
-          <div class="grid-sizer"></div>
-          <div class="gutter-sizer"></div>
-          <!-- Portfolio Item -->
-          <div class="grid-item desktop" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-                src="{% static 'img/projects/jira desktop app main.jpg' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://github.com/hupratt/jira-utilities/tree/master/"
-                    title="Aris desktop app"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://github.com/hupratt/jira-utilities/tree/master/"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Python desktop app</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-          <!-- Portfolio Item -->
-          <div class="grid-item web" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-              src="{% static 'img/projects/craft studios.jpg' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://portfolio.pythonbots.site"
-                    title="Ship"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://portfolio.pythonbots.site"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Craft Studio's website</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-          <!-- Portfolio Item -->
-          <div class="grid-item web grid-item-height" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-              src="{% static 'img/projects/lpp.jpg' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://www.lapetiteportugaise.eu"
-                    title="Tracy Portrait"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://www.lapetiteportugaise.eu"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Bookstore & Event venue</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-          <!-- Portfolio Item -->
-          <div class="grid-item web" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-                src="{% static 'img/projects/pbots.jpg' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://www.pythonbots.site/"
-                    title="Guitar"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://www.pythonbots.site/"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Blog</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-          <!-- Portfolio Item -->
-          <div class="grid-item web" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-              src="{% static 'img/projects/saleor.png' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    id="book"
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://shop.lapetiteportugaise.eu"
-                    title="Bookself"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://shop.lapetiteportugaise.eu"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Online book store</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-          <!-- Portfolio Item -->
-          <div class="grid-item web" data-aos="fade-up">
-            <div class="grid-item-wrapper">
-              <img
-                src="{% static 'img/projects/rural portugal.jpg' %}"
-                alt="portfolio-img"
-                class="portfolio-item"
-              />
-              <div class="grid-info">
-                <div class="grid-link d-flex justify-content-center">
-                  <a
-                    class="img-pop js-fh5co-nav-toggle"
-                    data-rel="lightcase"
-                    href="https://rural.pythonbots.site/"
-                    title="Guitar"
-                  >
-                    <span class="lnr lnr-move"></span>
-                  </a>
-                  <a
-                    class="ext-link"
-                    href="https://rural.pythonbots.site/"
-                    target="_blank"
-                  >
-                    <span class="lnr lnr-link"></span>
-                  </a>
-                </div>
-                <div class="grid-title">
-                  <h4>Hotel booking website</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- End of Portfolio Item -->
-        </div>
-        <!-- End of Portfolio Content -->
-      </div>
-      <!-- End of Portfolio Holder -->
-    </div>
+    <!-- End of Portfolio Content -->
   </div>
+  <!-- End of Portfolio Holder -->
+</div>
 
 
