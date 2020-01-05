@@ -48,6 +48,7 @@ def index(request):
         r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
         result = r.json()
         ''' End reCAPTCHA validation '''
+
         if result['success']:
             cd = form.cleaned_data
             from sendgrid import SendGridAPIClient
@@ -57,7 +58,7 @@ def index(request):
                 to_emails=settings.EMAIL_HOST_RECIPIENT,
                 subject=cd['subject'],
                 html_content=HtmlContent(template.format(
-                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), str(cd['subject']), str(cd['urgency']), str(cd['pricerange']))))
+                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), 'subject', str(cd['urgency']), str(cd['pricerange']))))
             try:
                 sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                 response = sg.send(message)
@@ -69,24 +70,19 @@ def index(request):
                         from_email='noreply@craft.studios',
                         to_emails=cd['email'],
                         subject=cd['subject'],
-                        html_content='Name {} \nSubject  {} \nMessage  {} \nEmail {} \n \nUrgency {} \n \nPrice range {} \n \nSend cc {} \n'.format(
-                            cd['firstname']+" "+cd['lastname'], cd['subject'], cd['message'], cd['email'], cd['urgency'], cd['pricerange'], cd['sendcc'])
+                html_content=HtmlContent(template.format(
+                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), 'subject', str(cd['urgency']), str(cd['pricerange'])))
                     )
 
                     response = sg.send(message2)                    
             except Exception as e:
                 messages.error(request, f"Your message could not be sent. {e}")
+                return HttpResponseRedirect('/')
+                
             messages.success(request, "Your message was successfully sent to: "+settings.EMAIL_HOST_RECIPIENT)
+            return HttpResponseRedirect('/')
     else:
         form = EmailPostForm()
-
-
-    context = {
-        "today": today,
-        "form":form,
-    }
-    return render(request, "index.html",context) #queryset
-
-
+    return render(request, "index.html",{"today": today,"form":form}) 
 
 

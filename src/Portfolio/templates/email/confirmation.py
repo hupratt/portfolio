@@ -60,8 +60,8 @@ template="""
 <!--<![endif]-->
 <div align="left" class="img-container left fixedwidth" style="padding-right: 25px;padding-left: 25px;">
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr style="line-height:0px"><td style="padding-right: 25px;padding-left: 25px;" align="left"><![endif]-->
-<div style="font-size:1px;line-height:25px"> </div><img alt="Image" border="0" class="left fixedwidth" src="cstudios-ico.png" style="text-decoration: none; -ms-interpolation-mode: bicubic; border: 0; height: auto; width: 100%; max-width: 208px; display: block;" title="Image" width="208"/>
-<div style="font-size:1px;line-height:25px"> </div>
+<div style="font-size:1px;line-height:5px"> </div>
+<div style="font-size:1px;line-height:5px"> </div>
 <!--[if mso]></td></tr></table><![endif]-->
 </div>
 <!--[if (!mso)&(!IE)]><!-->
@@ -87,7 +87,7 @@ template="""
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 10px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#132F40;font-family:Cabin, Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.2;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div style="font-size: 12px; line-height: 1.2; color: #132F40; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-<p style="font-size: 22px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 26px; margin: 0;"><span style="font-size: 22px;">Hello <strong>%s</strong>, <br/></span></p>
+<p style="font-size: 22px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 26px; margin: 0;"><span style="font-size: 22px;">Hello <strong>{}</strong>, <br/></span></p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
@@ -95,15 +95,15 @@ template="""
 <div style="color:#555555;font-family:Cabin, Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.5;padding-top:5px;padding-right:10px;padding-bottom:30px;padding-left:10px;">
 <div style="font-size: 12px; line-height: 1.5; color: #555555; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 18px;">
 <p style="font-size: 14px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin: 0;">Thank you for your email. Here is a copy of the message you've sent us.</p>
-<p style="font-size: 14px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin: 0;"><br/> message = %s</p>
-<p style="font-size: 14px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin: 0;">subject = %s<br/> urgency = %s<br/> pricerange = %s<br/><br/></p>
+<p style="font-size: 14px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin: 0;"><br/> message = {}</p>
+<p style="font-size: 14px; line-height: 1.5; word-break: break-word; mso-line-height-alt: 21px; margin: 0;">subject = {}<br/> urgency = {}<br/> pricerange = {}<br/><br/></p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
 <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 10px; padding-top: 20px; padding-bottom: 10px; font-family: Arial, sans-serif"><![endif]-->
 <div style="color:#555555;font-family:Cabin, Arial, Helvetica Neue, Helvetica, sans-serif;line-height:1.2;padding-top:20px;padding-right:10px;padding-bottom:10px;padding-left:10px;">
 <div style="font-size: 12px; line-height: 1.2; color: #555555; font-family: Cabin, Arial, Helvetica Neue, Helvetica, sans-serif; mso-line-height-alt: 14px;">
-<p style="font-size: 16px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 19px; margin: 0;"><span style="font-size: 16px;">Thanks so much for contacting craft studios ! </span></p>
+<p style="font-size: 16px; line-height: 1.2; word-break: break-word; mso-line-height-alt: 19px; margin: 0;"><span style="font-size: 16px;">Thanks so much for contacting <a href="https://portfolio.pythonbots.site/">craft studios</a> ! </span></p>
 </div>
 </div>
 <!--[if mso]></td></tr></table><![endif]-->
