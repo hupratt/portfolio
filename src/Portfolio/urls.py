@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
 from django.utils.translation import ugettext_lazy as _
+from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,10 +29,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    url('', TemplateView.as_view(template_name="index.html"), name='index'), 
-    url(_('posts/'), include('posts.urls')),
-    url(_(''), include('user.urls')),
-
+    url('', views.index, name='index'), 
     prefix_default_language=True)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

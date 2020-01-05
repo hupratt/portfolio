@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'posts',
+    'emails',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,10 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
 )
+
+
+GA_TRACKING_ID = os.environ.get("GA_TRACKING_ID")
+GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get("GOOGLE_RECAPTCHA_SITE_KEY_craft")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_RECIPIENT = "cortohprattdo@gmail.com"
+SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")

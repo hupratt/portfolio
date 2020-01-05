@@ -8,16 +8,16 @@
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
     <!-- Form -->
-    <form id="my-form" class="text-center" action="" method="post" novalidate>
+    <form id="my-form" class="text-center" action="sendmail/" method="post">
       {% csrf_token %}
       <div id="page1" class="page-card-format">
         <!-- Name -->
         <div class="my-form">
-          <input type="text" class="inputText" placeholder="First Name" />
+          <input type="text" class="inputText" placeholder="First Name" name="firstname"/>
           <div class="underline"></div>
         </div>
         <div class="my-form">
-          <input type="text" class="inputText" placeholder="Last Name" />
+          <input type="text" class="inputText" placeholder="Last Name" name="lastname"/>
           <div class="underline"></div>
         </div>
         <a id="gotoPage2" class="next-btn">Next</a>
@@ -38,7 +38,7 @@
       </div>
       <div class="page-card-format hidden" id="page3">
         <!-- Subject -->
-        <select class="mdb-select">
+        <select class="mdb-select" name="subject">
           <option value="" disabled>Choose option</option>
           <option value="1" selected>Let's have a chat !</option>
           <option value="2">Report a bug on this website</option>
@@ -52,6 +52,7 @@
             id="materialContactFormMessage"
             class="my-form md-textarea"
             rows="3"
+            name="message"
           ></textarea>
         </div>
 
@@ -61,6 +62,7 @@
             type="checkbox"
             class="form-check-input"
             id="materialContactFormCopy"
+            name="sendcc"
           />
           <label class="form-check-label" for="materialContactFormCopy"
             >Send me a copy of this message</label
@@ -71,16 +73,18 @@
       <div class="page-card-format hidden" id="page4">
         <!-- Slider price_range -->
 
-        <input class="js-range-slider" id="price_range" />
+        <input class="js-range-slider" id="price_range" name="pricerange" />
         <label>What is your price range?</label>
         <!-- Slider price_range -->
 
-        <input class="js-range-slider" id="timeline" />
+        <input class="js-range-slider" id="timeline" name="urgency"/>
         <label>How urgent is it?</label>
+        <div class="g-recaptcha" data-sitekey="6Lerf8wUAAAAAInoNXs3HmhcQK0cfVTJc0CnlS1c"></div>
         <!-- Send button -->
         <button
           class="formbtn btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
           type="submit"
+          
         >
           Send
         </button>
