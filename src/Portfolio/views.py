@@ -58,7 +58,7 @@ def index(request):
                 to_emails=settings.EMAIL_HOST_RECIPIENT,
                 subject=cd['subject'],
                 html_content=HtmlContent(template.format(
-                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), 'subject', str(cd['urgency']), str(cd['pricerange']))))
+                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), str(cd['subject']), str(cd['urgency']), str(cd['pricerange']))))
             try:
                 sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
                 response = sg.send(message)
@@ -71,7 +71,7 @@ def index(request):
                         to_emails=cd['email'],
                         subject=cd['subject'],
                 html_content=HtmlContent(template.format(
-                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), 'subject', str(cd['urgency']), str(cd['pricerange'])))
+                    str(cd['firstname'])+" "+str(cd['lastname']), str(cd['message']), str(cd['subject']), str(cd['urgency']), str(cd['pricerange'])))
                     )
 
                     response = sg.send(message2)                    
