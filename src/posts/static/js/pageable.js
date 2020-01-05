@@ -37,6 +37,7 @@ $(document).ready(function() {
       });
     }
   });
+  $("main").css('display',''); // chrome does not display the pageable item correctly
 
   function update(data) {
     var that = this;
