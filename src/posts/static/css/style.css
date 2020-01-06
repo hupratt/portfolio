@@ -1281,6 +1281,9 @@ section {
 
 /*=====  Form  ======*/
 
+#my-form option{
+  color:black;
+}
 
 .my-form input {
   border: none;

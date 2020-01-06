@@ -1,7 +1,7 @@
 !((jquery, t, e) => {
   var form = {
     init: e => {
-      form.showPage2(), form.showPage3(), form.showPage4();
+      form.showPage2(), form.showPage3(), form.showPage4(); 
     },
 
     showPage2: () => {
@@ -29,11 +29,13 @@
           jquery("#page2").hide();
           jquery("#page3").show();
           jquery("#page3").removeClass('hidden');
+          jquery('option[value="Report a bug on this website"]').attr('selected', 'selected');
         }
       });
       jquery("#my-form").on("keyup keypress", e => {
         if (jquery(".alert").prop("outerHTML") == message) {
           var keyCode = e.keyCode || e.which;
+          
           if (keyCode === 13) {
             e.preventDefault();
             // jquery("#page3").hide();
@@ -46,6 +48,7 @@
       jquery("#gotoPage4").click(() => {
         jquery("#page3").hide();
         jquery("#page4").show();
+        
         jquery("#page4").removeClass('hidden');
       });
       jquery("#my-form").on("keyup keypress", e => {
