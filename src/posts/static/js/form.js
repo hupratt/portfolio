@@ -14,8 +14,6 @@
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
           e.preventDefault();
-          //   jquery("#page1").hide();
-          //   jquery("#page2").show();
         }
       });
     },
@@ -38,8 +36,6 @@
           
           if (keyCode === 13) {
             e.preventDefault();
-            // jquery("#page3").hide();
-            // jquery("#page4").show();
           }
         }
       });
@@ -55,8 +51,6 @@
         var keyCode = e.keyCode || e.which;
         if (keyCode === 13) {
           e.preventDefault();
-          //   jquery("#page3").hide();
-          //   jquery("#page4").show();
         }
       });
     }
