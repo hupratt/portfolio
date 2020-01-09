@@ -366,9 +366,9 @@ nav li:nth-child(4) a::before {
 
 .pg-pips ul li a.active span,
 .pg-pips ul li:hover a.active span {
-  height: 12px;
-  width: 12px;
-  margin: -6px 0 0 -6px;
+  height: 22px;
+  width: 22px;
+  /* margin: -6px 0 0 -6px; */
   border-radius: 100%;
 }
 
@@ -377,8 +377,8 @@ nav li:nth-child(4) a::before {
   border-radius: 50%;
   position: absolute;
   z-index: 1;
-  height: 4px;
-  width: 4px;
+  height: 14px;
+  width: 14px;
   border: 0;
   background: var(--dot-span-color);
   left: 50%;
@@ -388,9 +388,9 @@ nav li:nth-child(4) a::before {
 }
 
 .pg-pips ul li:hover a span {
-  width: 10px;
-  height: 10px;
-  margin: -5px 0px 0px -5px;
+  width: 16px;
+  height: 16px;
+  /* margin: -5px 0px 0px -5px; */
 }
 
 #settings-open {

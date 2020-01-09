@@ -1,4 +1,4 @@
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", $(".js-slider").on("load", function() { 
 
 class Slider {
     constructor() {
@@ -37,7 +37,7 @@ class Slider {
         gl_FragColor = mix(_texture1, _texture2, dispPower);
       }
       `
-      
+
       this.el = document.querySelector('.js-slider')
       this.inner = this.el.querySelector('.js-slider__inner')
       this.slides = [...this.el.querySelectorAll('.js-slide')]
