@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", $(".js-slider").on("load", function() { 
 
+  window.addEventListener("load", () => {
 class Slider {
     constructor() {
       this.bindAll()
@@ -322,8 +322,8 @@ class Slider {
       link.classList.add('is-active')
     })
   })
-  
   // Init classes
-  new Slider()
+  setTimeout(()=>{new Slider()}, 2000);
+  
  
 });
