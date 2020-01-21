@@ -25,7 +25,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    
 ]
 
 urlpatterns += i18n_patterns(
@@ -33,3 +32,4 @@ urlpatterns += i18n_patterns(
     prefix_default_language=True)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
