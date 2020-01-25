@@ -7,10 +7,10 @@
 <div id="alert"></div>
 <div class="anchors">
   <ul>
-    <li><a href="#page-1" class=" active"></a></li>
-    <li><a href="#page-2"></a></li>
-    <li><a href="#page-3"></a></li>
-    <li><a href="#page-4"></a></li>
+    <li><a href="#landing-1" class=" active"></a></li>
+    <li><a href="#portfolio-2"></a></li>
+    <li><a href="#services-3"></a></li>
+    <li><a href="#contact-4"></a></li>
   </ul>
 </div>
 
@@ -19,16 +19,14 @@
     {% include "pages/loading.html" %}
   </section>
 
-  <section data-anchor="Page 1">
+  <section data-anchor="Landing 1">
 
     {% include "pages/page_1.html" %}
     {% include "components/chat.html" %} 
-    <div class="grid grid--interaction">
-      <a href="#page-2" class="grid__item grid__item--cursor grid__item--down"></a>
-    </div>
+
 
   </section>
-  <section id="portfolio" data-anchor="Page 2">
+  <section id="portfolio" data-anchor="Portfolio 2">
     <div class="zoom-zoom" style="overflow:hidden">
       <div class="section-content section-title-center-big">
 
@@ -37,9 +35,9 @@
         {% include "components/projectpopup.html" %}
       </div>
           <div class="grid grid--interaction">
-            <a href="#page-1" class="grid__item grid__item--cursor grid__item--up" ></a>
+            <a href="#landing-1" class="grid__item grid__item--cursor grid__item--up" ></a>
             <a class="grid__item grid__item--cursor grid__item--center" ></a>
-            <a href="#page-3" class="grid__item grid__item--cursor grid__item--down"></a>
+            <a href="#services-3" class="grid__item grid__item--cursor grid__item--down"></a>
           </div>
       {% include "components/page_2_background.html" %}
   </div>
@@ -47,23 +45,23 @@
   </div>
 
   </section>
-  <section data-anchor="Page 3">
+  <section data-anchor="Services 3">
     <div class="zoom-zoom" style="overflow:hidden">
 
     {% include "pages/page_3.html" %}
     <div class="grid grid--interaction">
-      <a href="#page-2" class="grid__item grid__item--cursor grid__item--up" ></a>
-      <a href="#page-4" class="grid__item grid__item--cursor grid__item--down"></a>
+      <a href="#portfolio-2" class="grid__item grid__item--cursor grid__item--up" ></a>
+      <a href="#contact-4" class="grid__item grid__item--cursor grid__item--down"></a>
     </div>
     {% include "components/page_3_background.html" %}
   </div>
   </section>
-  <section data-anchor="Page 4">
+  <section data-anchor="Contact 4">
     <div class="zoom-zoom" style="overflow:hidden;">
 
       {% include "pages/page_4.html" %}
         <div class="grid grid--interaction">
-          <a href="#page-3" class="grid__item grid__item--cursor grid__item--up" ></a>
+          <a href="#services-3" class="grid__item grid__item--cursor grid__item--up" ></a>
         </div>
     {% include "components/page_4_background.html" %}
   </div>
