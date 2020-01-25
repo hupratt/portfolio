@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--[if IE]>
+      <link rel="stylesheet" href="style.css"> 
+    <![endif]-->
+  
+
     {% load static i18n %} 
     
     {% get_current_language as LANGUAGE_CODE %}
@@ -8,140 +13,143 @@
     <meta charset="UTF-8" lang="{{ LANGUAGE_CODE }}" />
     <title>Craft Studios</title>
     <link rel="icon" type="image/webp" href="{%  static 'img/cstudios-ico.png' %}" />
+  </head>
 
-    <link
+    <body>
+    <!--[if !IE]> -->
+    <link lazyload
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"
     />
-    <link
+    <link lazyload
       rel="stylesheet"
       href="{% static 'vendor/ionslider/ionslider.css' %}"
     />
-    <link
+    <link lazyload
       rel="stylesheet"
       type="text/css"
       href="https://unpkg.com/minibarjs@latest/dist/minibar.min.css"
     />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link
+    <link lazyload rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link lazyload
       rel="stylesheet"
       href="{% static 'vendor/material/material.min.css' %}"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link
+    <link lazyload rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link lazyload
       rel="stylesheet"
       href="{% static 'vendor/hamburgers/hamburgers.min.css' %}"
     />
 
-    <link
+    <link lazyload
       rel="stylesheet"
       href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
     />
+    <!-- <![endif]-->
 
-  </head>
-  <body>
+  
     {% block body %} {% endblock %}
 
     <footer>
       <!-- External -->
-      <script
+      <script async 
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"
       ></script>
 
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'vendor/mo/segment.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'vendor/mo/mo.min.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'vendor/mo/letters.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'vendor/mo/d3-ease.v0.6.js' %}"
       ></script>
 
       <!-- Pageable: scroll effect -->
-      <script
+      <script async
         type="text/javascript"
         src="https://unpkg.com/pageable@latest/dist/pageable.min.js"
       ></script>
       <!-- Settings side menu -->
-      <script
+      <script async
         type="text/javascript"
         src="https://unpkg.com/minibarjs@latest/dist/minibar.min.js"
       ></script>
 
-      <script src="{% static 'vendor/isotope/isotope.min.js' %}"></script>
+      <script async src="{% static 'vendor/isotope/isotope.min.js' %}"></script>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+      <script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+      <script async src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
       
-      <script src="{% static 'vendor/svg-animation/anime.min.js' %}"></script>
+      <script async src="{% static 'vendor/svg-animation/anime.min.js' %}"></script>
 
       <!-- Form Validator -->
-      <script src="{% static 'vendor/validator/multifield.js' %}"></script>
-      <script src="{% static 'vendor/validator/validator.js' %}"></script>
+      <script async src="{% static 'vendor/validator/multifield.js' %}"></script>
+      <script async src="{% static 'vendor/validator/validator.js' %}"></script>
       <!-- Internal -->
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/portfolio.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/pageable.js' %}"
       ></script>
-      <script type="text/javascript" src="{% static 'js/form.js' %}"></script>
-      <script type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-      <script
+      <script async type="text/javascript" src="{% static 'js/form.js' %}"></script>
+      <script async type="text/javascript" src="{% static 'js/slider.js' %}"></script>
+      <script async
         type="text/javascript"
         src="{% static 'js/loading.js' %}"
       ></script>
 
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/nightMode.js' %}"
       ></script>
 
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/validator.init.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/fashion_slider.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/popup.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/tinder.js' %}"
       ></script>
-      <script
+      <script async
         type="text/javascript"
         src="{% static 'js/chat.js' %}"
       ></script>
-      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script async src='https://www.google.com/recaptcha/api.js'></script>
       
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156552206-1"></script>
-      <script>
+      <script async>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
