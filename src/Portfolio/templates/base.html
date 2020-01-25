@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--[if IE]>
-      <link rel="stylesheet" href="style.css"> 
-    <![endif]-->
-  
-
     {% load static i18n %} 
-    
+
+    <!--[if IE]>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <![endif]-->
+
     {% get_current_language as LANGUAGE_CODE %}
     
     <meta charset="UTF-8" lang="{{ LANGUAGE_CODE }}" />
