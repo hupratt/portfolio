@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
-/* @import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700"); */
+
 
 :root {
   --background-color: rgb(224, 224, 224);
@@ -8,7 +8,6 @@
   --section-text-color: black;
   --nav-color-links: black;
   --shape-colors: rgba(0, 0, 0, 0.075);
-  --anchor-underline: rgba(0, 0, 0, 0.267);
   --dot-span-color: rgba(25, 25, 25, 0.15);
   --dot-color: rgba(25, 25, 25, 0.15);
   --hamburger-color: black;
@@ -27,7 +26,6 @@
   --section-text-color: white;
   --nav-color-links: white;
   --shape-colors: #9c9ca45c;
-  --anchor-underline: white;
   --dot-span-color: rgba(255, 255, 255, 0.76);
   --dot-color: rgba(255, 255, 255, 0.76);
   --hamburger-color: white;
@@ -207,20 +205,6 @@ section {
     transform: translate3d(-50%, 10px, 0);
     opacity: 0;
   }
-}
-.anchors {
-  position: fixed;
-  top: 25px;
-  right: 50px;
-  z-index: 1;
-}
-.anchors ul {
-  margin: 0;
-  padding: 0;
-}
-.anchors ul li {
-  float: left;
-  list-style: none;
 }
 
 .alert {
@@ -700,13 +684,7 @@ pre[class*="language-"] {
   background-color: #fff;
 }
 
-.dark-mode-toggle {
-  height: 140px;
-  width: 120px;
-  position: absolute;
-  top: -3.2vh;
-  left: 10vh;
-}
+
 .page-progress {
   width: 40px;
   height: 40px;
@@ -873,6 +851,7 @@ section {
 .section-content {
   padding-top: 80px;
   padding-bottom: 80px;
+  z-index: 2;
 }
 
 .section-title {
@@ -1309,6 +1288,7 @@ section {
   position: absolute;
   width:40vw;
   overflow: hidden;
+  z-index: 2;
 }
 
 .page-card-format {
@@ -1340,38 +1320,9 @@ section {
   /* transform-origin: 100% 50%; */
 }
 
-.anchors ul li a {
-  padding: 12px;
-  color: var(--nav-color-links);
-  text-decoration: none;
-  position: relative;
-}
 
-.anchors ul li a.active::after {
-  position: absolute;
-  bottom: 0px;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background-color: var(--anchor-underline);
-  content: "";
-  transform: scaleX(1);
-  transition: transform 0.5s;
-  transform-origin: 50% 50%;
-}
 
-.anchors ul li a::after {
-  position: absolute;
-  bottom: 0px;
-  left: 10%;
-  width: 80%;
-  height: 3px;
-  background-color: var(--anchor-underline);
-  content: "";
-  transform: scaleX(0);
-  transition: transform 0.5s;
-  transform-origin: 50% 50%;
-}
+
 
 input:focus ~ .underline {
   transform: scaleX(1);
@@ -1861,10 +1812,6 @@ figure img {
   .jumbotron {
     min-height: 500px;
   }
-  .anchors {
-    display: none;
-  }
-
 }
 @media (min-width: 1675px){
   .section-sub-title-left{
@@ -2133,6 +2080,7 @@ figure img {
   left: 0;
   height: 16px;
   fill: #E8D1F9;
+  z-index: 2;
 }
 .phone .footer {
   position: absolute;
@@ -2172,6 +2120,7 @@ figure img {
   display: inline-block;
   top: 50%;
   margin-top: -15px;
+  z-index: 2;
 }
 .phone .footer .like {
   cursor: pointer;
@@ -2391,6 +2340,7 @@ line-height: 1em;
   width: 50vw;
 }
 .card {
+
   left: 30vh;
   width: 70vw;
 }
@@ -2643,3 +2593,29 @@ a{
 	-webkit-appearance: none;
 	cursor: pointer;
 }
+
+.grid__item--cursor.grid__item--down {
+  height:30vh;
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  cursor: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='61px' height='44px' viewBox='0 0 448 512' style='enable-background:new 0 0 61 44;' xml:space='preserve'%3E %3Cpath d='M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z'/%3E %3C/svg%3E") 30 22, sw-resize;
+}
+
+.grid__item--cursor.grid__item--up {
+  height:30vh;
+  top:0;
+  z-index: 1;
+  position: absolute;
+  width: 100vw;
+  cursor: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='61px' height='44px' viewBox='0 0 448 512' style='enable-background:new 0 0 61 44;' xml:space='preserve'%3E %3Cpath d='M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z'/%3E %3C/svg%3E") 30 22, sw-resize;
+}
+
+.grid--interaction {
+  position: absolute;
+  z-index: 1;
+  height:100vh;
+  width: 100vw;
+}
+

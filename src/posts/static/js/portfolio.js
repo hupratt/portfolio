@@ -64,19 +64,9 @@
       if (darkMode === "enabled") {
         enableDarkMode();
       }
-      const svgtoggle = document.querySelector("#dark-mode-toggle");
       const blacktoggle = document.querySelector("#mode-1");
       const whitetoggle = document.querySelector("#mode-2");
 
-
-      svgtoggle.addEventListener("click", _ => {
-        darkMode = localStorage.getItem("darkMode");
-        if (darkMode !== "enabled") {
-          enableDarkMode();
-        } else {
-          disableDarkMode();
-        }
-      });
       blacktoggle.addEventListener("click", _ => {
         darkMode = localStorage.getItem("darkMode");
         if (darkMode !== "enabled") {

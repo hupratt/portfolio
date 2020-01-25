@@ -24,17 +24,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$('#showNightToggle').bind('click', function() {
-		if( $('#dark-mode-toggle').hasClass('hidden') ) {
-		$('#dark-mode-toggle').show();
-		$('#dark-mode-toggle').removeClass('hidden');
-		$('#showNightToggle').text("Hide Theme")
-	} else {
-		$('#dark-mode-toggle').hide();
-		$('#dark-mode-toggle').addClass('hidden');	
-		$('#showNightToggle').text("Show Theme")
-	}
-	});
+
 });
 
 	    
