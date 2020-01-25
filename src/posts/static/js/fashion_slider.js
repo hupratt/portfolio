@@ -51,8 +51,8 @@ class Slider {
       this.images = [
         '/static/img/bg1.jpg',
         '/static/img/bg2.jpg',
-        '/static/img/projects/paper_black_white.jpg',
-        '/static/img/projects/paper_black_white.jpg'
+        '/static/img/projects/paper_black_white_resized.jpg',
+        '/static/img/projects/paper_black_white_resized.jpg'
       ]
       
       this.data = {
