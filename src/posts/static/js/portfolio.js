@@ -64,9 +64,29 @@
       if (darkMode === "enabled") {
         enableDarkMode();
       }
-      const toggle = document.querySelector("#dark-mode-toggle");
+      const svgtoggle = document.querySelector("#dark-mode-toggle");
+      const blacktoggle = document.querySelector("#mode-1");
+      const whitetoggle = document.querySelector("#mode-2");
 
-      toggle.addEventListener("click", _ => {
+
+      svgtoggle.addEventListener("click", _ => {
+        darkMode = localStorage.getItem("darkMode");
+        if (darkMode !== "enabled") {
+          enableDarkMode();
+        } else {
+          disableDarkMode();
+        }
+      });
+      blacktoggle.addEventListener("click", _ => {
+        darkMode = localStorage.getItem("darkMode");
+        if (darkMode !== "enabled") {
+          enableDarkMode();
+
+        } else {
+          disableDarkMode();
+        }
+      });
+      whitetoggle.addEventListener("click", _ => {
         darkMode = localStorage.getItem("darkMode");
         if (darkMode !== "enabled") {
           enableDarkMode();

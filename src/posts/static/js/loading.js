@@ -3,6 +3,11 @@ window.addEventListener("load", () => {
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+  var ls = localStorage.getItem('namespace.visited')
+  
+  //only display on first (ever) visit
+  if (ls == null) {
+    localStorage.setItem('namespace.visited', 1);
 
   sleep(20).then(() => {
     anime
@@ -167,4 +172,7 @@ window.addEventListener("load", () => {
         }
       });
   });
+}else{
+  $(".loading").remove();
+}
 });
