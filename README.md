@@ -1,6 +1,6 @@
 # Portfolio web application
 
-https://portfolio.pythonbots.site/
+https://www.craftstudios.tech
 
 ## Architecture
 
