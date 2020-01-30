@@ -16,12 +16,12 @@ for (x in labels) {
                 
 			node () {
 				
-				def NAME="la_petite_portugaise"
+				def NAME="portfolio"
 				def PROJECT="/home/ubuntu/Dev/${NAME}"
-				def SETTINGS="${PROJECT}/src/${NAME}/settings.py"
+				def SETTINGS="${PROJECT}/src/Portfolio/settings.py"
 				def MEDIA_ROOT="${PROJECT}/media"
 				def STATIC_ROOT="${PROJECT}/static"
-				def SETTINGS_COMMAND="--settings=${NAME}.settings"
+				def SETTINGS_COMMAND="--settings=Portfolio.settings"
 				def APACHE_CONF="${PROJECT}/${NAME}.conf"
 				def APACHE_CONF_LB="${PROJECT}/${NAME}.loadbalancer.conf"
 				def APACHE_CONF_TARGET="/etc/apache2/sites-available/${NAME}.conf"
