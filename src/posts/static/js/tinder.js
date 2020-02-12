@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
   $corazon = $(".header").find("svg");
 ($openCard = $(".cards-wrapper")
   .find(".card")
-  .eq(4)),
+  .eq(5)),
   (deletecard = new TimelineMax()),
   (lovecard = new TimelineMax()),
   (openthecard = new TimelineMax());
@@ -15,7 +15,7 @@ function deleteCard() {
   $delete.on("click", function() {
     var $card = $(".cards-wrapper")
       .find(".card")
-      .eq(4);
+      .eq(5);
     $card.attr("style", "");
 
     var $cardContent = $card
@@ -86,7 +86,7 @@ function likeAnimate($card) {
 function refreshOpen() {
   $open = $(".cards-wrapper")
     .find(".card")
-    .eq(4);
+    .eq(5);
   $close = $(".close");
 
   $openCard = $open;
@@ -119,7 +119,7 @@ function closeCard() {
     var text = openCard.find(".card-content .text").eq(0);
     var $card = $(".cards-wrapper")
       .find(".card")
-      .eq(4);
+      .eq(5);
     openCard.removeClass("open");
     openthecard
       .to($header, 0.3, { y: "0" })
@@ -146,7 +146,7 @@ function likeCard() {
     var el = $(this);
     var $card = $(".cards-wrapper")
       .find(".card")
-      .eq(4);
+      .eq(5);
     TweenLite.set($card, { clearProps: "all" });
 
     var $cardContent = $card

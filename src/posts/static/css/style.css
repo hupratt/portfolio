@@ -2187,6 +2187,10 @@ figure img {
   -webkit-transform: scale(1) translateY(60px);
           transform: scale(1) translateY(60px);
 }
+.cards-wrapper li:nth-child(6) {
+  -webkit-transform: scale(1) translateY(60px);
+          transform: scale(1) translateY(60px);
+}
 .cards-wrapper .card-header {
   top: 0;
   width: 100%;
