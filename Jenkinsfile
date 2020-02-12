@@ -20,6 +20,7 @@ for (x in labels) {
 					cd $PROJECT
 					sudo git fetch --all
 					sudo git reset --hard origin/master
+					sudo chown ubuntu:www-data $PROJECT -R
 					"""
 				}
 
