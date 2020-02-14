@@ -3,24 +3,6 @@
 
 
 :root {
-  --background-color: rgb(224, 224, 224);
-  --section-background-color: white;
-  --section-text-color: black;
-  --nav-color-links: black;
-  --shape-colors: rgba(0, 0, 0, 0.075);
-  --dot-span-color: rgba(25, 25, 25, 0.15);
-  --dot-color: rgba(25, 25, 25, 0.15);
-  --hamburger-color: black;
-  --nav-minibar: black;
-  --section-underline-text-color: none;
-  --svg-shape: #9aceff;
-  --svg-shape-light: #81d0d185;
-  --svg-shape-lighter: #81d0d13f;
-  --shape-page1: none;
-  --shape-page1-text: black;
-}
-
-.darkmode {
   --background-color: rgb(165, 164, 164);
   --section-background-color: rgb(85, 85, 85);
   --section-text-color: white;
@@ -34,6 +16,24 @@
   --svg-shape: white;
   --svg-shape-light: rgba(255, 255, 255, 0.445);
   --svg-shape-lighter: rgba(255, 255, 255, 0.151);
+  --shape-page1: none;
+  --shape-page1-text: black;
+}
+
+.lightmode {
+  --background-color: rgb(224, 224, 224);
+  --section-background-color: white;
+  --section-text-color: black;
+  --nav-color-links: black;
+  --shape-colors: rgba(0, 0, 0, 0.075);
+  --dot-span-color: rgba(25, 25, 25, 0.15);
+  --dot-color: rgba(25, 25, 25, 0.15);
+  --hamburger-color: black;
+  --nav-minibar: black;
+  --section-underline-text-color: none;
+  --svg-shape: #9aceff;
+  --svg-shape-light: #81d0d185;
+  --svg-shape-lighter: #81d0d13f;
   --shape-page1: none;
   --shape-page1-text: black;
 }
