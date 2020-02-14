@@ -51,37 +51,37 @@
       });
     },
     toggle_darkmode: () => {
-      let darkMode = localStorage.getItem("darkMode");
+      let lightMode = localStorage.getItem("lightMode");
 
-      const enableDarkMode = () => {
-        document.body.classList.add("darkmode");
-        localStorage.setItem("darkMode", "enabled");
+      const enableLightMode = () => {
+        document.body.classList.add("lightmode");
+        localStorage.setItem("lightMode", "enabled");
       };
-      const disableDarkMode = () => {
-        document.body.classList.remove("darkmode");
-        localStorage.setItem("darkMode", null);
+      const disableLightMode = () => {
+        document.body.classList.remove("lightmode");
+        localStorage.setItem("lightMode", null);
       };
-      if (darkMode === "enabled") {
-        enableDarkMode();
+      if (lightMode === "enabled") {
+        enableLightMode();
       }
       const blacktoggle = document.querySelector("#mode-1");
       const whitetoggle = document.querySelector("#mode-2");
 
       blacktoggle.addEventListener("click", _ => {
-        darkMode = localStorage.getItem("darkMode");
-        if (darkMode !== "enabled") {
-          enableDarkMode();
+        lightMode = localStorage.getItem("lightMode");
+        if (lightMode !== "enabled") {
+          enableLightMode();
 
         } else {
-          disableDarkMode();
+          disableLightMode();
         }
       });
       whitetoggle.addEventListener("click", _ => {
-        darkMode = localStorage.getItem("darkMode");
-        if (darkMode !== "enabled") {
-          enableDarkMode();
+        lightMode = localStorage.getItem("lightMode");
+        if (lightMode !== "enabled") {
+          enableLightMode();
         } else {
-          disableDarkMode();
+          disableLightMode();
         }
       });
     }
