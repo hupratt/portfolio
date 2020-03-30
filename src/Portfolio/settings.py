@@ -66,7 +66,7 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 CORS_ORIGIN_REGEX_WHITELIST = [
-    r"^https://\rural\.pythonbots\.site$",
+    r"^https://\rural\.pythonbots\.software$",
 ]
 
 ROOT_URLCONF = 'Portfolio.urls'
