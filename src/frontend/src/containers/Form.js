@@ -37,6 +37,7 @@ class HorizontalAddChatForm extends React.Component {
         const combined = [...usernames, this.props.username];
         axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
         axios.defaults.xsrfCookieName = "csrftoken";
+        
         axios.defaults.headers = {
           "Content-Type": "application/json",
           Authorization: `Token ${this.props.token}`

@@ -43,6 +43,8 @@ export const checkAuthTimeout = expirationTime => {
 export const authLogin = (username, password) => {
   return dispatch => {
     dispatch(authStart());
+    axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
+    axios.defaults.xsrfCookieName = "csrftoken";
     axios
       .post(`${HOST_URL}/rest-auth/login/`, {
         username: username,

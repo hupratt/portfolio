@@ -215,3 +215,5 @@ if os.environ.get("DJANGO_DEVELOPMENT") is None:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_PRELOAD = True
+
+CSRF_COOKIE_NAME = "csrftoken"

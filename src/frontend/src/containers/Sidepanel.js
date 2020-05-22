@@ -59,17 +59,21 @@ class Sidepanel extends React.Component {
   };
 
   render() {
-    let activeChats = this.props.chats.map(c => {
-      return (
-        <Contact
+    let activeChats
+    if (this.props.chat && this.props.chat.length>0){
+
+      activeChats = this.props.chats.map(c => {
+        return (
+          <Contact
           key={c.id}
           name="Harvey Specter"
           picURL="http://emilcarlsson.se/assets/louislitt.png"
           status="busy"
           chatURL={`/${c.id}`}
-        />
-      );
-    });
+          />
+          );
+        });
+      }
     return (
       <div id="sidepanel">
         <div id="profile">
@@ -110,6 +114,7 @@ class Sidepanel extends React.Component {
                 </button>
               ) : (
                 <div>
+                  
                   <form method="POST" onSubmit={this.authenticate}>
                     {this.state.loginForm ? (
                       <div>
@@ -161,7 +166,7 @@ class Sidepanel extends React.Component {
           <input type="text" placeholder="Search Chats..." />
         </div>
         <div id="contacts">
-          <ul>{activeChats}</ul>
+          {activeChats && <ul>{activeChats}</ul>}
         </div>
         <div id="bottom-bar">
           <button id="addChat" onClick={() => this.openAddChatPopup()}>
