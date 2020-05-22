@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "rest_auth.registration",
     "rest_framework",
     "rest_framework.authtoken",
+    "channels",
     # end chat api
     'posts',
     'emails',
@@ -215,9 +216,7 @@ if os.environ.get("DJANGO_DEVELOPMENT") is None:
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_PRELOAD = True
 
-CSRF_COOKIE_NAME = "csrftoken"
-WSGI_APPLICATION = 'Portfolio.wsgi.application'
-ASGI_APPLICATION = "chat.routing.application"
+
 
 CHANNEL_LAYERS = {
     "default": {
@@ -225,3 +224,7 @@ CHANNEL_LAYERS = {
         "CONFIG": {"hosts": [("127.0.0.1", 6379)],},
     },
 }
+
+CSRF_COOKIE_NAME = "csrftoken"
+WSGI_APPLICATION = 'Portfolio.wsgi.application'
+ASGI_APPLICATION = "Portfolio.routing.application"
