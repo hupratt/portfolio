@@ -108,3 +108,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+node_modules/
+.env.development
+src/frontend/static/frontend/main.js

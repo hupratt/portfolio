@@ -15,7 +15,7 @@ from django.http import Http404, HttpResponseRedirect
 # from .translate import translate
 # from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import (get_object_or_404, redirect, render,
-                              render_to_response)
+                              )
 from django.template import RequestContext
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
