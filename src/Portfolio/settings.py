@@ -114,7 +114,6 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 
 # Database
@@ -217,3 +216,12 @@ if os.environ.get("DJANGO_DEVELOPMENT") is None:
     SECURE_HSTS_PRELOAD = True
 
 CSRF_COOKIE_NAME = "csrftoken"
+WSGI_APPLICATION = 'Portfolio.wsgi.application'
+ASGI_APPLICATION = "chat.routing.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {"hosts": [("127.0.0.1", 6379)],},
+    },
+}

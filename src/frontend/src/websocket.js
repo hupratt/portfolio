@@ -16,21 +16,24 @@ class WebSocketService {
   }
 
   connect(chatUrl) {
-    const path = `${SOCKET_URL}/ws/chat/${chatUrl}/`;
-    this.socketRef = new WebSocket(path);
-    this.socketRef.onopen = () => {
-      console.log("WebSocket open");
-    };
-    this.socketRef.onmessage = e => {
-      this.socketNewMessage(e.data);
-    };
-    this.socketRef.onerror = e => {
-      console.log(e.message);
-    };
-    this.socketRef.onclose = () => {
-      console.log("WebSocket closed let's reopen");
-      this.connect();
-    };
+    if (chatUrl){
+      console.log('chatUrl', chatUrl);
+      const path = `${SOCKET_URL}/ws/chat/${chatUrl}/`;
+      this.socketRef = new WebSocket(path);
+      this.socketRef.onopen = () => {
+        console.log("WebSocket open");
+      };
+      this.socketRef.onmessage = e => {
+        this.socketNewMessage(e.data);
+      };
+      this.socketRef.onerror = e => {
+        console.log(e.message);
+      };
+      this.socketRef.onclose = () => {
+        console.log("WebSocket closed let's reopen");
+        this.connect();
+      };
+    }
   }
 
   disconnect() {

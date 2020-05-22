@@ -58,11 +58,11 @@ class Sidepanel extends React.Component {
     }
   };
 
-  render() {
-    let activeChats
-    if (this.props.chat && this.props.chat.length>0){
-
-      activeChats = this.props.chats.map(c => {
+  activeChats=(chats)=>{
+    let activeChats = <React.Fragment/>
+    if (chats && chats.length>0){
+  
+      activeChats = chats.map(c => {
         return (
           <Contact
           key={c.id}
@@ -74,6 +74,10 @@ class Sidepanel extends React.Component {
           );
         });
       }
+      return activeChats
+  }
+  render() {
+
     return (
       <div id="sidepanel">
         <div id="profile">
@@ -166,7 +170,7 @@ class Sidepanel extends React.Component {
           <input type="text" placeholder="Search Chats..." />
         </div>
         <div id="contacts">
-          {activeChats && <ul>{activeChats}</ul>}
+           <ul>{this.activeChats(this.props.chats)}</ul>
         </div>
         <div id="bottom-bar">
           <button id="addChat" onClick={() => this.openAddChatPopup()}>
@@ -182,6 +186,7 @@ class Sidepanel extends React.Component {
     );
   }
 }
+
 
 const mapStateToProps = state => {
   return {
