@@ -32,6 +32,8 @@ for (x in labels) {
 					sudo virtualenv -p python3 .
 					sudo chmod -R 770 $PROJECT
 					sudo chown -R ubuntu:www-data $PROJECT
+					npm install
+					npm run build
 					. bin/activate
 					echo 'which python are you running?'
 					which python
