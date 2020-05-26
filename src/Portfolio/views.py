@@ -29,6 +29,12 @@ from emails.models import Email
 from .templates.email.confirmation import template
 # Create your views here.
 
+def terms(request):
+    return render(request, "tou.html") 
+
+def privacy(request):
+    return render(request, "privacy.html") 
+
 
 def index(request):
     """

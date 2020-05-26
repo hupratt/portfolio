@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/ 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY_port')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get('DJANGO_DEVELOPMENT') is not None:
@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
     "allauth.socialaccount.providers.github",
+    "allauth.socialaccount.providers.facebook",
     "rest_auth",
     "rest_auth.registration",
     "rest_framework",
@@ -88,6 +90,7 @@ CORS_ORIGIN_WHITELIST = [
 
     "http://localhost:8080",
     "http://localhost:8000",
+    "http://127.0.0.1:8000",
     "http://localhost:3000",
     "http://127.0.0.1:9000"
 ]
@@ -228,3 +231,6 @@ CHANNEL_LAYERS = {
 CSRF_COOKIE_NAME = "csrftoken"
 WSGI_APPLICATION = 'Portfolio.wsgi.application'
 ASGI_APPLICATION = "Portfolio.routing.application"
+
+BASE_URL = os.getenv("BASE_URL",'')
+LOGIN_REDIRECT_URL = f"{BASE_URL}/chat/"

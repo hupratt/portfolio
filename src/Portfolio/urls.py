@@ -9,14 +9,17 @@ from django.utils.translation import ugettext_lazy as _
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-
+    path('', views.index, name='index'), 
+    path('privacy/', views.privacy, name='privacy'), 
+    path('terms/', views.terms, name='terms'), 
     path('chat/', include('chat.urls', namespace='chat')),
+    path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")),
 ]
 
-# urlpatterns += i18n_patterns(
-#     url('', views.index, name='index'), 
-#     prefix_default_language=True)
+urlpatterns += i18n_patterns(
+    prefix_default_language=True)
 
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

@@ -2437,14 +2437,13 @@ a{
 }
 
 
-
-
 #live-chat {
     bottom: 0;
     font-size: 12px;
     right: 24px;
     position: fixed;
     width: 300px;
+    z-index:2
     
 }
 
@@ -2625,3 +2624,21 @@ a{
   width: 100vw;
 }
 
+
+.google img,
+.github img,
+.facebook img{
+  width: 20px;
+  position: relative;
+}
+.google,
+.github,
+.facebook {
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #ababab;
+  border-radius: 4px;
+  transition: all 0.6s;
+  font-size: 14px;
+  display: block;
+}
