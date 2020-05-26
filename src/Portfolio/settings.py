@@ -234,3 +234,36 @@ ASGI_APPLICATION = "Portfolio.routing.application"
 
 BASE_URL = os.getenv("BASE_URL",'')
 LOGIN_REDIRECT_URL = f"{BASE_URL}/chat/"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(asctime)s %(name)s.%(funcName)s:%(lineno)s- %(message)s"
+        },
+        "simple": {"format": "{levelname} {message}", "style": "{"},
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+        "file": {
+            "level": "INFO", # ERROR
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "error.log"),
+            "formatter": "verbose",
+        },
+    },
+    "loggers": {
+        # create instance of log called 'django'
+        "django": {
+            # output logs to the console and to the file
+            "level": "INFO",
+            "handlers": ["file", "console"],
+            "propagate": True,
+        }
+    },
+}
