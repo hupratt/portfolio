@@ -51,9 +51,6 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new Dotenv({
-      safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
-      silent: true // hide any errors
-    })
+    new Dotenv({ safe: true, silent: true, path: "./src/.env.development" })
   ]
 };

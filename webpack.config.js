@@ -50,5 +50,5 @@ module.exports = {
     historyApiFallback: true,
     hot: true
   },
-  plugins: [new Dotenv({ path: "./.env.development" })]
+  plugins: [new Dotenv({ path: "./src/.env.development" })]
 };
