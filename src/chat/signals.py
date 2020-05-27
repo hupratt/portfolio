@@ -19,51 +19,17 @@ def user_signed_up_(request, user, sociallogin=None, **kwargs):
  
     See the socialaccount_socialaccount table for more in the 'extra_data' field.
     '''
- 
     if sociallogin:
         logger.info(f'creating a contact instance from the {sociallogin.account.provider} social account')
         # Extract first / last names from social nets and store on User record
-        if sociallogin.account.provider == 'github':
-            contact_instance = ''
-            name = sociallogin.account.extra_data['name']
-            if ' ' in name:
-                first_name, last_name = name.split(' ')
-                contact_instance = Contact.objects.create(first_name=name, last_name=last_name)
-            else:
-                contact_instance = Contact.objects.create(first_name=name)
-            picture_path = sociallogin.account.get_avatar_url()
-            if picture_path is not None or picture_path is not 'None':
-                logger.info(f'creating image with path: {picture_path}')
-                result = urllib.request.urlretrieve(picture_path)
-                contact_instance.image = File(open(result[0], 'rb'))
-                contact_instance.save()
-        elif sociallogin.account.provider == 'facebook':
-            name = sociallogin.account.extra_data['name']
-            logger.info(f'name: {name}')
-            logger.info(f'sociallogin.account: {sociallogin.account}')
-            if ' ' in name:
-                first_name, last_name = name.split(' ')
-                contact_instance = Contact.objects.create(first_name=name, last_name=last_name)
-            else:
-                contact_instance = Contact.objects.create(first_name=name)
-            picture_path = sociallogin.account.get_avatar_url()
-            if picture_path is not None or picture_path is not 'None':
-                logger.info(f'creating image with path: {picture_path}')
-                result = urllib.request.urlretrieve(picture_path)
-                contact_instance.image = File(open(result[0], 'rb'))
-                contact_instance.save()
-        elif sociallogin.account.provider == 'google':
-            name = sociallogin.account.extra_data['name']
-            logger.info(f'name: {name}')
-            logger.info(f'sociallogin.account: {sociallogin.account}')
-            if ' ' in name:
-                first_name, last_name = name.split(' ')
-                contact_instance = Contact.objects.create(first_name=name, last_name=last_name)
-            else:
-                contact_instance = Contact.objects.create(first_name=name)
-            picture_path = sociallogin.account.get_avatar_url()
-            if picture_path is not None or picture_path is not 'None':
-                logger.info(f'creating image with path: {picture_path}')
-                result = urllib.request.urlretrieve(picture_path)
-                contact_instance.image = File(open(result[0], 'rb'))
-                contact_instance.save()
+        name = sociallogin.account.extra_data['name']
+        logger.info(f'name: {name}')
+        logger.info(f'sociallogin.account: {sociallogin.account}')
+        picture_path = sociallogin.account.get_avatar_url()
+        contact_instance, _ = Contact.objects.get_or_create(user=user, image_url=picture_path)
+        admin, _ = Contact.objects.get_or_create(user=1)
+        if isinstance(admin, Contact):
+            contact_instance.friends.add(admin)
+            contact_instance.save()
+        else:
+            raise ValueError("Admin's contact could not be found")

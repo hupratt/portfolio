@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     # end chat api
     'posts',
     'emails',
-    'chat',
+    'chat.apps.ChatConfig',
     'frontend'
 ]
 SITE_ID = 1
@@ -155,7 +155,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "Europe/Luxembourg"
 
 USE_I18N = True
 
@@ -180,8 +180,8 @@ def ugettext(s): return s
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static")
-
-# print("STATIC_ROOT",STATIC_ROOT)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'locale'),
@@ -251,7 +251,7 @@ LOGGING = {
             "formatter": "simple",
         },
         "file": {
-            "level": "INFO", # ERROR
+            "level": "ERROR", # ERROR
             "class": "logging.FileHandler",
             "filename": os.path.join(BASE_DIR, "error.log"),
             "formatter": "verbose",

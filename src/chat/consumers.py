@@ -11,12 +11,13 @@ User = get_user_model()
 class ChatConsumer(WebsocketConsumer):
 
     def fetch_messages(self, data):
-        messages = get_last_10_messages(data['chatId'])
-        content = {
-            'command': 'messages',
-            'messages': self.messages_to_json(messages)
-        }
-        self.send_message(content)
+        if data['chatId'] != 'chat':
+            messages = get_last_10_messages(data['chatId'])
+            content = {
+                'command': 'messages',
+                'messages': self.messages_to_json(messages)
+            }
+            self.send_message(content)
 
     def new_message(self, data):
         user_contact = get_user_contact(data['from'])
@@ -52,19 +53,21 @@ class ChatConsumer(WebsocketConsumer):
     }
 
     def connect(self):
-        self.room_name = self.scope['url_route']['kwargs']['room_name']
-        self.room_group_name = 'chat_%s' % self.room_name
-        async_to_sync(self.channel_layer.group_add)(
-            self.room_group_name,
-            self.channel_name
-        )
-        self.accept()
+        if self.scope['url_route']['kwargs']['room_name'] != 'chat':
+            self.room_name = self.scope['url_route']['kwargs']['room_name']
+            self.room_group_name = 'chat_%s' % self.room_name
+            async_to_sync(self.channel_layer.group_add)(
+                self.room_group_name,
+                self.channel_name
+            )
+            self.accept()
 
     def disconnect(self, close_code):
-        async_to_sync(self.channel_layer.group_discard)(
-            self.room_group_name,
-            self.channel_name
-        )
+        if self.scope['url_route']['kwargs']['room_name'] != 'chat':
+            async_to_sync(self.channel_layer.group_discard)(
+                self.room_group_name,
+                self.channel_name
+            )
 
     def receive(self, text_data):
         data = json.loads(text_data)
