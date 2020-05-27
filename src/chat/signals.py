@@ -21,7 +21,6 @@ def user_signed_up_(request, user, sociallogin=None, **kwargs):
     '''
     if sociallogin:
         logger.info(f'creating a contact instance from the {sociallogin.account.provider} social account')
-        # Extract first / last names from social nets and store on User record
         name = sociallogin.account.extra_data['name']
         logger.info(f'name: {name}')
         logger.info(f'sociallogin.account: {sociallogin.account}')
