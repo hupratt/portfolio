@@ -15,6 +15,7 @@ urlpatterns = [
     path('chat/', include('chat.urls', namespace='chat')),
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
+    path('api-auth/', include('rest_framework.urls')),
 ]
 
 urlpatterns += i18n_patterns(

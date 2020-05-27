@@ -16,6 +16,13 @@ export const authSuccess = (username, token) => {
   };
 };
 
+export const authSessionSuccess = (username) => {
+  return {
+    type: actionTypes.AUTH_SUCCESS,
+    username: username
+  };
+};
+
 export const authFail = error => {
   return {
     type: actionTypes.AUTH_FAIL,
@@ -104,10 +111,33 @@ export const authCheckState = () => {
         dispatch(authSuccess(username, token));
         dispatch(
           checkAuthTimeout(
-            (expirationDate.getTime() - new Date().getTime()) / 1000
+            (expirationDate.getTime() - new Date().getTime()) / 100000
           )
         );
       }
     }
   };
 };
+
+export const checkLoggedInSession = () => {
+  return dispatch => {
+    // FIX ME: rest-auth returns html??? 
+    axios
+      .get(`${HOST_URL}/chat/auth/user/`, {
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
+      .then(res => {
+        // const expirationDate = new Date(new Date().getTime() + 3600 * 100000);
+        // localStorage.setItem("token", res.data.token);
+        // localStorage.setItem("expirationDate", expirationDate);
+        console.log('res.data.user_name', res.data.user_name);
+        localStorage.setItem("username", res.data.user_name);
+        dispatch(authSessionSuccess(res.data.user_name));
+        dispatch(checkAuthTimeout(3600));
+      })
+      .catch(err => {
+        dispatch(authFail(err));
+      });
+}};

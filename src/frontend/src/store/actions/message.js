@@ -23,14 +23,20 @@ const getUserChatsSuccess = chats => {
   };
 };
 
-export const getUserChats = (username, token) => {
+export const getUserChats = (username, token='') => {
   return dispatch => {
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
     axios.defaults.xsrfCookieName = "csrftoken";
-    axios.defaults.headers = {
-      "Content-Type": "application/json",
-      Authorization: `Token ${token}`
-    };
+    if (token.length>0){
+      axios.defaults.headers = {
+        "Content-Type": "application/json",
+        Authorization: `Token ${token}`
+      };
+    } else {
+      axios.defaults.headers = {
+        "Content-Type": "application/json",
+      };
+    }
     axios
       .get(`${HOST_URL}/chat/?username=${username}`)
       .then(res => dispatch(getUserChatsSuccess(res.data)));

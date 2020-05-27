@@ -13,7 +13,8 @@ import "./assets/style.css";
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.onTryAutoSignup();
+    // this.props.onTryAutoSignup();
+    this.props.onTryAutoSessionSignup();
   }
 
   constructor(props) {
@@ -53,6 +54,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState()),
+    onTryAutoSessionSignup: () => dispatch(actions.checkLoggedInSession()),
     closeAddChatPopup: () => dispatch(navActions.closeAddChatPopup()),
     addMessage: message => dispatch(messageActions.addMessage(message)),
     setMessages: messages => dispatch(messageActions.setMessages(messages))

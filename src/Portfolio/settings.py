@@ -69,9 +69,12 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.BasicAuthentication",
     ),
 }
+
+# REST_AUTH_SERIALIZERS = {
+#     'USER_DETAILS_SERIALIZER' : 'rest_auth.serializers.UserDetailsSerializer',
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

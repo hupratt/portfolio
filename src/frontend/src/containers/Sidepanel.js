@@ -10,30 +10,35 @@ const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
 class Sidepanel extends React.Component {
   state = {
-    loginForm: true
+    loginForm: true, 
+    username: null
   };
 
-  waitForAuthDetails() {
-    const component = this;
-    setTimeout(function() {
-      if (
-        component.props.token !== null &&
-        component.props.token !== undefined
-      ) {
-        component.props.getUserChats(
-          component.props.username,
-          component.props.token
-        );
-        return;
-      } else {
-        console.log("waiting for authentication details...");
-        component.waitForAuthDetails();
-      }
-    }, 100);
+  waitForAuthDetails=() =>{
+    if (
+      this.props.token !== null &&
+      this.props.token !== undefined
+    ) {
+      this.props.getUserChats(
+        this.props.username,
+        this.props.token
+      );
+    } else if (this.props.username !== undefined){
+      this.props.getUserChats(
+        this.props.username
+      );
+    }
+
   }
 
-  componentDidMount() {
-    this.waitForAuthDetails();
+  componentDidUpdate() {
+    if (!this.state.username){
+      this.waitForAuthDetails();
+      this.setState((prevState) => { 
+        return { ...prevState, username: this.props.username }
+      }, ()=>console.log('state set', this.state))
+    }
+    
   }
 
   openAddChatPopup() {
@@ -190,7 +195,7 @@ class Sidepanel extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.token !== null,
+    isAuthenticated: state.auth.token !== null || state.auth.username !==null,
     loading: state.auth.loading,
     token: state.auth.token,
     username: state.auth.username,

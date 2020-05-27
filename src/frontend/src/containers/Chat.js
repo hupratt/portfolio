@@ -148,7 +148,7 @@ class Chat extends React.Component {
               />
               <i className="fa fa-paperclip attachment" aria-hidden="true" />
               <button id="chat-message-submit" className="submit">
-                <i className="fa fa-paper-plane" aria-hidden="true" />
+              <i className="fas fa-paper-plane"></i>
               </button>
             </div>
           </form>

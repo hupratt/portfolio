@@ -5,7 +5,8 @@ from .views import (
     ChatDetailView,
     ChatCreateView,
     ChatUpdateView,
-    ChatDeleteView
+    ChatDeleteView,
+    UserIDView
 )
 
 app_name = 'chat'
@@ -15,5 +16,7 @@ urlpatterns = [
     path('create/', ChatCreateView.as_view()),
     path('<pk>', ChatDetailView.as_view()),
     path('<pk>/update/', ChatUpdateView.as_view()),
-    path('<pk>/delete/', ChatDeleteView.as_view())
+    path('<pk>/delete/', ChatDeleteView.as_view()),
+    path("auth/user/", UserIDView.as_view(), name="user-staff-check"),
+
 ]
