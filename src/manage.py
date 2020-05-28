@@ -8,7 +8,7 @@ def main():
     if os.environ.get("DJANGO_DEVELOPMENT") == "true":
         dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env.development'))
     else:
-        dotenv.read_dotenv()
+        dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env'))
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Portfolio.settings')
     try:
         from django.core.management import execute_from_command_line

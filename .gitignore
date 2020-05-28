@@ -112,3 +112,4 @@ venv.bak/
 node_modules/
 .env.development
 src/frontend/static/frontend/main.js
+*.conf

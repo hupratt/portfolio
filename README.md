@@ -18,3 +18,15 @@ https://www.craftstudios.tech
 - [x] Feature 1
 - [x] Feature 2
 - [x] Feature 3
+
+# daphne testing
+
+daphne -b 0.0.0.0 -p 8001 Portfolio.asgi:application
+daphne service needed to make this work with apache
+
+sudo systemctl daemon-reload
+sudo systemctl start daphne.service
+sudo systemctl start django_worker.service
+
+sudo a2enmod proxy_http
+sudo a2enmod proxy_wstunnel

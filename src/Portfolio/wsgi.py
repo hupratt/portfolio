@@ -14,7 +14,7 @@ from django.core.wsgi import get_wsgi_application
 if os.environ.get("DJANGO_DEVELOPMENT") == "true":
     dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env.development'))
 else:
-    dotenv.read_dotenv()
+    dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env'))
 
 sys.path.append("/home/ubuntu/Dev/PythonBots")
 
