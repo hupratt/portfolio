@@ -31,11 +31,13 @@ def user_signed_up_(request, user, sociallogin=None, **kwargs):
             guest.friends.add(admin)
             guest.save()
 
+            import pdb; pdb.set_trace()
             # open up a conversation with the admin
-            conversation, _ = Chat.objects.get_or_create(participants=guest)
+            conversation = Chat.objects.create()
+            conversation.participants.add(guest)
             conversation.participants.add(admin)
             conversation.save()
-            
+            logger.info(f'conversation successfully saved')
             # strike up a conversation with the guest
             message = Message.objects.create(contact= admin,content=f"Hello {guest.user.first_name}, drop me a message here and I'll get back to you as soon as possible")
             conversation.messages.add(message)

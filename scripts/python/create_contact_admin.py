@@ -13,9 +13,10 @@ new.save()
 newcontact, _ = Contact.objects.get_or_create(user=User.objects.get(pk=3))
 
 
-conversation, _ = Chat.objects.get_or_create(participants=guest)
+conversation = Chat.objects.create()
 
 conversation.participants.add(newcontact)
+conversation.participants.add(guest)
 conversation.save()
 conversation.participants.all()
 
