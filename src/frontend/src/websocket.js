@@ -16,22 +16,21 @@ class WebSocketService {
   }
 
   connect(chatUrl) {
-    if (!SOCKET_URL || !chatUrl){
-      console.log('FATAL ERROR');
-      console.log('SOCKET_URL or chatUrl cannot be null or undefined');
+    if (!SOCKET_URL) {
+      console.log("FATAL ERROR");
+      console.log("SOCKET_URL cannot be null or undefined");
       console.log(`SOCKET_URL: ${SOCKET_URL}`);
-      console.log(`chatUrl: ${chatUrl}`);
     }
-    if (chatUrl){
+    if (chatUrl) {
       const path = `${SOCKET_URL}/ws/chat/${chatUrl}/`;
       this.socketRef = new WebSocket(path);
       this.socketRef.onopen = () => {
         console.log("WebSocket open");
       };
-      this.socketRef.onmessage = e => {
+      this.socketRef.onmessage = (e) => {
         this.socketNewMessage(e.data);
       };
-      this.socketRef.onerror = e => {
+      this.socketRef.onerror = (e) => {
         console.log(e.message);
       };
       this.socketRef.onclose = () => {
@@ -63,7 +62,7 @@ class WebSocketService {
     this.sendMessage({
       command: "fetch_messages",
       username: username,
-      chatId: chatId
+      chatId: chatId,
     });
   }
 
@@ -72,7 +71,7 @@ class WebSocketService {
       command: "new_message",
       from: message.from,
       message: message.content,
-      chatId: message.chatId
+      chatId: message.chatId,
     });
   }
 
