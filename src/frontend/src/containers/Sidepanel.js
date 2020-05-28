@@ -10,35 +10,28 @@ const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
 class Sidepanel extends React.Component {
   state = {
-    loginForm: true, 
-    username: null
+    loginForm: true,
+    username: null,
   };
 
-  waitForAuthDetails=() =>{
-    if (
-      this.props.token !== null &&
-      this.props.token !== undefined
-    ) {
-      this.props.getUserChats(
-        this.props.username,
-        this.props.token
-      );
-    } else if (this.props.username !== undefined){
-      this.props.getUserChats(
-        this.props.username
-      );
+  waitForAuthDetails = () => {
+    if (this.props.token !== null && this.props.token !== undefined) {
+      this.props.getUserChats(this.props.username, this.props.token);
+    } else if (this.props.username !== undefined) {
+      this.props.getUserChats(this.props.username);
     }
-
-  }
+  };
 
   componentDidUpdate() {
-    if (!this.state.username){
+    if (!this.state.username) {
       this.waitForAuthDetails();
-      this.setState((prevState) => { 
-        return { ...prevState, username: this.props.username }
-      }, ()=>console.log('state set', this.state))
+      this.setState(
+        (prevState) => {
+          return { ...prevState, username: this.props.username };
+        },
+        () => console.log("state set", this.state)
+      );
     }
-    
   }
 
   openAddChatPopup() {
@@ -49,7 +42,7 @@ class Sidepanel extends React.Component {
     this.setState({ loginForm: !this.state.loginForm });
   };
 
-  authenticate = e => {
+  authenticate = (e) => {
     e.preventDefault();
     if (this.state.loginForm) {
       this.props.login(e.target.username.value, e.target.password.value);
@@ -63,33 +56,31 @@ class Sidepanel extends React.Component {
     }
   };
 
-  activeChats=(chats)=>{
-    let activeChats = <React.Fragment/>
-    if (chats && chats.length>0){
-  
-      activeChats = chats.map(c => {
+  activeChats = (chats) => {
+    let activeChats = <React.Fragment />;
+    if (chats && chats.length > 0) {
+      activeChats = chats.map((c) => {
         return (
           <Contact
-          key={c.id}
-          name="Harvey Specter"
-          picURL="http://emilcarlsson.se/assets/louislitt.png"
-          status="busy"
-          chatURL={`/${c.id}`}
+            key={c.id}
+            name="Harvey Specter"
+            picURL="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
+            status="busy"
+            chatURL={`/${c.id}`}
           />
-          );
-        });
-      }
-      return activeChats
-  }
+        );
+      });
+    }
+    return activeChats;
+  };
   render() {
-
     return (
       <div id="sidepanel">
         <div id="profile">
           <div className="wrap">
             <img
               id="profile-img"
-              src="http://emilcarlsson.se/assets/mikeross.png"
+              src="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
               className="online"
               alt=""
             />
@@ -123,7 +114,6 @@ class Sidepanel extends React.Component {
                 </button>
               ) : (
                 <div>
-                  
                   <form method="POST" onSubmit={this.authenticate}>
                     {this.state.loginForm ? (
                       <div>
@@ -175,7 +165,7 @@ class Sidepanel extends React.Component {
           <input type="text" placeholder="Search Chats..." />
         </div>
         <div id="contacts">
-           <ul>{this.activeChats(this.props.chats)}</ul>
+          <ul>{this.activeChats(this.props.chats)}</ul>
         </div>
         <div id="bottom-bar">
           <button id="addChat" onClick={() => this.openAddChatPopup()}>
@@ -192,18 +182,17 @@ class Sidepanel extends React.Component {
   }
 }
 
-
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    isAuthenticated: state.auth.token !== null || state.auth.username !==null,
+    isAuthenticated: state.auth.token !== null || state.auth.username !== null,
     loading: state.auth.loading,
     token: state.auth.token,
     username: state.auth.username,
-    chats: state.message.chats
+    chats: state.message.chats,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     login: (userName, password) =>
       dispatch(actions.authLogin(userName, password)),
@@ -212,11 +201,8 @@ const mapDispatchToProps = dispatch => {
       dispatch(actions.authSignup(username, email, password1, password2)),
     addChat: () => dispatch(navActions.openAddChatPopup()),
     getUserChats: (username, token) =>
-      dispatch(messageActions.getUserChats(username, token))
+      dispatch(messageActions.getUserChats(username, token)),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Sidepanel);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidepanel);

@@ -5,7 +5,7 @@ import Hoc from "../hoc/hoc";
 
 class Chat extends React.Component {
   state = { message: "" };
-  
+
   initialiseChat() {
     this.waitForSocketConnection(() => {
       WebSocketInstance.fetchMessages(
@@ -13,7 +13,7 @@ class Chat extends React.Component {
         this.props.match.params.chatID
       );
     });
-    console.log('chatID', this.props.match.params.chatID);
+    console.log("chatID", this.props.match.params.chatID);
     WebSocketInstance.connect(this.props.match.params.chatID);
   }
 
@@ -37,22 +37,22 @@ class Chat extends React.Component {
     }, 100);
   }
 
-  messageChangeHandler = event => {
+  messageChangeHandler = (event) => {
     this.setState({ message: event.target.value });
   };
 
-  sendMessageHandler = e => {
+  sendMessageHandler = (e) => {
     e.preventDefault();
     const messageObject = {
       from: this.props.username,
       content: this.state.message,
-      chatId: this.props.match.params.chatID
+      chatId: this.props.match.params.chatID,
     };
     WebSocketInstance.newChatMessage(messageObject);
     this.setState({ message: "" });
   };
 
-  renderTimestamp = timestamp => {
+  renderTimestamp = (timestamp) => {
     let prefix = "";
     const timeDiff = Math.round(
       (new Date().getTime() - new Date(timestamp).getTime()) / 60000
@@ -75,7 +75,7 @@ class Chat extends React.Component {
     return prefix;
   };
 
-  renderMessages = messages => {
+  renderMessages = (messages) => {
     const currentUser = this.props.username;
     return messages.map((message, i, arr) => (
       <li
@@ -84,7 +84,7 @@ class Chat extends React.Component {
         className={message.author === currentUser ? "sent" : "replies"}
       >
         <img
-          src="http://emilcarlsson.se/assets/mikeross.png"
+          src="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
           alt="profile-pic"
         />
         <p>
@@ -129,7 +129,7 @@ class Chat extends React.Component {
             {this.props.messages && this.renderMessages(this.props.messages)}
             <div
               style={{ float: "left", clear: "both" }}
-              ref={el => {
+              ref={(el) => {
                 this.messagesEnd = el;
               }}
             />
@@ -148,7 +148,7 @@ class Chat extends React.Component {
               />
               <i className="fa fa-paperclip attachment" aria-hidden="true" />
               <button id="chat-message-submit" className="submit">
-              <i className="fas fa-paper-plane"></i>
+                <i className="fas fa-paper-plane"></i>
               </button>
             </div>
           </form>
@@ -158,10 +158,10 @@ class Chat extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
-    messages: state.message.messages
+    messages: state.message.messages,
   };
 };
 
