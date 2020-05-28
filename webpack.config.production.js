@@ -50,5 +50,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true
   },
-  plugins: [new Dotenv({ path: "./src/.env" })]
+  plugins: [
+    new Dotenv({ safe: true, silent: true, path: './src/.env' })
+  ]
 };

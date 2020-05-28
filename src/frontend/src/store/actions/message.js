@@ -25,6 +25,7 @@ const getUserChatsSuccess = chats => {
 
 export const getUserChats = (username, token='') => {
   return dispatch => {
+    if (username){
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
     axios.defaults.xsrfCookieName = "csrftoken";
     if (token.length>0){
@@ -40,5 +41,7 @@ export const getUserChats = (username, token='') => {
     axios
       .get(`${HOST_URL}/chat/?username=${username}`)
       .then(res => dispatch(getUserChatsSuccess(res.data)));
-  };
+  } else {
+    console.log('username cannot be null or undefined');
+  }}
 };
