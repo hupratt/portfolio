@@ -692,3 +692,9 @@ small {
     padding: 7px;
     width: calc(100% - 43px);
 }
+
+#chat-message-submit i::before{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f1d8";
+}
