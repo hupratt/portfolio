@@ -28,6 +28,7 @@ export const getUserChats = (username, token='') => {
     if (username){
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
     axios.defaults.xsrfCookieName = "csrftoken";
+    console.log('token',token);
     if (token.length>0){
       axios.defaults.headers = {
         "Content-Type": "application/json",
