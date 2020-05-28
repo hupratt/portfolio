@@ -16,7 +16,7 @@ class WebSocketService {
   }
 
   connect(chatUrl) {
-    if (chatUrl){
+    if (chatUrl && SOCKET_URL){
       console.log('chatUrl', chatUrl);
       const path = `${SOCKET_URL}/ws/chat/${chatUrl}/`;
       console.log('path', path);
