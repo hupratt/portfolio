@@ -51,6 +51,6 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new Dotenv({ safe: true, silent: true, path: "./src/.env.development" })
+    new Dotenv({ safe: true, silent: true, path: './src/.env' })
   ]
 };
