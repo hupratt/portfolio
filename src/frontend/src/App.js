@@ -26,6 +26,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('process.env.HOST_URL;',process.env.HOST_URL);
     return (
       <Router>
         <div id="frame">

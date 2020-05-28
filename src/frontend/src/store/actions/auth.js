@@ -53,7 +53,7 @@ export const authLogin = (username, password) => {
     axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
     axios.defaults.xsrfCookieName = "csrftoken";
     axios
-      .post(`${HOST_URL}/rest-auth/login/`, {
+      .post(`${process.env.HOST_URL}/rest-auth/login/`, {
         username: username,
         password: password
       })
@@ -76,7 +76,7 @@ export const authSignup = (username, email, password1, password2) => {
   return dispatch => {
     dispatch(authStart());
     axios
-      .post(`${HOST_URL}/rest-auth/registration/`, {
+      .post(`${process.env.HOST_URL}/rest-auth/registration/`, {
         username: username,
         email: email,
         password1: password1,
@@ -123,7 +123,7 @@ export const checkLoggedInSession = () => {
   return dispatch => {
     // FIX ME: rest-auth returns html??? 
     axios
-      .get(`${HOST_URL}/chat/auth/user/`, {
+      .get(`${process.env.HOST_URL}/chat/auth/user/`, {
         headers: {
             'Content-Type': 'application/json',
         }

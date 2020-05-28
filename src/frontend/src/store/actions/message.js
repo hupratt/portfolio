@@ -38,7 +38,7 @@ export const getUserChats = (username, token='') => {
       };
     }
     axios
-      .get(`${HOST_URL}/chat/?username=${username}`)
+      .get(`${process.env.HOST_URL}/chat/?username=${username}`)
       .then(res => dispatch(getUserChatsSuccess(res.data)));
   };
 };

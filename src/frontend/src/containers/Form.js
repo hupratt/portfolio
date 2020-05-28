@@ -43,7 +43,7 @@ class HorizontalAddChatForm extends React.Component {
           Authorization: `Token ${this.props.token}`
         };
         axios
-          .post(`${HOST_URL}/chat/create/`, {
+          .post(`${process.env.HOST_URL}/chat/create/`, {
             messages: [],
             participants: combined
           })
