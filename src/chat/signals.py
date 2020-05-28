@@ -30,8 +30,6 @@ def user_signed_up_(request, user, sociallogin=None, **kwargs):
         if isinstance(admin, Contact):
             guest.friends.add(admin)
             guest.save()
-
-            import pdb; pdb.set_trace()
             # open up a conversation with the admin
             conversation = Chat.objects.create()
             conversation.participants.add(guest)
