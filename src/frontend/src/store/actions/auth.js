@@ -122,6 +122,7 @@ export const authCheckState = () => {
 export const checkLoggedInSession = () => {
   return dispatch => {
     // FIX ME: rest-auth returns html??? 
+    if (HOST_URL){
     axios
       .get(`${HOST_URL}/chat/auth/user/`, {
         headers: {
@@ -139,5 +140,5 @@ export const checkLoggedInSession = () => {
       })
       .catch(err => {
         dispatch(authFail(err));
-      });
+      });}
 }};
