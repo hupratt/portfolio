@@ -16,10 +16,14 @@ class WebSocketService {
   }
 
   connect(chatUrl) {
-    if (chatUrl && SOCKET_URL){
-      console.log('chatUrl', chatUrl);
+    if (!SOCKET_URL || !chatUrl){
+      console.log('FATAL ERROR');
+      console.log('SOCKET_URL or chatUrl cannot be null or undefined');
+      console.log(`SOCKET_URL: ${SOCKET_URL}`);
+      console.log(`chatUrl: ${chatUrl}`);
+    }
+    if (chatUrl){
       const path = `${SOCKET_URL}/ws/chat/${chatUrl}/`;
-      console.log('path', path);
       this.socketRef = new WebSocket(path);
       this.socketRef.onopen = () => {
         console.log("WebSocket open");
