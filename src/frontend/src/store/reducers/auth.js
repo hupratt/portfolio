@@ -5,37 +5,36 @@ const initialState = {
   token: null,
   username: null,
   error: null,
-  loading: false
+  loading: false,
 };
 
 const authStart = (state, action) => {
   return updateObject(state, {
     error: null,
-    loading: true
+    loading: true,
   });
 };
 
 const authSuccess = (state, action) => {
-  console.log('action.username', action.username);
   return updateObject(state, {
     token: action.token,
     username: action.username,
     error: null,
-    loading: false
+    loading: false,
   });
 };
 
 const authFail = (state, action) => {
   return updateObject(state, {
     error: action.error,
-    loading: false
+    loading: false,
   });
 };
 
 const authLogout = (state, action) => {
   return updateObject(state, {
     token: null,
-    username: null
+    username: null,
   });
 };
 

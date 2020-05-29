@@ -17,7 +17,6 @@ class WebSocketService {
 
   connect(chatUrl) {
     if (!SOCKET_URL) {
-      console.log("FATAL ERROR");
       console.log("SOCKET_URL cannot be null or undefined");
       console.log(`SOCKET_URL: ${SOCKET_URL}`);
     }
