@@ -267,4 +267,3 @@ LOGGING = {
         "daphne": {"handlers": ["file", "console"], "level": "INFO"},
     },
 }
-

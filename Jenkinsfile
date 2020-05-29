@@ -10,7 +10,6 @@ for (x in labels) {
 				
 				def PROJECT="/home/ubuntu/Dev/portfolio"
 				def PYTHON_P="$PROJECT/bin/python3.6"
-				def GET_SECRET="/var/lib/jenkins/run_vars_port.py"
 				
 				
 				stage ('Checkout') {
@@ -29,7 +28,6 @@ for (x in labels) {
 					sh """ 
 
 					cd $PROJECT
-					#sudo virtualenv -p python3 .
 					sudo chmod -R 770 $PROJECT
 					sudo chown -R ubuntu:www-data $PROJECT
 					npm install
@@ -43,8 +41,6 @@ for (x in labels) {
 					echo 'pip upgrade done'
 					sudo $PYTHON_P -m pip install -r REQUIREMENTS.txt # Install or upgrade dependencies
 					echo 'pip install done'
-					sudo $PYTHON_P $GET_SECRET
-					echo 'var import done'
 
 					# sudo $PYTHON_P manage.py createcachetable cache_table
 
