@@ -271,6 +271,13 @@ LOGGING = {
             "level": "INFO",
             "handlers": ["file", "console"],
             "propagate": True,
-        }
+        },
+        'daphne': {
+            'handlers': [
+                'console',
+            ],
+            'level': 'DEBUG'
+        },
+
     },
 }
