@@ -8,7 +8,7 @@ After=network.target
 #Group=www-data
 WorkingDirectory=/home/ubuntu/Dev/portfolio/src
 EnvironmentFile=/home/ubuntu/Dev/portfolio/src/.env
-ExecStart=/home/ubuntu/Dev/portfolio/bin/daphne --access-log /home/ubuntu/Dev/portfolio/access.log -e ssl:443:privateKey=/etc/letsencrypt/live/www.craftstudios.tech/privkey.pem:certKey=/etc/letsencrypt/live/www.craftstudios.tech/cert.pem Portfolio.asgi:application
+ExecStart=/home/ubuntu/Dev/portfolio/bin/daphne --access-log /home/ubuntu/Dev/portfolio/access.log -e ssl:8001:privateKey=/etc/letsencrypt/live/www.craftstudios.tech/privkey.pem:certKey=/etc/letsencrypt/live/www.craftstudios.tech/cert.pem Portfolio.asgi:application
 
 [Install]
 WantedBy=multi-user.target
