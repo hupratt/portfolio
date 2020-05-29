@@ -29,7 +29,7 @@ for (x in labels) {
 					sh """ 
 
 					cd $PROJECT
-					sudo virtualenv -p python3 .
+					#sudo virtualenv -p python3 .
 					sudo chmod -R 770 $PROJECT
 					sudo chown -R ubuntu:www-data $PROJECT
 					npm install
