@@ -9,17 +9,28 @@ class ContactSerializer(serializers.StringRelatedField):
         return value
 
 
+class ContactModelSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Contact
+        fields = ("id", "image_url")
+        read_only = "id"
+
+    def get_image_url(self, obj):
+        return obj.image_file.url
+
+
 class ChatSerializer(serializers.ModelSerializer):
     participants = ContactSerializer(many=True)
 
     class Meta:
         model = Chat
-        fields = ('id', 'messages', 'participants')
-        read_only = ('id')
+        fields = ("id", "messages", "participants")
+        read_only = "id"
 
     def create(self, validated_data):
-        print(validated_data)
-        participants = validated_data.pop('participants')
+        participants = validated_data.pop("participants")
         chat = Chat()
         chat.save()
         for username in participants:
@@ -27,13 +38,3 @@ class ChatSerializer(serializers.ModelSerializer):
             chat.participants.add(contact)
         chat.save()
         return chat
-
-
-# do in python shell to see how to serialize data
-
-# from chat.models import Chat
-# from chat.api.serializers import ChatSerializer
-# chat = Chat.objects.get(id=1)
-# s = ChatSerializer(instance=chat)
-# s
-# s.data

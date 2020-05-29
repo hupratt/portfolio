@@ -23,9 +23,22 @@ export const authSessionSuccess = (username) => {
   };
 };
 
+export const grabPictureSuccess = (pic) => {
+  return {
+    type: actionTypes.GRAB_PICTURE_SUCCESS,
+    pic: pic,
+  };
+};
+
 export const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,
+    error: error,
+  };
+};
+export const grabPicFail = (error) => {
+  return {
+    type: actionTypes.GRAB_PICTURE_FAIL,
     error: error,
   };
 };
@@ -119,6 +132,23 @@ export const authCheckState = () => {
   };
 };
 
+export const grabPicture = (userid) => {
+  return (dispatch) => {
+    axios
+      .get(`${HOST_URL}/chat/contact/${userid}/`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((res) => {
+        dispatch(grabPictureSuccess(res.data.image_url));
+      })
+      .catch((err) => {
+        dispatch(grabPicFail(err));
+      });
+  };
+};
+
 export const checkLoggedInSession = () => {
   return (dispatch) => {
     // FIX ME: rest-auth returns html???
@@ -129,9 +159,9 @@ export const checkLoggedInSession = () => {
         },
       })
       .then((res) => {
-        localStorage.setItem("username", res.data.user_name);
         dispatch(authSessionSuccess(res.data.user_name));
         dispatch(checkAuthTimeout(3600));
+        dispatch(grabPicture(res.data.userID));
       })
       .catch((err) => {
         dispatch(authFail(err));

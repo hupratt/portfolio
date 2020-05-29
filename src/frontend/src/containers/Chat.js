@@ -120,6 +120,8 @@ class Chat extends React.Component {
   }
 
   render() {
+    console.log("chat pic", this.props.pic);
+
     return (
       <Hoc>
         <div className="messages">
@@ -159,6 +161,7 @@ class Chat extends React.Component {
 const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
+    pic: state.auth.pic,
     messages: state.message.messages,
   };
 };

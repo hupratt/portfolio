@@ -6,6 +6,7 @@ const initialState = {
   username: null,
   error: null,
   loading: false,
+  pic: null,
 };
 
 const authStart = (state, action) => {
@@ -19,6 +20,14 @@ const authSuccess = (state, action) => {
   return updateObject(state, {
     token: action.token,
     username: action.username,
+    error: null,
+    loading: false,
+  });
+};
+
+const picSuccess = (state, action) => {
+  return updateObject(state, {
+    pic: action.pic,
     error: null,
     loading: false,
   });
@@ -48,6 +57,8 @@ const reducer = (state = initialState, action) => {
       return authFail(state, action);
     case actionTypes.AUTH_LOGOUT:
       return authLogout(state, action);
+    case actionTypes.GRAB_PICTURE_SUCCESS:
+      return picSuccess(state, action);
     default:
       return state;
   }
