@@ -26,7 +26,9 @@ daphne service needed to make this work with apache
 
 sudo systemctl daemon-reload
 sudo systemctl start daphne.service
-sudo systemctl start django_worker.service
+sudo systemctl enable daphne.service
 
+sudo a2enmod ssl
+sudo a2enmod proxy
 sudo a2enmod proxy_http
 sudo a2enmod proxy_wstunnel

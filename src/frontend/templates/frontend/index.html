@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Chat interface</title>
+    {% load static %} 
+    <link rel="icon" type="image/webp" href="{%  static 'icon/cstudios-ico-600.png' %}" />
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="app" style="width: 100%;"></div>
-    {% load static %} 
 
     <script src="{% static 'frontend/main.js' %}"></script>
   </body>
 </html>
+

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import WebSocketInstance from "../websocket";
 import Hoc from "../hoc/hoc";
+import { BASE_URL } from "../settings";
 
 class Chat extends React.Component {
   state = { message: "" };
@@ -81,15 +82,35 @@ class Chat extends React.Component {
         style={{ marginBottom: arr.length - 1 === i ? "300px" : "15px" }}
         className={message.author === currentUser ? "sent" : "replies"}
       >
-        <img
-          src="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
-          alt="profile-pic"
-        />
-        <p>
-          {message.content}
-          <br />
-          <small>{this.renderTimestamp(message.timestamp)}</small>
-        </p>
+        {message.author === currentUser ? (
+          <React.Fragment>
+            <img
+              id="profile-img"
+              src={`${BASE_URL}${this.props.guest.image_url}`}
+              alt="profile-pic"
+            />
+
+            <p>
+              {message.content}
+              <br />
+              <small>{this.renderTimestamp(message.timestamp)}</small>
+            </p>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <img
+              id="profile-img"
+              src={`${BASE_URL}${this.props.admin.image_url}`}
+              alt="profile-pic"
+            />
+
+            <p>
+              {message.content}
+              <br />
+              <small>{this.renderTimestamp(message.timestamp)}</small>
+            </p>
+          </React.Fragment>
+        )}
       </li>
     ));
   };
@@ -121,10 +142,13 @@ class Chat extends React.Component {
 
   render() {
     return (
-      <Hoc>
+      <React.Fragment>
         <div className="messages">
           <ul id="chat-log">
-            {this.props.messages && this.renderMessages(this.props.messages)}
+            {this.props.messages &&
+              this.props.admin &&
+              this.props.guest &&
+              this.renderMessages(this.props.messages)}
             <div
               style={{ float: "left", clear: "both" }}
               ref={(el) => {
@@ -151,7 +175,7 @@ class Chat extends React.Component {
             </div>
           </form>
         </div>
-      </Hoc>
+      </React.Fragment>
     );
   }
 }
@@ -160,6 +184,9 @@ const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
     messages: state.message.messages,
+    chats: state.message.chats,
+    guest: state.message.guest,
+    admin: state.message.admin,
   };
 };
 

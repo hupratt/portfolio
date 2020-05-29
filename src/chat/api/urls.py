@@ -6,17 +6,18 @@ from .views import (
     ChatCreateView,
     ChatUpdateView,
     ChatDeleteView,
-    UserIDView
+    UserIDView,
+    ContactModelView,
 )
 
-app_name = 'chat'
+app_name = "chat"
 
 urlpatterns = [
-    path('', ChatListView.as_view()),
-    path('create/', ChatCreateView.as_view()),
-    path('<pk>', ChatDetailView.as_view()),
-    path('<pk>/update/', ChatUpdateView.as_view()),
-    path('<pk>/delete/', ChatDeleteView.as_view()),
+    path("", ChatListView.as_view()),
+    path("create/", ChatCreateView.as_view()),
+    path("<pk>", ChatDetailView.as_view()),
+    path("<pk>/update/", ChatUpdateView.as_view()),
+    path("<pk>/delete/", ChatDeleteView.as_view()),
     path("auth/user/", UserIDView.as_view(), name="user-staff-check"),
-
+    path("contact/<pk>/", ContactModelView.as_view()),
 ]

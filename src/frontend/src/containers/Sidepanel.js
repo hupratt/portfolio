@@ -5,6 +5,7 @@ import * as actions from "../store/actions/auth";
 import * as navActions from "../store/actions/nav";
 import * as messageActions from "../store/actions/message";
 import Contact from "../components/Contact";
+import { BASE_URL } from "../settings";
 
 const antIcon = <Icon type="loading" style={{ fontSize: 24 }} spin />;
 
@@ -25,12 +26,12 @@ class Sidepanel extends React.Component {
   componentDidUpdate() {
     if (!this.state.username) {
       this.waitForAuthDetails();
-      this.setState(
-        (prevState) => {
-          return { ...prevState, username: this.props.username };
-        },
-        () => console.log("state set", this.state)
-      );
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          username: this.props.username,
+        };
+      });
     }
   }
 
@@ -56,107 +57,117 @@ class Sidepanel extends React.Component {
     }
   };
 
-  activeChats = (chats) => {
-    let activeChats = <React.Fragment />;
-    if (chats && chats.length > 0) {
-      activeChats = chats.map((c) => {
-        return (
-          <Contact
-            key={c.id}
-            name="Harvey Specter"
-            picURL="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
-            status="busy"
-            chatURL={`/${c.id}`}
-          />
-        );
-      });
-    }
-    return activeChats;
-  };
   render() {
+    console.log("this.props.username", this.props.username);
     return (
       <div id="sidepanel">
         <div id="profile">
-          <div className="wrap">
-            <img
-              id="profile-img"
-              src="https://bookshop-images-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/resources/FB-Icon.png"
-              className="online"
-              alt=""
-            />
-            <p>Mike Ross</p>
-            <i
-              className="fa fa-chevron-down expand-button"
-              aria-hidden="true"
-            />
-            <div id="status-options">
-              <ul>
-                <li id="status-online" className="active">
-                  <span className="status-circle" /> <p>Online</p>
-                </li>
-                <li id="status-away">
-                  <span className="status-circle" /> <p>Away</p>
-                </li>
-                <li id="status-busy">
-                  <span className="status-circle" /> <p>Busy</p>
-                </li>
-                <li id="status-offline">
-                  <span className="status-circle" /> <p>Offline</p>
-                </li>
-              </ul>
-            </div>
-            <div id="expanded">
-              {this.props.loading ? (
-                <Spin indicator={antIcon} />
-              ) : this.props.isAuthenticated ? (
-                <button onClick={() => this.props.logout()} className="authBtn">
-                  <span>Logout</span>
-                </button>
+          {this.props.guest && this.props.admin && (
+            <div className="wrap">
+              {this.props.username == "hugo" ? (
+                <React.Fragment>
+                  <img
+                    id="profile-img"
+                    src={`${BASE_URL}${this.props.admin.image_url}`}
+                    className="online"
+                    alt=""
+                  />
+
+                  <p>{this.props.admin.fullname}</p>
+                </React.Fragment>
               ) : (
-                <div>
-                  <form method="POST" onSubmit={this.authenticate}>
-                    {this.state.loginForm ? (
-                      <div>
-                        <input
-                          name="username"
-                          type="text"
-                          placeholder="username"
-                        />
-                        <input
-                          name="password"
-                          type="password"
-                          placeholder="password"
-                        />
-                      </div>
-                    ) : (
-                      <div>
-                        <input
-                          name="username"
-                          type="text"
-                          placeholder="username"
-                        />
-                        <input name="email" type="email" placeholder="email" />
-                        <input
-                          name="password"
-                          type="password"
-                          placeholder="password"
-                        />
-                        <input
-                          name="password2"
-                          type="password"
-                          placeholder="password confirm"
-                        />
-                      </div>
-                    )}
+                <React.Fragment>
+                  <img
+                    id="profile-img"
+                    src={`${BASE_URL}${this.props.guest.image_url}`}
+                    className="online"
+                    alt=""
+                  />
 
-                    <button type="submit">Authenticate</button>
-                  </form>
-
-                  <button onClick={this.changeForm}>Switch</button>
-                </div>
+                  <p>{this.props.guest.fullname}</p>
+                </React.Fragment>
               )}
+
+              <i
+                className="fa fa-chevron-down expand-button"
+                aria-hidden="true"
+              />
+              <div id="status-options">
+                <ul>
+                  <li id="status-online" className="active">
+                    <span className="status-circle" /> <p>Online</p>
+                  </li>
+                  <li id="status-away">
+                    <span className="status-circle" /> <p>Away</p>
+                  </li>
+                  <li id="status-busy">
+                    <span className="status-circle" /> <p>Busy</p>
+                  </li>
+                  <li id="status-offline">
+                    <span className="status-circle" /> <p>Offline</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="expanded">
+                {this.props.loading ? (
+                  <Spin indicator={antIcon} />
+                ) : this.props.isAuthenticated ? (
+                  <button
+                    onClick={() => this.props.logout()}
+                    className="authBtn"
+                  >
+                    <span>Logout</span>
+                  </button>
+                ) : (
+                  <div>
+                    <form method="POST" onSubmit={this.authenticate}>
+                      {this.state.loginForm ? (
+                        <div>
+                          <input
+                            name="username"
+                            type="text"
+                            placeholder="username"
+                          />
+                          <input
+                            name="password"
+                            type="password"
+                            placeholder="password"
+                          />
+                        </div>
+                      ) : (
+                        <div>
+                          <input
+                            name="username"
+                            type="text"
+                            placeholder="username"
+                          />
+                          <input
+                            name="email"
+                            type="email"
+                            placeholder="email"
+                          />
+                          <input
+                            name="password"
+                            type="password"
+                            placeholder="password"
+                          />
+                          <input
+                            name="password2"
+                            type="password"
+                            placeholder="password confirm"
+                          />
+                        </div>
+                      )}
+
+                      <button type="submit">Authenticate</button>
+                    </form>
+
+                    <button onClick={this.changeForm}>Switch</button>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
         <div id="search">
           <label htmlFor="">
@@ -165,7 +176,20 @@ class Sidepanel extends React.Component {
           <input type="text" placeholder="Search Chats..." />
         </div>
         <div id="contacts">
-          <ul>{this.activeChats(this.props.chats)}</ul>
+          <ul>
+            {this.props.admin && (
+              // this.props.chat &&
+              // this.props.chat.length > 0 &&
+              // this.props.chat.forEach((_) => {
+              <Contact
+                key={this.props.admin.id}
+                name={this.props.admin.fullname}
+                picURL={`${BASE_URL}${this.props.admin.image_url}`}
+                status="away"
+                chatURL={`/${this.props.admin.id}`}
+              />
+            )}
+          </ul>
         </div>
         <div id="bottom-bar">
           <button id="addChat" onClick={() => this.openAddChatPopup()}>
@@ -189,6 +213,9 @@ const mapStateToProps = (state) => {
     token: state.auth.token,
     username: state.auth.username,
     chats: state.message.chats,
+    guest: state.message.guest,
+    admin: state.message.admin,
+    messages: state.message.messages,
   };
 };
 
