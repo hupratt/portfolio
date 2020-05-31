@@ -51,7 +51,7 @@ class Sidepanel extends React.Component {
   renderChats = (chats) => {
     let returnList = [];
     chats.forEach((chat) => {
-      return returnList.push(
+      returnList.push(
         <Contact
           key={this.props.admin.id}
           name={this.props.admin.fullname}
@@ -61,6 +61,7 @@ class Sidepanel extends React.Component {
         />
       );
     });
+    console.log(`${returnList.length} chat(s) were found`);
     return returnList;
   };
   changeForm = () => {

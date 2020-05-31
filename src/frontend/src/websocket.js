@@ -30,7 +30,7 @@ class WebSocketService {
         this.socketNewMessage(e.data);
       };
       this.socketRef.onerror = (e) => {
-        console.log(e.message);
+        console.log(e);
       };
       this.socketRef.onclose = () => {
         console.log("WebSocket closed let's reopen");
@@ -83,7 +83,7 @@ class WebSocketService {
     try {
       this.socketRef.send(JSON.stringify({ ...data }));
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   }
 
