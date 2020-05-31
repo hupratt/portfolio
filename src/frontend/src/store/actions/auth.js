@@ -1,14 +1,15 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
 import { HOST_URL } from "../../settings";
+import { getUserChats } from "./message";
 
-export const authStart = () => {
+const authStart = () => {
   return {
     type: actionTypes.AUTH_START,
   };
 };
 
-export const authSuccess = (username, token) => {
+const authSuccess = (username, token) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     token: token,
@@ -16,21 +17,14 @@ export const authSuccess = (username, token) => {
   };
 };
 
-export const authSessionSuccess = (username) => {
+const authSessionSuccess = (username) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
     username: username,
   };
 };
 
-export const grabPictureSuccess = (pic) => {
-  return {
-    type: actionTypes.GRAB_PICTURE_SUCCESS,
-    pic: pic,
-  };
-};
-
-export const authFail = (error) => {
+const authFail = (error) => {
   return {
     type: actionTypes.AUTH_FAIL,
     error: error,
@@ -161,7 +155,11 @@ export const checkLoggedInSession = () => {
       .then((res) => {
         dispatch(authSessionSuccess(res.data.user_name));
         dispatch(checkAuthTimeout(3600));
-        dispatch(grabPicture(res.data.userID));
+        // dispatch(getUserChats(res.data.user_name));
+        // console.log("res.data.participants", res.data);
+        // res.data.participants.forEach((element) => {
+        //   dispatch(grabPicture(element.userID));
+        // });
       })
       .catch((err) => {
         dispatch(authFail(err));
