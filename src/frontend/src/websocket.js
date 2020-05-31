@@ -58,7 +58,6 @@ class WebSocketService {
   }
 
   fetchMessages(username, chatId) {
-    console.log("fetching messages");
     this.sendMessage({
       command: "fetch_messages",
       username: username,

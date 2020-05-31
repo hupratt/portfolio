@@ -44,24 +44,21 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     showAddChatPopup: state.nav.showAddChatPopup,
-    authenticated: state.auth.token
+    authenticated: state.auth.token,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onTryAutoSignup: () => dispatch(actions.authCheckState()),
     onTryAutoSessionSignup: () => dispatch(actions.checkLoggedInSession()),
     closeAddChatPopup: () => dispatch(navActions.closeAddChatPopup()),
-    addMessage: message => dispatch(messageActions.addMessage(message)),
-    setMessages: messages => dispatch(messageActions.setMessages(messages))
+    addMessage: (message) => dispatch(messageActions.addMessage(message)),
+    setMessages: (messages) => dispatch(messageActions.setMessages(messages)),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

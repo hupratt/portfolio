@@ -82,21 +82,7 @@ class Chat extends React.Component {
         style={{ marginBottom: arr.length - 1 === i ? "300px" : "15px" }}
         className={message.author === currentUser ? "sent" : "replies"}
       >
-        {message.author === currentUser ? (
-          <React.Fragment>
-            <img
-              id="profile-img"
-              src={`${BASE_URL}${this.props.guest.image_url}`}
-              alt="profile-pic"
-            />
-
-            <p>
-              {message.content}
-              <br />
-              <small>{this.renderTimestamp(message.timestamp)}</small>
-            </p>
-          </React.Fragment>
-        ) : (
+        {message.author === "hugo" ? (
           <React.Fragment>
             <img
               id="profile-img"
@@ -105,7 +91,21 @@ class Chat extends React.Component {
             />
 
             <p>
-              {message.content}
+              {message.content} by {message.author}
+              <br />
+              <small>{this.renderTimestamp(message.timestamp)}</small>
+            </p>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <img
+              id="profile-img"
+              src={`${BASE_URL}${this.props.guest.image_url}`}
+              alt="profile-pic"
+            />
+
+            <p>
+              {message.content} by {message.author}
               <br />
               <small>{this.renderTimestamp(message.timestamp)}</small>
             </p>
@@ -141,8 +141,6 @@ class Chat extends React.Component {
   }
 
   render() {
-    console.log("chat pic", this.props.pic);
-
     return (
       <React.Fragment>
         <div className="messages">

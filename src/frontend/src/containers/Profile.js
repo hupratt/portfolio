@@ -6,39 +6,17 @@ import { BASE_URL } from "../settings";
 
 class Profile extends React.Component {
   render() {
-    if (this.props.token === null) {
-      return <Redirect to="/" />;
-    }
+    // if (this.props.token === null) {
+    //   return <Redirect to="/" />;
+    // }
     return (
-      <React.Fragment>
-        {this.props.guest && this.props.admin && (
-          <div className="contact-profile">
-            {this.props.guest.username == "hugo" ? (
-              <React.Fragment>
-                <img src={`${BASE_URL}${this.props.admin.image_url}`} alt="" />
-
-                <p>{this.props.admin.fullname}</p>
-                <div className="social-media">
-                  <i className="fa fa-facebook" aria-hidden="true" />
-                  <i className="fa fa-twitter" aria-hidden="true" />
-                  <i className="fa fa-instagram" aria-hidden="true" />
-                </div>
-              </React.Fragment>
-            ) : (
-              <React.Fragment>
-                <img src={`${BASE_URL}${this.props.guest.image_url}`} alt="" />
-
-                <p>{this.props.guest.fullname}</p>
-                <div className="social-media">
-                  <i className="fa fa-facebook" aria-hidden="true" />
-                  <i className="fa fa-twitter" aria-hidden="true" />
-                  <i className="fa fa-instagram" aria-hidden="true" />
-                </div>
-              </React.Fragment>
-            )}
-          </div>
-        )}
-      </React.Fragment>
+      <div className="contact-profile">
+        <div className="social-media">
+          <i className="fa fa-facebook" aria-hidden="true" />
+          <i className="fa fa-twitter" aria-hidden="true" />
+          <i className="fa fa-instagram" aria-hidden="true" />
+        </div>
+      </div>
     );
   }
 }
