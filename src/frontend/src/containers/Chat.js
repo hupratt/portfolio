@@ -19,6 +19,7 @@ class Chat extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.initialiseChat();
   }
 
@@ -120,6 +121,10 @@ class Chat extends React.Component {
   };
 
   componentDidMount() {
+    // console.log(
+    //   "this.props.match.params.chatID",
+    //   this.props.match.params.chatID
+    // );
     this.scrollToBottom();
   }
 

@@ -6,9 +6,6 @@ import { BASE_URL } from "../settings";
 
 class Profile extends React.Component {
   render() {
-    if (this.props.token === null) {
-      return <Redirect to="/" />;
-    }
     return (
       <div className="contact-profile">
         <div className="social-media">
