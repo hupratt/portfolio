@@ -93,7 +93,7 @@ class Sidepanel extends React.Component {
                     id="profile-img"
                     src={`${BASE_URL}${this.props.admin.image_url}`}
                     className="online"
-                    alt=""
+                    alt="profile-pic"
                   />
 
                   <p>{this.props.admin.fullname}</p>
@@ -104,7 +104,7 @@ class Sidepanel extends React.Component {
                     id="profile-img"
                     src={`${BASE_URL}${this.props.guest.image_url}`}
                     className="online"
-                    alt=""
+                    alt="profile-pic"
                   />
 
                   <p>{this.props.guest.fullname}</p>

@@ -6,7 +6,7 @@ const Contact = (props) => (
     <li className="contact">
       <div className="wrap">
         <span className={`contact-status ${props.status}`} />
-        <img src={props.picURL} alt="" />
+        <img src={props.picURL} alt="profile-pic" />
         <div className="meta">
           <p className="name">{props.name}</p>
         </div>
