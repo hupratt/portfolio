@@ -82,7 +82,6 @@ class Sidepanel extends React.Component {
   };
 
   render() {
-    console.log("this.state.chats", this.state.chats);
     return (
       <div id="sidepanel">
         <div id="profile">

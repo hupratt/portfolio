@@ -91,7 +91,7 @@ class Chat extends React.Component {
             />
 
             <p>
-              {message.content} by {message.author}
+              {message.content}
               <br />
               <small>{this.renderTimestamp(message.timestamp)}</small>
             </p>
@@ -105,7 +105,7 @@ class Chat extends React.Component {
             />
 
             <p>
-              {message.content} by {message.author}
+              {message.content}
               <br />
               <small>{this.renderTimestamp(message.timestamp)}</small>
             </p>
