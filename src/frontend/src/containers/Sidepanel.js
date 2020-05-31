@@ -13,6 +13,7 @@ class Sidepanel extends React.Component {
   state = {
     loginForm: true,
     username: null,
+    chats: [],
   };
 
   waitForAuthDetails = () => {
@@ -33,12 +34,35 @@ class Sidepanel extends React.Component {
         };
       });
     }
+    if (this.state.chats.length == 0 && this.props.chats.length > 0) {
+      this.setState((prevState) => {
+        return {
+          ...prevState,
+          chats: this.props.chats,
+        };
+      });
+    }
   }
 
   openAddChatPopup() {
     this.props.addChat();
   }
 
+  renderChats = (chats) => {
+    let returnList = [];
+    chats.forEach((chat) => {
+      return returnList.push(
+        <Contact
+          key={this.props.admin.id}
+          name={this.props.admin.fullname}
+          picURL={`${BASE_URL}${this.props.admin.image_url}`}
+          status="away"
+          chatURL={`/${chat.id}`}
+        />
+      );
+    });
+    return returnList;
+  };
   changeForm = () => {
     this.setState({ loginForm: !this.state.loginForm });
   };
@@ -58,7 +82,7 @@ class Sidepanel extends React.Component {
   };
 
   render() {
-    console.log("this.props.username", this.props.username);
+    console.log("this.state.chats", this.state.chats);
     return (
       <div id="sidepanel">
         <div id="profile">
@@ -177,18 +201,9 @@ class Sidepanel extends React.Component {
         </div>
         <div id="contacts">
           <ul>
-            {this.props.admin && (
-              // this.props.chat &&
-              // this.props.chat.length > 0 &&
-              // this.props.chat.forEach((_) => {
-              <Contact
-                key={this.props.admin.id}
-                name={this.props.admin.fullname}
-                picURL={`${BASE_URL}${this.props.admin.image_url}`}
-                status="away"
-                chatURL={`/${this.props.admin.id}`}
-              />
-            )}
+            {this.props.admin &&
+              this.state.chats.length > 0 &&
+              this.renderChats(this.state.chats)}
           </ul>
         </div>
         <div id="bottom-bar">

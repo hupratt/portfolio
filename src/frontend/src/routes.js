@@ -5,9 +5,9 @@ import Hoc from "./hoc/hoc";
 import Chat from "./containers/Chat";
 
 const BaseRouter = () => (
-  <Hoc>
+  <React.Fragment>
     <Route exact path="/:chatID/" component={Chat} />
-  </Hoc>
+  </React.Fragment>
 );
 
 export default BaseRouter;
