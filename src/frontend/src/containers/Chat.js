@@ -121,10 +121,6 @@ class Chat extends React.Component {
   };
 
   componentDidMount() {
-    // console.log(
-    //   "this.props.match.params.chatID",
-    //   this.props.match.params.chatID
-    // );
     this.scrollToBottom();
   }
 

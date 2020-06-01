@@ -53,11 +53,11 @@ class Sidepanel extends React.Component {
     chats.forEach((chat) => {
       returnList.push(
         <Contact
-          key={this.props.admin.id}
+          key={chat.id}
           name={this.props.admin.fullname}
           picURL={`${BASE_URL}${this.props.admin.image_url}`}
           status="away"
-          chatURL={`/${chat.id}`}
+          chatURL={`/chat/${chat.id}/`}
         />
       );
     });
