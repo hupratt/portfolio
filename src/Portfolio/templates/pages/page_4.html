@@ -1,4 +1,3 @@
-
 <!-- Material form contact -->
 <div class="card">
   <!-- <h5 class="card-header info-color white-text text-center py-4">
@@ -8,16 +7,26 @@
   <!--Card content-->
   <div class="card-body px-lg-5 pt-0">
     <!-- Form -->
-    <form id="my-form" class="text-center" action="sendmail/" method="post">
+    <form id="my-form" class="text-center" action="/" method="post">
       {% csrf_token %}
       <div id="page1" class="page-card-format">
         <!-- Name -->
         <div class="my-form">
-          <input type="text" class="inputText" placeholder="First Name" name="firstname"/>
+          <input
+            type="text"
+            class="inputText"
+            placeholder="First Name"
+            name="firstname"
+          />
           <div class="underline"></div>
         </div>
         <div class="my-form">
-          <input type="text" class="inputText" placeholder="Last Name" name="lastname"/>
+          <input
+            type="text"
+            class="inputText"
+            placeholder="Last Name"
+            name="lastname"
+          />
           <div class="underline"></div>
         </div>
         <a id="gotoPage2" class="next-btn">Next</a>
@@ -38,11 +47,19 @@
       </div>
       <div class="page-card-format hidden" id="page3">
         <!-- Subject -->
-        <select class="mdb-select" name="subject" >
-          <option id="selected" value="Choose an option" selected >Choose option</option>
-          <option value="Let's have a chat !"selected="Let's have a chat !">Let's have a chat !</option>
-          <option value="Report a bug on this website">Report a bug on this website</option>
-          <option value="I'd like to add a feature to my website">I'd like to add a feature to my website</option>
+        <select class="mdb-select" name="subject">
+          <option id="selected" value="Choose an option" selected
+            >Choose option</option
+          >
+          <option value="Let's have a chat !" selected="Let's have a chat !"
+            >Let's have a chat !</option
+          >
+          <option value="Report a bug on this website"
+            >Report a bug on this website</option
+          >
+          <option value="I'd like to add a feature to my website"
+            >I'd like to add a feature to my website</option
+          >
           <option value="Fix my website">Fix my website</option>
         </select>
 
@@ -77,14 +94,12 @@
         <label>What is your price range?</label>
         <!-- Slider price_range -->
 
-        <input class="js-range-slider" id="timeline" name="urgency"/>
+        <input class="js-range-slider" id="timeline" name="urgency" />
         <label>How urgent is it?</label>
-        <div class="g-recaptcha" data-sitekey="6Le_w9IUAAAAAD7mY7e-k54bTMcGhk8OkygBCPgx"></div>
         <!-- Send button -->
         <button
           class="formbtn btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect"
           type="submit"
-          
         >
           Send
         </button>
@@ -95,5 +110,3 @@
 </div>
 
 <!-- Material form contact -->
-
-
