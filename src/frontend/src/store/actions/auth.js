@@ -17,10 +17,19 @@ const authSuccess = (username, token) => {
   };
 };
 
-const authSessionSuccess = (username) => {
+const authSessionSuccess = (data) => {
   return {
     type: actionTypes.AUTH_SUCCESS,
-    username: username,
+    user_name: data.user_name,
+    user_staff: data.user_staff,
+    userID: data.userID,
+    email: data.email,
+  };
+};
+const serializePic = (data) => {
+  return {
+    type: actionTypes.AUTH_PICTURE,
+    image_url: data.image_url,
   };
 };
 
@@ -153,13 +162,14 @@ export const checkLoggedInSession = () => {
         },
       })
       .then((res) => {
-        dispatch(authSessionSuccess(res.data.user_name));
+        dispatch(authSessionSuccess(res.data));
         dispatch(checkAuthTimeout(3600));
-        // dispatch(getUserChats(res.data.user_name));
-        // console.log("res.data.participants", res.data);
-        // res.data.participants.forEach((element) => {
-        //   dispatch(grabPicture(element.userID));
-        // });
+        return res.data.userID;
+      })
+      .then((res) => {
+        axios.get(`${HOST_URL}/chat/contact/${res}/`).then((res) => {
+          dispatch(serializePic(res.data));
+        });
       })
       .catch((err) => {
         dispatch(authFail(err));

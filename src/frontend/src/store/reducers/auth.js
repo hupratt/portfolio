@@ -7,6 +7,10 @@ const initialState = {
   error: null,
   loading: false,
   pic: null,
+  image_url: null,
+  email: null,
+  userID: null,
+  user_staff: null,
 };
 
 const authStart = (state, action) => {
@@ -19,9 +23,18 @@ const authStart = (state, action) => {
 const authSuccess = (state, action) => {
   return updateObject(state, {
     token: action.token,
-    username: action.username,
+    username: action.user_name,
+    user_staff: action.user_staff,
+    userID: action.userID,
+    email: action.email,
+    image_url: action.image_url,
     error: null,
     loading: false,
+  });
+};
+const updatePic = (state, action) => {
+  return updateObject(state, {
+    image_url: action.image_url,
   });
 };
 
@@ -53,6 +66,8 @@ const reducer = (state = initialState, action) => {
       return authStart(state, action);
     case actionTypes.AUTH_SUCCESS:
       return authSuccess(state, action);
+    case actionTypes.AUTH_PICTURE:
+      return updatePic(state, action);
     case actionTypes.AUTH_FAIL:
       return authFail(state, action);
     case actionTypes.AUTH_LOGOUT:

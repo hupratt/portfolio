@@ -13,10 +13,17 @@ from .serializers import ChatSerializer, ContactModelSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
+from rest_auth.views import UserDetailsView
 
 # from allauth.socialaccount.models import SocialToken
 
 User = get_user_model()
+
+
+# class ContactListView(ListAPIView):
+#     queryset = Contact.objects.all()
+#     serializer_class = ContactModelSerializer
+#     permission_classes = (permissions.IsAuthenticated,)
 
 
 class UserIDView(APIView):

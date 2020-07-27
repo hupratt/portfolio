@@ -77,6 +77,11 @@ class Chat extends React.Component {
 
   renderMessages = (messages) => {
     const currentUser = this.props.username;
+    console.log("currentUser", currentUser);
+    console.log("this.props.admin", this.props.admin);
+    messages.forEach((message) => {
+      console.log("message", message);
+    });
     return messages.map((message, i, arr) => (
       <li
         key={message.id}
@@ -88,7 +93,7 @@ class Chat extends React.Component {
             <img
               id="profile-img"
               src={`${BASE_URL}${this.props.admin.image_url}`}
-              alt="profile-pic"
+              alt="profile-pic-admin"
             />
 
             <p>
@@ -101,7 +106,7 @@ class Chat extends React.Component {
           <React.Fragment>
             <img
               id="profile-img"
-              src={`${BASE_URL}${this.props.guest.image_url}`}
+              src={`${BASE_URL}${this.props.image_url}`}
               alt="profile-pic"
             />
 
@@ -184,6 +189,7 @@ class Chat extends React.Component {
 const mapStateToProps = (state) => {
   return {
     username: state.auth.username,
+    image_url: state.auth.image_url,
     pic: state.auth.pic,
     messages: state.message.messages,
     chats: state.message.chats,
