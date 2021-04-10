@@ -30,8 +30,6 @@ else:
         )
     )
 
-sys.path.append("/home/ubuntu/Dev/PythonBots")
-
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Portfolio.settings")
 
 application = get_wsgi_application()
