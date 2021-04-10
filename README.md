@@ -1,6 +1,6 @@
 # Portfolio web application
 
-https://www.craftstudios.tech
+https://www.craftstudios.eu
 
 ## Architecture
 
