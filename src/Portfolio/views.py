@@ -105,6 +105,6 @@ def index(request):
             "Your message was successfully sent to: " + settings.EMAIL_HOST_RECIPIENT,
         )
         return HttpResponseRedirect("/")
-    else:
+    if request.method == "POST":
         form = EmailPostForm()
     return render(request, "index.html", {"today": today, "form": form})
