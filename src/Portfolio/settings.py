@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY","")
 if os.environ.get("DJANGO_DEVELOPMENT") is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = ["portfolio.craftstudios.shop", "craftstudios.eu", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["portfolio.craftstudios.shop", "www.craftstudios.shop", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -236,7 +236,7 @@ CHANNEL_LAYERS = {
 
 CSRF_COOKIE_NAME = "csrftoken"
 WSGI_APPLICATION = "Portfolio.wsgi.application"
-ASGI_APPLICATION = "Portfolio.routing.application"
+# ASGI_APPLICATION = "Portfolio.routing.application"
 
 BASE_URL = os.getenv("BASE_URL", "")
 LOGIN_REDIRECT_URL = f"{BASE_URL}/chat/"
