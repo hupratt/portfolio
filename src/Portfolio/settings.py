@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY","")
 if os.environ.get("DJANGO_DEVELOPMENT") is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = ["www.craftstudios.eu", "craftstudios.eu", "127.0.0.1"]
+ALLOWED_HOSTS = ["portfolio.craftstudios.shop", "craftstudios.eu", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -91,7 +91,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
-    "http://localhost:8000",
+    "http://localhost:7000",
     "http://127.0.0.1:8000",
     "http://localhost:3000",
     "http://127.0.0.1:9000",

@@ -5,7 +5,7 @@ import sys
 import dotenv
 
 def main():
-    if os.environ.get("DJANGO_DEVELOPMENT") == "true":
+    if os.environ.get("DJANGO_DEVELOPMENT") == "True":
         dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env.development'))
     else:
         dotenv.read_dotenv(os.path.join(os.path.dirname(os.path.abspath(__file__)),'.env'))
