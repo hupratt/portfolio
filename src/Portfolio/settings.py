@@ -97,9 +97,6 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:9000",
 ]
 
-# CORS_ORIGIN_REGEX_WHITELIST = [
-#     r"^https://\rural\.craftstudios\.eu$",
-# ]
 
 ROOT_URLCONF = "Portfolio.urls"
 
