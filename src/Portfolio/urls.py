@@ -12,10 +12,10 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("privacy/", views.privacy, name="privacy"),
     path("terms/", views.terms, name="terms"),
-    path("chat/", include("chat.urls", namespace="chat")),
+    # path("chat/", include("chat.urls", namespace="chat")),
     path("admin/", admin.site.urls),
-    path("accounts/", include("allauth.urls")),
-    path("api-auth/", include("rest_framework.urls")),
+    # path("accounts/", include("allauth.urls")),
+    # path("api-auth/", include("rest_framework.urls")),
 ]
 
 urlpatterns += i18n_patterns(prefix_default_language=True)

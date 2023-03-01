@@ -21,13 +21,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get("SECRET_KEY","")
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if os.environ.get("DJANGO_DEVELOPMENT") is not None:
     DEBUG = True
 
-ALLOWED_HOSTS = ["portfolio.craftstudios.shop", "www.craftstudios.shop", "127.0.0.1", "localhost"]
+ALLOWED_HOSTS = [
+    "portfolio.craftstudios.shop",
+    "www.craftstudios.shop",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
@@ -43,22 +48,22 @@ INSTALLED_APPS = [
     "corsheaders",
     "django_extensions",
     # chat api
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.google",
-    "allauth.socialaccount.providers.github",
-    "allauth.socialaccount.providers.facebook",
-    "rest_auth",
-    "rest_auth.registration",
-    "rest_framework",
-    "rest_framework.authtoken",
-    "channels",
+    # "allauth",
+    # "allauth.account",
+    # "allauth.socialaccount",
+    # "allauth.socialaccount.providers.google",
+    # "allauth.socialaccount.providers.github",
+    # "allauth.socialaccount.providers.facebook",
+    # "rest_auth",
+    # "rest_auth.registration",
+    # "rest_framework",
+    # "rest_framework.authtoken",
+    # "channels",
     # end chat api
     "posts",
     "emails",
-    "chat.apps.ChatConfig",
-    "frontend",
+    # "chat.apps.ChatConfig",
+    # "frontend",
 ]
 SITE_ID = 1
 
@@ -136,7 +141,7 @@ DATABASES = {
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'craftstudios.sqlite3', 
+#         'NAME': 'craftstudios.sqlite3',
 #     }
 # }
 
@@ -148,9 +153,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 
