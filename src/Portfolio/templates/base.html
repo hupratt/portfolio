@@ -3,10 +3,6 @@
   <head>
     {% load static i18n %} 
 
-    <!--[if IE]>
-      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <![endif]-->
-
     {% get_current_language as LANGUAGE_CODE %}
     
     <meta charset="UTF-8" lang="{{ LANGUAGE_CODE }}" />
@@ -34,7 +30,8 @@
       rel="stylesheet"
       href="{% static 'vendor/material/material.min.css' %}"
     />
-    <link lazyload rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link lazyload
       rel="stylesheet"
       href="{% static 'vendor/hamburgers/hamburgers.min.css' %}"
@@ -44,6 +41,7 @@
       rel="stylesheet"
       href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
     <!-- <![endif]-->
 
   
@@ -113,7 +111,7 @@
       ></script>
       <script async type="text/javascript" src="{% static 'js/form.js' %}"></script>
       <script async type="text/javascript" src="{% static 'js/slider.js' %}"></script>
-      <script async
+      <script
         type="text/javascript"
         src="{% static 'js/loading.js' %}"
       ></script>

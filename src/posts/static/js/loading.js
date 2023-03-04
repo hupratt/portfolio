@@ -1,178 +1,115 @@
 window.addEventListener("load", () => {
-  const _duration = 200;
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  var ls = localStorage.getItem('namespace.visited')
-  
-  //only display on first (ever) visit
-  if (ls == null) {
-    localStorage.setItem('namespace.visited', 1);
+  //Getting dom elements
+  let mouseCursor = document.querySelector(".cursor-effect");
+  let ctaLinks = document.querySelectorAll(
+    ".about-content a, .footer-links a, .more-about a"
+  );
 
-  sleep(20).then(() => {
-    anime
-      .timeline({
-        easing: "easeInOutCubic"
-      })
-      .add({
-        targets: "#Letter_1",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_1").setAttribute("stroke", "black");
-        }
-      })
-      .add({
-        targets: "#Letter_2",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_2").setAttribute("stroke", "black");
-        }
-      })
-      .add({
-        targets: "#Letter_3",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_3").setAttribute("stroke", "black");
-          document.getElementById("Letter_1").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_1")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_4",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_4").setAttribute("stroke", "black");
-          document.getElementById("Letter_2").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_2")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_5",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_5").setAttribute("stroke", "black");
-          document.getElementById("Letter_3").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_3")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_6",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_6").setAttribute("stroke", "black");
-          document.getElementById("Letter_4").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_4")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_7",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_7").setAttribute("stroke", "black");
-          document.getElementById("Letter_5").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_5")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_8",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_8").setAttribute("stroke", "black");
-          document.getElementById("Letter_6").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_6")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_9",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_9").setAttribute("stroke", "black");
-          document.getElementById("Letter_7").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_7")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_10",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_10").setAttribute("stroke", "black");
-          document.getElementById("Letter_8").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_8")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_11",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_11").setAttribute("stroke", "black");
-          document.getElementById("Letter_9").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_9")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Letter_12",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_12").setAttribute("stroke", "black");
-          document.getElementById("Letter_10").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_10")
-            .setAttribute("stroke", "transparent");
-          document.getElementById("Letter_11").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_11")
-            .setAttribute("stroke", "transparent");
-        }
-      })
-      .add({
-        targets: "#Line",
-        strokeDashoffset: [anime.setDashoffset, 0],
-        duration: _duration,
-        begin: function(anim) {
-          document.getElementById("Letter_12").setAttribute("fill", "black");
-          document
-            .getElementById("Letter_12")
-            .setAttribute("stroke", "transparent");
-          document.getElementById("Line").setAttribute("stroke", "black");
-        },
-        complete: anim => {
-          sleep(1000).then(() => {
-            $(".loading").remove();
-          });
-        }
-      });
+  //  Mouse effect
+  window.addEventListener("mousemove", cursor);
+
+  function cursor(e) {
+    mouseCursor.style.top = e.pageY + "px";
+    mouseCursor.style.left = e.pageX + "px";
+  }
+
+  ctaLinks.forEach((link) => {
+    link.addEventListener("mouseover", () => {
+      mouseCursor.classList.add("link-grow");
+    });
+    link.addEventListener("mouseleave", () => {
+      mouseCursor.classList.remove("link-grow");
+    });
   });
-}else{
-  $(".loading").remove();
+
+  //GSAP animations
+  function fadeOut() {
+    if(document.querySelector("#intro-btn")) {
+    TweenMax.to(".intro-btn", 1, {
+      opacity: 0,
+      y: -100,
+    });
+    TweenMax.to(".text", 1, {
+      y: "-100%",
+    });
+    TweenMax.to(".slider", 2, {
+      y: "-100%",
+      delay: 1,
+      ease: Expo.easeInOut,
+    });
+    TweenMax.to(".slider-2", 2, {
+      y: "-100%",
+      delay: 1.4,
+      ease: Power2.easeInOut,
+    });
+    TweenMax.to(
+      ".intro",
+      2,
+      {
+        y: "-100%",
+        delay: 2,
+        ease: Power2.easeInOut,
+      },
+      "-=.5"
+    );
+    TweenMax.to(".content", 2, {
+      y: 0,
+      ease: Power2.easeInOut,
+    });
+  } else{
+    console.log('=== element not found loading.js [60] ===', 'element not found');
+  }}
+  ///Timeline
+  const tl = gsap.timeline({
+    defaults: { ease: "power1.out" },
+  });
+
+  tl.to(".text", {
+    y: "0%",
+    duration: 1,
+    stagger: 0.4,
+  });
+
+  let trans = () => {
+    document.documentElement.classList.add("transition");
+    window.setTimeout(() => {
+      document.documentElement.classList.remove("transition");
+    }, 1200);
+  };
+
+  document.getElementById("intro-btn").addEventListener("click", fadeOut);
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  var ls = localStorage.getItem("namespace.visited");
+
+  // only display on first (ever) visit
+  // if (ls == null) {
+  localStorage.setItem("namespace.visited", 1);
+  const svgPath = document.querySelectorAll(".path");
+
+  anime({
+    targets: svgPath,
+    begin: function() {
+      document.querySelector(".loading").style.opacity = 1;
+    },
+    strokeDashoffset: [anime.setDashoffset, 0],
+    easing: "easeInCubic",
+    duration: 700,
+    opacity: "1",
+    delay: (el, i) => {
+      return i * 500;
+    },
+
+    complete: (anim) => {
+      sleep(1000).then(() => {
+        $(".loading").remove();
+      });
+    },
+  });
 }
-});
+// else{
+//   $(".loading").remove();
+// }}
+);

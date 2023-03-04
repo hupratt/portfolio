@@ -56,14 +56,16 @@
 }
 
 .loading {
-  overflow: hidden;
   height: 100vh;
-  /* width:1px; */
-  background-color: #ffffff;
-  background-size: 30vh;
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  width: 100%;
+  background-color: #fe974d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: hidden;
 }
+
 
 body {
   color: var(--section-text-color);
