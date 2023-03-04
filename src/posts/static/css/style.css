@@ -83,7 +83,10 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-h2 {
+p {
+  color: var(--section-text-color);
+}
+  h2 {
   color: var(--section-text-color);
   font-size: 5rem;
   font-weight: 900;

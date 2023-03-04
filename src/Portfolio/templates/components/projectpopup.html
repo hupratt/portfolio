@@ -6,141 +6,77 @@
     ><i></i
   ></a>
 
-  <div class="slider js-slider">
-    <div class="slider__inner js-slider__inner"></div>
-
-    <div class="slide js-slide">
-      <div class="slide__content">
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/lpp logo.jpg' %}"
-            onclick="location.href='https://www.lapetiteportugaise.eu/';"
-          />
-        </figure>
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/lpp main.jpg' %}"
-            onclick="location.href='https://www.lapetiteportugaise.eu/';"
-          />
-        </figure>
-      </div>
-      <div class="slider__text js-slider__text">
-        <div class="slider__text-line js-slider__text-line">
-          <div>Book store</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>landing page</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>and events page</div>
-        </div>
+  <div class="carousel">
+    <div class="carousel__nav">
+     <span id="moveLeft" class="carousel__arrow">
+          <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+  </svg>
+      </span>
+      <span id="moveRight" class="carousel__arrow" >
+        <svg class="carousel__icon"  width="24" height="24" viewBox="0 0 24 24">
+    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+  </svg>    
+      </span>
+    </div>
+    <div class="carousel-item carousel-item--1">
+      <div class="carousel-item__image"></div>
+      <div class="carousel-item__info">
+        <div class="carousel-item__container">
+        <h2 class="carousel-item__subtitle">The grand moment </h2>
+        <h1 class="carousel-item__title">Le tour</h1>
+        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <a href="#" class="carousel-item__btn">Explore the tour</a>
+          </div>
       </div>
     </div>
-
-    <div class="slide js-slide">
-      <div class="slide__content">
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/aris logo.jpg' %}"
-            onclick="location.href='https://github.com/hupratt/jira-utilities/tree/master/';"
-          />
-        </figure>
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/jira desktop app main.jpg' %}"
-            onclick="location.href='https://github.com/hupratt/jira-utilities/tree/master/';"
-          />
-        </figure>
-      </div>
-      <div class="slider__text js-slider__text">
-        <div class="slider__text-line js-slider__text-line">
-          <div>Desktop app</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>for scraping</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>and ticket management</div>
-        </div>
+    <div class="carousel-item carousel-item--2">
+      <div class="carousel-item__image"></div>
+      <div class="carousel-item__info">
+        <div class="carousel-item__container">
+        <h2 class="carousel-item__subtitle">The big window </h2>
+        <h1 class="carousel-item__title">Minimal window</h1>
+        <p class="carousel-item__description">Clear Glass Window With Brown and White Wooden Frame iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <a href="#" class="carousel-item__btn">Read the article</a>
+          </div>
       </div>
     </div>
-
-    <div class="slide js-slide">
-      <div class="slide__content">
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/linkedin-big.jpg' %}"
-            onclick="location.href='https://www.pythonbots.software/';"
-          />
-        </figure>
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/pbots.jpg' %}"
-            onclick="location.href='https://www.pythonbots.software/';"
-          />
-        </figure>
-      </div>
-
-      <div class="slider__text js-slider__text">
-        <div class="slider__text-line js-slider__text-line">
-          <div>Blog and</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>CMS website</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>about datascience</div>
-        </div>
+      <div class="carousel-item carousel-item--3">
+      <div class="carousel-item__image"></div>
+      <div class="carousel-item__info">
+        <div class="carousel-item__container">
+        <h2 class="carousel-item__subtitle">Tropical palms </h2>
+        <h1 class="carousel-item__title">Palms</h1>
+        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <a href="#" class="carousel-item__btn">Explore the palms</a>
+          </div>
       </div>
     </div>
-
-    <div class="slide js-slide">
-      <div class="slide__content">
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/craft bigger.jpg' %}"
-            onclick="location.href='https://www.craftstudios.shop/';"
-          />
-        </figure>
-        <figure class="slide__img js-slide__img">
-          <img
-            src="{% static 'img/projects/craft studios main.jpg' %}"
-            onclick="location.href='https://www.craftstudios.shop/';"
-          />
-        </figure>
-      </div>
-      <div class="slider__text js-slider__text">
-        <div class="slider__text-line js-slider__text-line">
-          <div>Agency</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>advertising</div>
-        </div>
-        <div class="slider__text-line js-slider__text-line">
-          <div>web development services</div>
-        </div>
+    
+     <div class="carousel-item carousel-item--4">
+      <div class="carousel-item__image"></div>
+      <div class="carousel-item__info">
+        <div class="carousel-item__container">
+        <h2 class="carousel-item__subtitle">Beach </h2>
+        <h1 class="carousel-item__title">The beach </h1>
+        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <a href="#" class="carousel-item__btn">Explore the beach</a>
+          </div>
       </div>
     </div>
-    <nav class="slider__nav js-slider__nav">
-      <div class="slider-bullet js-slider-bullet">
-        <span class="slider-bullet__text js-slider-bullet__text">01</span>
-        <span class="slider-bullet__line js-slider-bullet__line"></span>
+    
+   <div class="carousel-item carousel-item--5">
+      <div class="carousel-item__image"></div>
+      <div class="carousel-item__info">
+        <div class="carousel-item__container">
+        <h2 class="carousel-item__subtitle">The white building </h2>
+        <h1 class="carousel-item__title">White building</h1>
+        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+        <a href="#" class="carousel-item__btn">Read the article</a>
+          </div>
       </div>
-      <div class="slider-bullet js-slider-bullet">
-        <span class="slider-bullet__text js-slider-bullet__text">02</span>
-        <span class="slider-bullet__line js-slider-bullet__line"></span>
-      </div>
-      <div class="slider-bullet js-slider-bullet">
-        <span class="slider-bullet__text js-slider-bullet__text">03</span>
-        <span class="slider-bullet__line js-slider-bullet__line"></span>
-      </div>
-      <div class="slider-bullet js-slider-bullet">
-        <span class="slider-bullet__text js-slider-bullet__text">04</span>
-        <span class="slider-bullet__line js-slider-bullet__line"></span>
-      </div>
-    </nav>
-
-    <div class="scroll js-scroll"></div>
+    </div>
+    
   </div>
 
   <div class="vert-text">
