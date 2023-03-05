@@ -1522,7 +1522,7 @@ li {
   width: 15rem;
   display: flex;
   align-items: center;
-  z-index: 10;
+  z-index: -10;
 }
 .vert-text span {
   display: block;

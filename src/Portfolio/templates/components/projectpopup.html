@@ -1,12 +1,16 @@
 {% load static i18n %}
 
 <!-- Start of Page 5  -->
+
 <nav id="fh5co-main-nav" role="navigation">
+  <h2 id="background-number" style="z-index: 3;position: absolute;
+  top: 0;margin-top: 2rem"></h2>
   <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle active" id="closeme"
     ><i></i
   ></a>
 
   <div class="carousel">
+    
     <div class="carousel__nav">
      <span id="moveLeft" class="carousel__arrow">
           <svg class="carousel__icon" width="24" height="24" viewBox="0 0 24 24">
@@ -26,7 +30,7 @@
         <h2 class="carousel-item__subtitle">Python web application</h2>
         <h1 class="carousel-item__title">Travel blog</h1>
         <p class="carousel-item__description">This is a demo of what Wagtail CMS can offer. The front end is a React Redux single page app that uses Maplibre to build the map layer and draw paths on the map. <br>
-        The website has an in-built integration with machine translation services like Deepl and Google translate for a one click article translation.</p>
+        The website has an in-built integration with machine translation services like Deepl and Google translate for a one-click article translation.</p>
         <a href="https://makita.craftstudios.shop/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
@@ -35,10 +39,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The big window </h2>
-        <h1 class="carousel-item__title">Minimal window</h1>
-        <p class="carousel-item__description">Clear Glass Window With Brown and White Wooden Frame iste natus error sit voluptatem accusantium doloremque laudantium.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Python web application</h2>
+        <h1 class="carousel-item__title">Hotel booking</h1>
+        <p class="carousel-item__description">Booking is a classic django web app with static templating running on Apache as a web server. Apache proxies requests to the standard WSGI application which invokes the Booking application itself.</p>
+        <a href="https://booking.craftstudios.shop" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -46,10 +50,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">Tropical palms </h2>
-        <h1 class="carousel-item__title">Palms</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Explore the palms</a>
+        <h2 class="carousel-item__subtitle">Serverless react app</h2>
+        <h1 class="carousel-item__title">React calculator</h1>
+        <p class="carousel-item__description">Mortgage-calculator-react is a react single page application that is compiled into a single index.js file with webpack. The page is hosted on AWS S3</p>
+        <a href="https://mortgage-calculator-f1492f08-f236-4a55-afb7-70ded209cb25.s3.eu-west-2.amazonaws.com/serverless/index.html" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -58,10 +62,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">Beach </h2>
-        <h1 class="carousel-item__title">The beach </h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Explore the beach</a>
+        <h2 class="carousel-item__subtitle">Python web application</h2>
+        <h1 class="carousel-item__title">Coach</h1>
+        <p class="carousel-item__description">Coach is a calendar app built with Django on the backend and react in the frontend. The app is bundled with Webpack and transpiled with Babel. The app features OAuth authentication with facebook google and github. The frontend is integrated into django as an "app". It's static files get fed into the main django static folder so as to avoid having to manage more than one agent on our server.</p>
+        <a href="https://coach.craftstudios.shop/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -70,10 +74,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Serverless javascript</h2>
+        <h1 class="carousel-item__title">Interactive CV</h1>
+        <p class="carousel-item__description">A UI experiment on a Curriculum vitæ with no bundlers</p>
+        <a href="https://rihab2-f1492f08-f236-4a55-afb7-70ded209cb24.s3.eu-west-2.amazonaws.com/index.html" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -82,22 +86,23 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Python scripting</h2>
+        <h1 class="carousel-item__title">Picture downloader</h1>
+        <p class="carousel-item__description">Used a combination of tools to automate the bulk download of facebook pictures on android. Android emulation is done on Waydroid and Apium server acts as a JSON layer between Selenium and our Python script</p>
+        <a href="https://github.com/hupratt/facebook-crawler" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
     
-   <div class="carousel-item carousel-item--7">
+    
+    <div class="carousel-item carousel-item--7">
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Python web application</h2>
+        <h1 class="carousel-item__title">Website analytics</h1>
+        <p class="carousel-item__description">This project is a fork of the popular Posthog repo before they moved to Typescript. The backend features asynchronous tasks via a task queue and an in memory database. The front end has a live view of who is visiting what page and what links they are clicking. </p>
+        <a href="https://posthog.craftstudios.shop/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -106,10 +111,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Python web application</h2>
+        <h1 class="carousel-item__title">Ecommerce</h1>
+        <p class="carousel-item__description">Ecom is a django single page (SPA) web app running on apache as a web server. <br> The latest multiprocessing apache module is used to create parallel replicas of our app. Each apache "event_worker" is 1 process and 1 python app. 1 process launches multiple threads so that each app is concurrently accessed by multiple users. This allows us to have replication without installing Docker</p>
+        <a href="https://shop.lapetiteportugaise.eu/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -118,10 +123,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Node.js app</h2>
+        <h1 class="carousel-item__title">Web streaming</h1>
+        <p class="carousel-item__description">Based on the latest and greatest from google RTCMultiConnectionFork is an express.js that utilizes the WebRTC protocol on our web browsers</p>
+        <a href="https://rtc.craftstudios.shop/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
@@ -130,10 +135,10 @@
       <div class="carousel-item__image"></div>
       <div class="carousel-item__info">
         <div class="carousel-item__container">
-        <h2 class="carousel-item__subtitle">The white building </h2>
-        <h1 class="carousel-item__title">White building</h1>
-        <p class="carousel-item__description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-        <a href="#" class="carousel-item__btn">Read the article</a>
+        <h2 class="carousel-item__subtitle">Node.js app</h2>
+        <h1 class="carousel-item__title">Video streaming</h1>
+        <p class="carousel-item__description">A fork of a fellow github user that mimicks line by line the youtube UI. It features a React redux express js application. I needed to do this fork because the original repo does not allow streaming local files </p>
+        <a href="https://youtube.craftstudios.shop/" class="carousel-item__btn">Visit the website here</a>
           </div>
       </div>
     </div>
