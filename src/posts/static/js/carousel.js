@@ -2,6 +2,12 @@ window.addEventListener("load", () => {
     $('.carousel-item').eq(0).addClass('active');
     var total = $('.carousel-item').length;
     var current = 0;
+    $('.carousel-item.active').on('click', function(){
+      $('.carousel-item.active .carousel-item__image').css("width","100%");
+      $('.carousel-item.active .carousel-item__image').css("flex-basis","100%");
+      $('.carousel-item.active .carousel-item__info').css("display","none");
+      // $('.carousel-item.active').css("display","block");
+    });
     $('#moveRight').on('click', function(){
       var next=current;
       current= current+1;

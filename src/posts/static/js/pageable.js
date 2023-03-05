@@ -17,11 +17,9 @@ $(document).ready(function() {
   var settings = document.getElementById("settings");
   var buttons = document.querySelectorAll("button");
   var selects = document.querySelectorAll("select");
-  var hamburger = document.getElementById("hamburger");
 
   const pageable = new Pageable("main", {
     animation: 400, // the duration in ms of the scroll animation
-    onInit: init,
     delay: 300, // the delay in ms before the scroll animation starts
     throttle: 50, // the interval in ms that the resize callback is fired
     onFinish: update,
@@ -42,9 +40,7 @@ $(document).ready(function() {
   function update(data) {
     var that = this;
     selects[0].value = this.index + 1;
-    selects[1].value = this.anchors[this.index];
-    selects[2].value = this.horizontal ? "horizontal" : "vertical";
-
+ 
     anchors.forEach(function(anchor, i) {
       anchor.firstElementChild.classList.toggle("active", i === that.index);
     });
@@ -52,15 +48,6 @@ $(document).ready(function() {
 
   function init() {
     var that = this;
-
-    window.bar = new MiniBar("#scroll", {
-      alwaysShowBars: true
-    });
-
-    toggle.addEventListener("click", function(e) {
-      settings.classList.toggle("active");
-      hamburger.classList.toggle("is-active");
-    });
 
     buttons.forEach(function(button) {
       button.onclick = toggleMethod;
