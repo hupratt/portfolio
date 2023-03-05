@@ -323,22 +323,6 @@ html {
     border-bottom: 3px dotted var(--mainColor)
 }
 
-input[type="checkbox"] {
-    height: 0;
-    width: 0;
-    visibility: hidden
-}
-
-input[type="checkbox"]:checked+label {
-    background: var(--mainColor)
-}
-
-input[type="checkbox"]:checked+label:after {
-    left: calc(100% - 5px);
-    -webkit-transform: translateX(-100%);
-    transform: translateX(-100%)
-}
-
 
 .intro p {
     color: var(--white);
