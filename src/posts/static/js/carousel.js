@@ -5,11 +5,13 @@ window.addEventListener("load", () => {
 
   $(document).on('click', '.carousel-item.active', function () {
     if ($('.carousel-item.active .carousel-item__image')[0].style.width=="60%"){
+      $('.carousel-item.active .carousel-item__image').css("background-position","center");
       $('.carousel-item.active .carousel-item__image').css("width","100%");
       $('.carousel-item.active .carousel-item__image').css("flex-basis","100%");
       $('.carousel-item.active .carousel-item__info').css("display","none");
     } else {
       $('.carousel-item.active .carousel-item__image').css("width","60%");
+      $('.carousel-item.active .carousel-item__image').css("background-position","left");
       $('.carousel-item.active .carousel-item__image').css("flex-basis","60%");
       $('.carousel-item.active .carousel-item__info').css("display","flex");
 

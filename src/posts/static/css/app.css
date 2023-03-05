@@ -73,8 +73,7 @@ html {
     position: relative;
     margin-top: 2em;
     z-index: 10;
-    -webkit-transform: translateX(-75%);
-    transform: translateX(-75%)
+    opacity: 0;
 }
 
 #intro-btn:hover {
@@ -437,12 +436,12 @@ body {
     -webkit-align-self: flex-end;
     -webkit-flex-basis: 60%; */
 
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     transform: translateX(100%);
     transition: 0.6s all ease-in-out;
+    cursor: pointer;
 }
 
 .carousel-item__subtitle {
@@ -555,7 +554,7 @@ body {
     position: absolute;
     right: 0;
     z-index: 2;
-    background-color: #fff;
+    background-color: #b1ffff;
     bottom: 0;
 }
 
