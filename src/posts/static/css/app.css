@@ -458,9 +458,15 @@ body {
     transition: 0.4s all ease-in-out;
 }
 
+
+@font-face {
+    font-family: "Poppins-Bold";
+    src: url("/static/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  }
+
 .carousel-item__title {
     margin: 15px 0 0 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Poppins-Bold';
     font-size: 44px;
     line-height: 45px;
     letter-spacing: 3px;
@@ -479,7 +485,7 @@ body {
     transition: 0.6s all ease-in-out;
     margin-top: 35px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
+    font-size: 20px;
     color: #7e7e7e;
     line-height: 22px;
     margin-bottom: 35px;
