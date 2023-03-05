@@ -437,7 +437,7 @@ body {
     -webkit-align-self: flex-end;
     -webkit-flex-basis: 60%; */
 
-    /* background-position: center; */
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

@@ -2,12 +2,21 @@ window.addEventListener("load", () => {
     $('.carousel-item').eq(0).addClass('active');
     var total = $('.carousel-item').length;
     var current = 0;
-    $('.carousel-item.active').on('click', function(){
+
+  $(document).on('click', '.carousel-item.active', function () {
+    if ($('.carousel-item.active .carousel-item__image')[0].style.width=="60%"){
       $('.carousel-item.active .carousel-item__image').css("width","100%");
       $('.carousel-item.active .carousel-item__image').css("flex-basis","100%");
       $('.carousel-item.active .carousel-item__info').css("display","none");
-      // $('.carousel-item.active').css("display","block");
-    });
+    } else {
+      $('.carousel-item.active .carousel-item__image').css("width","60%");
+      $('.carousel-item.active .carousel-item__image').css("flex-basis","60%");
+      $('.carousel-item.active .carousel-item__info').css("display","flex");
+
+    }
+});
+  
+
     $('#moveRight').on('click', function(){
       var next=current;
       current= current+1;
