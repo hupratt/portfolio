@@ -131,7 +131,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "craftstudios",
-        "USER": os.environ.get("dbuser"),
+        "USER": "pguser",
         "PASSWORD": os.environ.get("dbpassword"),
         "HOST": os.environ.get("hostip"),
         "PORT": os.environ.get("pnumber"),
