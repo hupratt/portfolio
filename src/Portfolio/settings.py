@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [
     "www.craftstudios.shop",
     "127.0.0.1",
     "localhost",
-    "craftstudios.bitwcmd.duckdns.org"
+    "craftstudios.craftstudios.shop"
 ]
 
 
