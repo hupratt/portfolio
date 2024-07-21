@@ -28,11 +28,7 @@ if os.environ.get("DJANGO_DEVELOPMENT") is not None:
     DEBUG = True
 
 ALLOWED_HOSTS = [
-    "portfolio.craftstudios.shop",
-    "www.craftstudios.shop",
-    "127.0.0.1",
-    "localhost",
-    "craftstudios.craftstudios.shop"
+    "portfolio.thekor.eu"
 ]
 
 
