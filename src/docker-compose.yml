@@ -1,0 +1,23 @@
+services:
+  backend:
+    container_name: portfolio
+    build: .
+    restart: always
+    ports:
+      - "9915:9915"
+    volumes:
+      - ./:/hdd/Dev/portfolio
+    env_file:
+      - .env
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    gunicorn Portfolio.wsgi:application -w 2 --bind 0.0.0.0:9915"
+                  #  python manage.py runserver 0.0.0.0:9925"
+  nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - "8066:80"
+    volumes:
+      - ./static:/app/static
+      - ./media:/app/media
